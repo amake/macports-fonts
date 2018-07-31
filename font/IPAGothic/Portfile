@@ -1,0 +1,44 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                IPAGothic
+version             003.03
+description         Gothic-style monospaced and proportional fonts for mixed Latin and Japanese
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ipa
+
+homepage            https://ipafont.ipa.go.jp/old/
+master_sites        https://oscdl.ipa.go.jp/IPAfont/
+
+set distprefix      IPAGTTC
+set flatversion     [string map {. ""} ${version}]
+set distbase        ${distprefix}${flatversion}
+distfiles           ${distbase}.zip
+
+use_configure       no
+
+checksums           rmd160  c64e0fbd8df08410584948c1f66fa6ee178d8c8c \
+                    sha256  d7e2b6e981e3f93d5197a2ff4c603ed268b679bb823c74584cef88082dbb9b86 \
+                    size    4439524
+
+use_zip             yes
+
+worksrcdir          ${distbase}
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
+}
+
+livecheck.version   ${flatversion}
+livecheck.url       https://ipafont.ipa.go.jp/old/ipafont/download.html
+livecheck.regex     ${distprefix}\(\[0-9\]+\)
