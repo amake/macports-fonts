@@ -1,0 +1,44 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                IPAMincho
+version             003.03
+description         Mincho-style monospaced and proportional fonts for mixed Latin and Japanese
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ipa
+
+homepage            https://ipafont.ipa.go.jp/old/
+master_sites        https://oscdl.ipa.go.jp/IPAfont/
+
+set distprefix      IPAMTTC
+set flatversion     [string map {. ""} ${version}]
+set distbase        ${distprefix}${flatversion}
+distfiles           ${distbase}.zip
+
+use_configure       no
+
+checksums           rmd160  bb4ecd24b33a4988b5fb0200c90c01ae93b060e1 \
+                    sha256  aecd05d564342881ca01928c94ca812a73af833e04c4307af2cdd95f5b9593c1 \
+                    size    5904481
+
+use_zip             yes
+
+worksrcdir          ${distbase}
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
+}
+
+livecheck.version   ${flatversion}
+livecheck.url       https://ipafont.ipa.go.jp/old/ipafont/download.html
+livecheck.regex     ${distprefix}\(\[0-9\]+\)
