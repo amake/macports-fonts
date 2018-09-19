@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                Shirokuma
+version             2.000
+description         Mincho-style monospaced and proportional fonts for mixed Latin and Japanese
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ipa
+
+homepage            https://www.flopdesign.com/freefont/utsukushi-mincho-font.html
+master_sites        https://dl.dropboxusercontent.com/s/mb05k64z6fr9n00/
+
+distfiles           001Shirokuma-Regular.otf
+
+use_configure       no
+
+checksums           rmd160  b82e4289901c922a81e6f2c287d5b125c8eff7b9 \
+                    sha256  f40c9c101c10cd42787875decb99024c532a498d747ee61162091c2910124739 \
+                    size    1880300
+
+worksrcdir          .
+
+extract.mkdir       no
+extract.cmd         cp
+extract.pre_args
+extract.post_args   .
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+}
