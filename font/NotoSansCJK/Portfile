@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                NotoSansCJK
+version             1.004
+description         A comprehensive sans-serif font covering Simplified Chinese, \
+                    Traditional Chinese, Japanese, and Korean in a unified  \
+                    font family.
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+homepage            https://www.google.com/get/noto/help/cjk/
+master_sites        https://noto-website-2.storage.googleapis.com/pkgs/
+
+distname            ${name}.ttc
+
+worksrcdir          .
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  97033fae6ab020deb5b44f02aef71df95681f7ee \
+                    sha256  690866416682fc801a4b191866dda5eb809ad36306056a4826d178fa978d8522 \
+                    size    93278711
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
+}
