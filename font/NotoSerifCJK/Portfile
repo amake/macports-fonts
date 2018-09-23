@@ -36,3 +36,7 @@ destroot {
     xinstall -m 755 -d ${target}
     copy {*}[glob ${worksrcpath}/*.ttc] ${target}
 }
+
+livecheck.type      regex
+livecheck.url       https://www.google.com/get/noto/updates/
+livecheck.regex     Noto Serif CJK.*Version \(\(\[0-9\]+\\.?\)+\)
