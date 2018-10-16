@@ -24,10 +24,7 @@ checksums           rmd160  b82e4289901c922a81e6f2c287d5b125c8eff7b9 \
 
 worksrcdir          .
 
-extract.mkdir       no
-extract.cmd         cp
-extract.pre_args
-extract.post_args   .
+extract.only
 
 build {}
 
@@ -36,7 +33,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 755 -d ${target}
-    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+    copy {*}[glob ${distpath}/*.otf] ${target}
 }
 
 livecheck.type      none
