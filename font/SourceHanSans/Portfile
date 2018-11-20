@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          font
+name                SourceHanSans
+github.setup        adobe-fonts source-han-sans 2.000 "" R
+
+description         A set of Pan-CJK sans-serif fonts
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+github.master_sites ${github.homepage}/releases/download/${github.version}${github.tag_suffix}
+distfiles           ${name}.ttc
+
+use_configure       no
+
+checksums           rmd160  83f466178ad37e42a6122e4871fb8c1f62d9469d \
+                    sha256  b26df6801f3c882c5d72aa4510527db4627aeaeee7b6e3bb7062bcee7252705d \
+                    size    123039596
+
+extract.only
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy ${distpath}/${distfiles} ${target}
+}
