@@ -12,7 +12,7 @@ maintainers         {amake @amake} openmaintainer
 license             ipa
 
 homepage            https://www.flopdesign.com/freefont/utsukushi-mincho-font.html
-master_sites        https://dl.dropboxusercontent.com/s/mb05k64z6fr9n00/
+master_sites        https://dl.dropboxusercontent.com/s/cido7at4cvb1hgj/
 
 distfiles           001Shirokuma-Regular.otf
 
@@ -21,8 +21,6 @@ use_configure       no
 checksums           rmd160  b82e4289901c922a81e6f2c287d5b125c8eff7b9 \
                     sha256  f40c9c101c10cd42787875decb99024c532a498d747ee61162091c2910124739 \
                     size    1880300
-
-worksrcdir          .
 
 extract.only
 
