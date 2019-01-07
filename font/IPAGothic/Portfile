@@ -36,6 +36,7 @@ destroot {
     copy {*}[glob ${worksrcpath}/*.ttc] ${target}
 }
 
+livecheck.type      regex
 livecheck.version   ${flatversion}
 livecheck.url       https://ipafont.ipa.go.jp/old/ipafont/download.html
 livecheck.regex     ${distprefix}\(\[0-9\]+\)
