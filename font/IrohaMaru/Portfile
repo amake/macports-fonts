@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                IrohaMaru
+version             1.01
+description         Retro gothic Japanese font
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+homepage            http://modi.jpn.org/font_irohamaru.php
+master_sites        http://modi.jpn.org/download/
+
+distname            MODI_irohamaru_2016_0727
+
+use_zip             yes
+use_configure       no
+
+checksums           rmd160  9a72b4776618a424bf84a15e003135f815056075 \
+                    sha256  1eba27483d2f3a4e4d1f7a8d0e576cdf803bb828529d26b18fb1f66e223f1742 \
+                    size    15440920
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ver\(\(\[0-9\]+\\.?\)+\)
