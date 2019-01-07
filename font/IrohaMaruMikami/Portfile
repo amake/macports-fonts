@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                IrohaMaruMikami
+version             1.01
+description         Rounded gothic Japanese font
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             free
+
+homepage            http://modi.jpn.org/font_irohamaru-mikami.php
+master_sites        http://modi.jpn.org/download/
+
+distname            MODI_irohamaru-mikami_2016_0914
+
+use_zip             yes
+use_configure       no
+
+checksums           rmd160  d5ac1e1a2b6f477d632a302f993903608861d51c \
+                    sha256  730999aa326117a5849a8faa75758f3631ae49b0d9b8e203933b19163eaf7925 \
+                    size    5011529
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ver\(\(\[0-9\]+\\.?\)+\)
