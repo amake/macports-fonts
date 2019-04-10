@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          font
 name                SourceHanSans
-github.setup        adobe-fonts source-han-sans 2.000 "" R
+github.setup        adobe-fonts source-han-sans 2.001 "" R
 
 description         A set of Pan-CJK sans-serif fonts
 long_description    ${description}
@@ -18,9 +18,9 @@ distfiles           ${name}.ttc
 
 use_configure       no
 
-checksums           rmd160  83f466178ad37e42a6122e4871fb8c1f62d9469d \
-                    sha256  b26df6801f3c882c5d72aa4510527db4627aeaeee7b6e3bb7062bcee7252705d \
-                    size    123039596
+checksums           rmd160  fdf3ee2fa97c59b16c8e1950a399be9f99d3685f \
+                    sha256  9e94fe493685a7c99ce61e4488169007e3b97badb9f1ef43d3c13da501463780 \
+                    size    123173880
 
 extract.only
 
