@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          font
+name                SourceHanMono
+github.setup        adobe-fonts source-han-mono 1.000
+
+description         A set of Pan-CJK monospaced fonts
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+github.master_sites ${github.homepage}/releases/download/${github.version}
+distfiles           ${name}.ttc
+
+use_configure       no
+
+checksums           rmd160  75efd2715074270ce9e93b85e8109d1703b033d0 \
+                    sha256  aafbc64dabfe9d5ac807b7d489018810078381c8290784869781c3386d76ad87 \
+                    size    122112368
+
+extract.only
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy ${distpath}/${distfiles} ${target}
+}
