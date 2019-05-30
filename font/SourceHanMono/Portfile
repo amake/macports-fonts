@@ -15,6 +15,7 @@ license             ofl
 
 github.master_sites ${github.homepage}/releases/download/${github.version}
 distfiles           ${name}.ttc
+dist_subdir         ${name}/${version}
 
 use_configure       no
 

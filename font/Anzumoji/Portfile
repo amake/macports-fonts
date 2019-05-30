@@ -15,6 +15,7 @@ homepage            http://www8.plala.or.jp/p_dolce/
 master_sites        http://www8.plala.or.jp/p_dolce/font/
 
 distname            ap1
+dist_subdir         ${name}/${version}
 
 worksrcdir          あんずもじ
 

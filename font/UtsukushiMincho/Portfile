@@ -15,6 +15,7 @@ homepage            https://www.flopdesign.com/freefont/utsukushi-mincho-font.ht
 master_sites        http://flop.sakura.ne.jp/font/fontdata/
 
 distname            ${name}-FONT
+dist_subdir         ${name}/${version}
 
 use_configure       no
 
