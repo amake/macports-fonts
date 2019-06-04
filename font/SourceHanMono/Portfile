@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          font
 name                SourceHanMono
-github.setup        adobe-fonts source-han-mono 1.001
+github.setup        adobe-fonts source-han-mono 1.002
 
 description         A set of Pan-CJK monospaced fonts
 long_description    ${description}
@@ -19,9 +19,9 @@ dist_subdir         ${name}/${version}
 
 use_configure       no
 
-checksums           rmd160  20cb47e3125f97f8a7bf3bee9a32351c5cd604dd \
-                    sha256  b20f78b0c2c22a456db9e21fa311c01c2417b12687cd5ce6dadd131ebfefc4e6 \
-                    size    122115320
+checksums           rmd160  5f3c4a8354d882a0220f706052dee4a334556971 \
+                    sha256  0c192448de90848f11eb8336876883a9a36dc65b8965e489600cfcc7a67358c1 \
+                    size    122117628
 
 extract.only
 
