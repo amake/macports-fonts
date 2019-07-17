@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          font
-github.setup        tonsky FiraCode 1.206
+github.setup        tonsky FiraCode 1.207
 github.tarball_from releases
 
 description         Monospaced font with programming ligatures
@@ -20,9 +20,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  38a9aa7f86557875e2256d18c1cc943695438a73 \
-                    sha256  433e9e059e53ae1e94c674819b73e49d65bd76e3c6ec70f42d2324062ea3210b \
-                    size    2206458
+checksums           rmd160  5b58bb4db9e9a03a0132f4371c8a04d8f21c31c4 \
+                    sha256  ba8d1a9ff3ad1bce7decc48db7a1e95c6116959cc5b9b80dc307b615eec3dfee \
+                    size    2304329
 
 build {}
 
