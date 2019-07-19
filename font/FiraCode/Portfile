@@ -5,6 +5,7 @@ PortGroup           github 1.0
 
 categories          font
 github.setup        tonsky FiraCode 1.207
+revision            1
 github.tarball_from releases
 
 description         Monospaced font with programming ligatures
@@ -31,5 +32,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 755 -d ${target}
-    copy {*}[glob ${worksrcpath}/ttf/*] ${target}
+    copy {*}[glob ${worksrcpath}/otf/*] ${target}
 }
