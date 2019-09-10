@@ -4,8 +4,8 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          font
-github.setup        tonsky FiraCode 1.207
-revision            1
+github.setup        tonsky FiraCode 2
+revision            0
 github.tarball_from releases
 
 description         Monospaced font with programming ligatures
@@ -21,9 +21,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  5b58bb4db9e9a03a0132f4371c8a04d8f21c31c4 \
-                    sha256  ba8d1a9ff3ad1bce7decc48db7a1e95c6116959cc5b9b80dc307b615eec3dfee \
-                    size    2304329
+checksums           rmd160  d40b967453acd3a5a94e332eec757b4bb702aa56 \
+                    sha256  60d5b1106b708cc134c521aae4e503bb1d2ec3c9bf8ad978f2c659820505d492 \
+                    size    2874044
 
 build {}
 
@@ -31,6 +31,6 @@ destroot.violate_mtree yes
 
 destroot {
     set target ${destroot}/Library/Fonts/
-    xinstall -m 755 -d ${target}
+    xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/otf/*] ${target}
 }
