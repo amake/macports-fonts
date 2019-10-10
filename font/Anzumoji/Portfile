@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          font
 name                Anzumoji
-version             1.00
+version             201907
 description         Handwriting-like font for Japanese
 long_description    ${description}
 platforms           darwin
@@ -21,9 +21,9 @@ worksrcdir          あんずもじ
 
 use_configure       no
 
-checksums           rmd160  002456430c7022e793b3d7e5ef985639fe5c9028 \
-                    sha256  5523e42b23dbd447a1232ec026bf7781dcb06a83f40746498ff8c669972ac242 \
-                    size    3275980
+checksums           rmd160  4b24df2e01af0d53c12792f232b42a62c0b5de49 \
+                    sha256  659d941cc3e7af2662b8f71639f81b404983b04db5698379de65ac9a0defac18 \
+                    size    3313856
 
 depends_extract     port:unar
 
