@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                NotoFonts
+version             20180424
+description         Beautiful and free fonts for all languages
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+homepage            http://www.google.com/get/noto/
+master_sites        https://noto-website-2.storage.googleapis.com/pkgs/
+
+distname            Noto-unhinted
+dist_subdir         ${name}/${version}
+
+worksrcdir          .
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  ee91a5587b443ebb5c53e5c13798e5915ce65e04 \
+                    sha256  7d0e099c208d11d7bf64091ea7f62f85bc07dedfaf2c01de53985a5b981025e3 \
+                    size    1114561068
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      none
