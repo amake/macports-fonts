@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                sawarabi-mincho
+version             20191015
+description         Mincho Japanese font
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             CC-BY-3
+
+homepage            https://sawarabi-fonts.osdn.jp/
+master_sites        osdn:sawarabi-fonts/71770
+
+distname            ${name}-otf-$version
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  03964943b6c6971974c853aa851dd45fb4adc057 \
+                    sha256  e5bdd19a2f2615ce8a43fb907784d9428ab305ecb30fa1ebd04a391011d5ef3a \
+                    size    2054293
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://osdn.net/projects/sawarabi-fonts/releases/rss
+livecheck.regex     ${name}-otf-(\[0-9\]+)${extract.suffix}
