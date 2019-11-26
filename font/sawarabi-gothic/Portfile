@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          font
+name                sawarabi-gothic
+version             20161015
+description         Gothic Japanese font
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             CC-BY-3
+
+homepage            https://sawarabi-fonts.osdn.jp/
+master_sites        osdn:sawarabi-fonts/66581
+
+distname            ${name}-otf-$version
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  e5be1ce7d9a68b69e4f479dba0d03f978f383ecb \
+                    sha256  111860ad6af29c35bbd45a962bc676886e57f8df8204e445fd4eb81c4eda9831 \
+                    size    1505282
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://sawarabi-fonts.osdn.jp/en/
+livecheck.regex     Sawarabi Gothic \\(ver\\.(\[0-9\]+)\\)
