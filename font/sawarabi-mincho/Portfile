@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          font
 name                sawarabi-mincho
-version             20191215
+version             20200215
 description         Mincho Japanese font
 long_description    ${description}
 platforms           darwin
@@ -13,16 +13,16 @@ license             CC-BY-3
 
 homepage            https://sawarabi-fonts.osdn.jp/
 # Note: The numerical suffix here changes with each version!
-master_sites        osdn:sawarabi-fonts/72039
+master_sites        osdn:sawarabi-fonts/72375
 
 distname            ${name}-otf-$version
 
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  5a424234815663b2ed898c2ab4d3e28da78603d4 \
-                    sha256  59c107dcf5088bde7e46374625ce4e1576c36d9791f007fe968b216374bdff18 \
-                    size    2087738
+checksums           rmd160  bb7b721645f64272dce4c4c533d6845760cff9b2 \
+                    sha256  102323707a084b8001ea226910dd4b1c7a4eb8553c1fd77d7a7c11c7f64bacab \
+                    size    2127850
 
 build {}
 
