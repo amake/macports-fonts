@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          font
-github.setup        tonsky FiraCode 3
+github.setup        tonsky FiraCode 3.1
 revision            0
 github.tarball_from releases
 
@@ -21,9 +21,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  dafe9cbf373f84e0bbfab7727421b7fa83495d2b \
-                    sha256  043fa00e002704aec6f8b5e1908faf099f9477160d00ad0260a8103329c3981b \
-                    size    3248329
+checksums           rmd160  3e42f4e6a55d5682b6735aac6d50d26253b3a0bc \
+                    sha256  cbcabd2c412ee4c3fec4688be8387de18a33bb77bc5c5988e9fd9293a0b9dbb7 \
+                    size    3246743
 
 build {}
 
