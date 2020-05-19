@@ -12,7 +12,7 @@ maintainers         {amake @amake} openmaintainer
 license             ipa
 
 homepage            https://ipafont.ipa.go.jp/old/
-master_sites        https://oscdl.ipa.go.jp/IPAfont/
+master_sites        https://ipafont.ipa.go.jp/IPAfont/
 
 set distprefix      IPAMTTC
 set flatversion     [string map {. ""} ${version}]
