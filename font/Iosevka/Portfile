@@ -36,3 +36,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/ttc/*] ${target}
 }
+
+github.livecheck.regex  {([^"-]+)}
