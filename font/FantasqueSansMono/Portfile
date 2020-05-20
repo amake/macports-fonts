@@ -19,6 +19,8 @@ maintainers         {amake @amake} openmaintainer
 license             ofl
 
 distname            ${name}-Normal
+dist_subdir         ${name}/${version}
+
 use_configure       no
 worksrcdir          .
 

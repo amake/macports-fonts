@@ -19,6 +19,8 @@ maintainers         {amake @amake} openmaintainer
 license             Apache-2
 
 distname            ${github.project}-android
+dist_subdir         ${name}/${version}
+
 use_configure       no
 use_zip             yes
 worksrcdir          .

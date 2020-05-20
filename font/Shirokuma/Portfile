@@ -15,6 +15,7 @@ homepage            https://www.lazypolarbear.com/entry/font-shirokuma
 master_sites        https://dl.dropboxusercontent.com/s/cido7at4cvb1hgj/
 
 distfiles           001Shirokuma-Regular.otf
+dist_subdir         ${name}/${version}
 
 use_configure       no
 
