@@ -14,7 +14,7 @@ license             CC-BY-3
 homepage            https://sawarabi-fonts.osdn.jp/
 master_sites        osdn:sawarabi-fonts/66581
 
-distname            ${name}-otf-$version
+distname            ${name}-otf-${version}
 
 use_configure       no
 use_zip             yes

@@ -15,7 +15,7 @@ homepage            https://sawarabi-fonts.osdn.jp/
 # Note: The numerical suffix here changes with each version!
 master_sites        osdn:sawarabi-fonts/72750
 
-distname            ${name}-otf-$version
+distname            ${name}-otf-${version}
 
 use_configure       no
 use_zip             yes
