@@ -11,6 +11,7 @@ revision            0
 description         An open-source monospaced font with optional semi-connected \
                     cursive italics and programming symbol ligatures.
 long_description    ${description}
+homepage            https://rubjo.github.io/victor-mono/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer

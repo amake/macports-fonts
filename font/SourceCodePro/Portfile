@@ -14,6 +14,7 @@ description         A font family with a great monospaced variant for programmer
 long_description \
     A programming font, designed with functionality in mind, and with some \
     wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.
+homepage            https://adobe-fonts.github.io/source-code-pro/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer

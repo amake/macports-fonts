@@ -11,6 +11,7 @@ github.tarball_from releases
 
 description         A monospace font, designed for code listings and the like, in print.
 long_description    ${description}
+homepage            https://www.levien.com/type/myfonts/inconsolata.html
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer

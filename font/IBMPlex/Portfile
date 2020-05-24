@@ -11,6 +11,7 @@ github.tarball_from releases
 
 description         IBM’s typeface, IBM Plex
 long_description    ${description}
+homepage            https://www.ibm.com/plex/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer

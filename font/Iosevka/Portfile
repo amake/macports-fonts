@@ -13,6 +13,7 @@ long_description \
     ${name} is an open-source, sans-serif + slab-serif, monospace + \
     quasi‑proportional typeface family, designed for writing code, using in \
     terminals, and preparing technical documents.
+homepage            https://typeof.net/Iosevka/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
