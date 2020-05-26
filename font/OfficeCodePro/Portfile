@@ -1,0 +1,33 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          font
+github.setup        nathco Office-Code-Pro 1.004
+name                OfficeCodePro
+revision            0
+
+description         A version of Source Code Pro customized for text editors and \
+                    coding environments
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+use_configure       no
+
+checksums           rmd160  e2084f1918f0c6404a3699c5170db1ded164411d \
+                    sha256  609e9d1828d3db20effe31623ef23abfb4d416687f5049e81903261b27322823 \
+                    size    2911976
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob "${worksrcpath}/Fonts/Office Code Pro/OTF/*"] ${target}
+}
