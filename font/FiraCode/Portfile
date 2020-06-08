@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          font
-github.setup        tonsky FiraCode 4
+github.setup        tonsky FiraCode 5
 revision            0
 github.tarball_from releases
 
@@ -21,9 +21,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  5f1ec0b26510d6621fa47f66064573bfe9ca9be2 \
-                    sha256  46ed45d1a793a56e13d31ed10fb7e09f5277731953a0d9522915644fc59086d8 \
-                    size    3181715
+checksums           rmd160  eb2c31d3d366aacb425241dc8b1b574bcccacd9f \
+                    sha256  a095333b5e24d57f6536efb62d5425d3325243808dca410c6755d0cf7c5bd8da \
+                    size    2457144
 
 build {}
 
@@ -32,5 +32,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/otf/*] ${target}
+    copy {*}[glob ${worksrcpath}/ttf/*] ${target}
 }
