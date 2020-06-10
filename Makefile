@@ -4,6 +4,8 @@ GIT_DIR := $(shell git rev-parse --git-dir)
 .PHONY: hooks
 hooks:  ## Install helpful git hooks
 hooks: $(foreach _,$(HOOKS),$(GIT_DIR)/hooks/$(notdir $(_)))
+# Always merge to ensure post-merge hook runs
+	git config pull.rebase false
 
 $(GIT_DIR)/hooks/%: hooks/%
 	ln -s $(PWD)/$(<) $(@)

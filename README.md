@@ -32,7 +32,6 @@ Optionally set up automatic index refresh:
 ```sh
 cd macports-fonts
 make hooks
-git config pull.rebase false
 ```
 
 Add the entry to your MacPorts sources config (by default at
