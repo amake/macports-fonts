@@ -33,7 +33,6 @@ Optionally set up automatic index refresh:
 cd macports-fonts
 make hooks
 git config pull.rebase false
-git branch --set-upstream-to=origin/master master
 ```
 
 Add the entry to your MacPorts sources config (by default at
