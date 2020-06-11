@@ -31,7 +31,7 @@ Optionally set up automatic index refresh:
 
 ```sh
 cd macports-fonts
-make hooks
+make
 ```
 
 Add the entry to your MacPorts sources config (by default at
