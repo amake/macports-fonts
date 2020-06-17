@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                UbuntuFont
+version             0.83
+
+description         A font with a contemporary style and contains \
+    characteristics unique to the Ubuntu brand that convey a precise, reliable \
+    and free attitude.
+
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             permissive
+homepage            https://design.ubuntu.com/font/
+master_sites        https://assets.ubuntu.com/v1/
+
+distname            0cef8205-ubuntu-font-family-${version}
+worksrcdir          ubuntu-font-family-${version}
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  49af89fe7a9850cea5802b84863e6ecc8b837a93 \
+                    sha256  61a2b342526fd552f19fef438bb9211a8212de19ad96e32a1209c039f1d68ecf \
+                    size    2190387
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://launchpad.net/ubuntu-font-family/+packages
+livecheck.regex     \(\[0-9.\]+\)-\[0-9\]ubuntu\[0-9\]
