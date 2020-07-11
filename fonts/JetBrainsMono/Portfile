@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        JetBrains JetBrainsMono 1.0.6 v
+github.setup        JetBrains JetBrainsMono 2.000 v
 revision            0
 github.tarball_from releases
 
@@ -19,9 +19,11 @@ license             Apache-2
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  1ca41416f7db07522dc4739561e8946677efaffb \
-                    sha256  2c2d660c46fa68f1b4ae087990b0742b12a7585e96b9e791adb28583251c0472 \
-                    size    6335183
+distname            JetBrains.Mono.${version}
+
+checksums           rmd160  edb9f699d04929eb776569f53930a31da6122a3a \
+                    sha256  fa7fd6baf5f0448f74b2aba3c33bc41edaa4507f9ce27d1e0bdcb904533bc534 \
+                    size    8351073
 
 build {}
 
