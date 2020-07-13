@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 3.2.2 v
+github.setup        be5invis Iosevka 3.3.0 v
 revision            0
 github.tarball_from releases
 
@@ -24,9 +24,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  f78a8974e94875f3a8b9185462128d2d33f14af1 \
-                    sha256  71bc68c7862a9b1265bee4dcfc290a0e7f0c20170bbdeede63575949e05bbfa8 \
-                    size    207431922
+checksums           rmd160  d16ba318ee1e2245404858931dc4f65a48692317 \
+                    sha256  2547e0e38190358cd3ace46dfda8675de2f9bdf54ca9a982eb2dc4b1bbc45c1f \
+                    size    205069530
 
 build {}
 
