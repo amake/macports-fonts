@@ -1,0 +1,41 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        rsms inter 3.13 v
+name                Inter
+revision            0
+
+description         A typeface specially designed for user interfaces with focus \
+                    on high legibility of small-to-medium sized text on computer \
+                    screens.
+long_description    ${description}
+
+homepage            https://rsms.me/inter/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             otf
+
+github.tarball_from releases
+distname            ${name}-${version}
+
+use_configure       no
+use_zip             yes
+worksrcdir          .
+
+checksums           rmd160  820c67b8b1bac2dad73c8027e0abf0f4f80a0b82 \
+                    sha256  789d34210229d814afc5bd7d0b4623bb89c8d8073fbe7b0a24fbf77248564da6 \
+                    size    18484208
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob "${worksrcpath}/Inter Desktop/*.otf"] ${target}
+}
