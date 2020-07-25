@@ -1,0 +1,41 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                mplus
+version             1.063a
+set short_version   063
+description         Multilingual, multiweight, multistyle free font including CJK characters
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             permissive
+
+homepage            https://mplus-fonts.osdn.jp/
+master_sites        osdn:mplus-fonts/62344
+
+distname            ${short_version}-OTF
+use_configure       no
+use_xz              yes
+
+checksums           md5     6286ab8f44f796904350c63984055756 \
+                    sha1    d3711d629c2b37ec4e72394cbfd103696fd3858e \
+                    sha256  b1a98b24e034ff26d7cb957d904f1d49bbffc004c732eadc822e140b99f98ce1 \
+                    rmd160  22b88bdbe08070b0e903034db38c710fa3291912 \
+                    size    14145976
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://osdn.net/projects/mplus-fonts/releases/rss
+livecheck.regex     \(\[0-9\]+\)-OTF${extract.suffix}
+livecheck.version   ${short_version}
