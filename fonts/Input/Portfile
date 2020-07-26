@@ -11,6 +11,7 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 homepage            https://input.fontbureau.com/
+master_sites
 
 distname            Input-Font
 dist_subdir         ${name}/${version}
