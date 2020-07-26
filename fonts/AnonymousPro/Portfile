@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                AnonymousPro
+version             1.002
+revision            0
+
+description         A family of four fixed-width fonts designed with coding in mind
+long_description    ${description}
+homepage            https://www.marksimonson.com/fonts/view/anonymous-pro
+master_sites        https://www.marksimonson.com/assets/content/fonts/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  75d29f506a0ec98d53ebec8acd8c0417f4d7f1ec \
+                    sha256  86665847a51cdfb58a1e1dfd8b1ba33f183485affe50b53e3304f63d3d3552ab \
+                    size    284289
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ${name}-\(\[0-9.\]+\)${extract.suffix}
