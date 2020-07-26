@@ -1,0 +1,45 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                PragmataPro
+version             0.828
+description         A condensed monospaced font optimized for screen, designed to \
+                    be the ideal font for coding, math and engineering
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Restrictive
+homepage            https://fsd.it/shop/fonts/pragmatapro/
+master_sites
+
+distname            ${name}${version}-2
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  260b41b0d4ef5dea4853738b35959fda2b082abc \
+                    sha256  23ca2674fcb850df0020aec0a0f1c241cf7c2f27248591611533b5d71b6806a7 \
+                    size    13107184
+
+fetch {
+    file mkdir ${distpath}
+    if {![file exists ${distpath}/${distfiles}]} {
+        ui_error "NOTE: Due to licensing restrictions, '${distfiles}' must be manually downloaded from ${homepage}"
+        ui_error "and placed in ${distpath} for example using: ‘sudo cp ~/Downloads/${distfiles} ${distpath}'"
+    }
+}
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {version is ([0-9.]+)}
