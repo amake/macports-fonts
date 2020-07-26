@@ -1,0 +1,31 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        bBoxType FiraGO 715cd3e8b59179822cd5b86933ecfc254cd1e74e
+version             1.001
+revision            0
+
+homepage            https://bboxtype.com/typefaces/FiraGO/
+description         Fira Sans, but with extensions for several languages
+long_description    ${description} such as Arabic, Devanagari, Georgian, Hebrew and Thai
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+fetch.type          git
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/Fonts/FiraGO_OTF_1001/*/*] ${target}
+}
