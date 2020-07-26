@@ -12,7 +12,7 @@ description         A type family is designed primarily for official \
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             permissive
+license             Permissive
 homepage            https://company.paratype.com/pt-sans-pt-serif
 master_sites        https://company.paratype.com/system/attachments/631/original/
 

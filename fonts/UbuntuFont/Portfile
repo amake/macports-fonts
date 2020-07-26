@@ -13,7 +13,7 @@ description         A font with a contemporary style and contains \
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             permissive
+license             Permissive
 homepage            https://design.ubuntu.com/font/
 master_sites        https://assets.ubuntu.com/v1/
 

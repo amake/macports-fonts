@@ -10,7 +10,7 @@ description         Multilingual, multiweight, multistyle free font including CJ
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             permissive
+license             Permissive
 
 homepage            https://mplus-fonts.osdn.jp/
 master_sites        osdn:mplus-fonts/62344
