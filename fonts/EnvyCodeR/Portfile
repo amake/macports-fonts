@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                EnvyCodeR
+version             7.2
+revision            0
+
+description         A monospaced font designed for programmers
+long_description    ${description}
+homepage            https://damieng.com/envy-code-r
+master_sites        https://download.damieng.com/fonts/original/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             {Permissive NoMirror}
+
+use_configure       no
+use_zip             yes
+
+distname            ${name}-PR7
+
+checksums           rmd160  9386c184ea463fccd5bdb9b74395a960be66f4f6 \
+                    sha256  9f7e9703aaf21110b4e1a54d954d57d4092727546348598a5a8e8101e4597aff \
+                    size    172849
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {Preview ([0-9.]+)}
