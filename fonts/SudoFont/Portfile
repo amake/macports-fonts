@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        jenskutilek sudo-font 0.50 v
+name                SudoFont
+revision            0
+
+description         A monospaced font designed for terminal and programming
+long_description    ${description}
+homepage            https://www.kutilek.de/sudo-font/
+master_sites        https://www.kutilek.de/download/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+distname            sudo
+dist_subdir         ${name}/${version}
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  50725c12ccc032c26d6fed802c323727aab8d284 \
+                    sha256  2e70c9371ae0f330277d277bb8dec919bc5dd8d64785ffe4c1938f361d4c9ecd \
+                    size    1594285
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
