@@ -41,6 +41,3 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob "${worksrcpath}/*/OpenType (best for Mac OS)/*.otf"] ${target}
 }
-
-livecheck.type      regex
-livecheck.regex     {version is ([0-9.]+)}
