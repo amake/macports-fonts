@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        adobe-fonts source-sans-pro 3.006R
+name                SourceSansPro
+revision            0
+github.tarball_from releases
+
+description         A set of OpenType fonts that have been designed to work \
+                    well in user interface (UI) environments
+long_description    ${description}
+
+homepage            https://adobe-fonts.github.io/source-sans-pro/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ofl
+
+distname            ${github.project}-${version}
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  bcf2571a006127f4ea0da7d737718ae060b863a2 \
+                    sha256  b22c7a4c45050ed8ae1b5293a9fd3b886d6f5150eb1e2ded429b9a11ac1602c5 \
+                    size    9935058
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/OTF/*] ${target}
+}
