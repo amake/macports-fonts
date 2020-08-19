@@ -1,0 +1,41 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                APL385
+version             2.00066
+description         A monospaced code font for APL
+long_description    ${description}. Developed with all APL software vendors in \
+                    the late 1980s and enhanced as required with new characters \
+                    to meet interpreter updates.
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             public-domain
+
+homepage            https://apl385.com/fonts/index.htm
+master_sites        https://apl385.com/fonts/
+
+distname            [string tolower ${name}]
+dist_subdir         ${name}/${version}
+
+worksrcdir          .
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  c8d88305349577213e25ad58c5460c0d192d2049 \
+                    sha256  2fccdb3137bc985fb5977c5e6b05f93611b277a46ef8883a72d86cd0ad76588c \
+                    size    102594
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      none
