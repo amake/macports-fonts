@@ -31,3 +31,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/et-book*/*/*.\[ot\]tf] ${target}
 }
+
+github.livecheck.branch  gh-pages
