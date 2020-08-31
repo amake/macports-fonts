@@ -1,0 +1,33 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        edwardtufte et-book 24d3a3bbfc880095d3df2b9e9d60d05819138e89
+name                ETBook
+version             001.001
+revision            0
+
+description         A webfont version of the typeface used in Edward Tufte’s books
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             MIT
+
+use_configure       no
+
+checksums           rmd160  6490bede6f3c3d4ccedbe86a49729e0550a2b1dc \
+                    sha256  ef16d89042f111732a20bef6a5d65d1d1cd8c9e9ca8480f32179c8455dbbd2fd \
+                    size    2587295
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/et-book*/*/*.\[ot\]tf] ${target}
+}
