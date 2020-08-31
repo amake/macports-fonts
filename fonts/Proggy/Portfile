@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        bluescan proggyfonts 1.1.5 v
+name                Proggy
+revision            0
+
+description         A cset of fixed-width screen fonts that are designed for programming
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             MIT
+
+use_configure       no
+
+checksums           rmd160  7f84078d192075445e8b43ea3804b8e8d84b7510 \
+                    sha256  4c3c3dab899bf04aafc293a4672fcf2b3285fc7a7ed05bd813d2517a74e682d7 \
+                    size    4846208
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    # By inspection with ttx (fonttools port), the "Mac" version differs only by
+    # ulCodePageRange1 and 2, which seem to be irrelevant on Mac anyway.
+    # https://docs.microsoft.com/en-us/typography/opentype/otspec160/os2#ulcodepagerange1-bits-0-31ulcodepagerange2-bits-32-63
+    delete {*}[glob ${worksrcpath}/*/*Mac.ttf]
+    copy {*}[glob ${worksrcpath}/*/*.ttf] ${target}
+}
