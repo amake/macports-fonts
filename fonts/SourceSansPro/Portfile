@@ -20,6 +20,7 @@ maintainers         {amake @amake} openmaintainer
 license             ofl
 
 distname            source-sans-[string map {. v} ${version}]
+worksrcdir          .
 use_configure       no
 use_zip             yes
 
