@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        googlefonts noto-emoji 2020-07-22-unicode13_0 v
+github.setup        googlefonts noto-emoji 2020-09-16-unicode13_1 v
 name                NotoEmoji
 revision            0
 
