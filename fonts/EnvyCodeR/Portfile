@@ -9,7 +9,7 @@ revision            0
 
 description         A monospaced font designed for programmers
 long_description    ${description}
-homepage            https://damieng.com/envy-code-r
+homepage            https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released
 master_sites        https://download.damieng.com/fonts/original/
 
 platforms           darwin
