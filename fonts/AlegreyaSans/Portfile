@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        huertatipografica Alegreya-Sans 2.008 v
+name                AlegreyaSans
+revision            0
+
+description         A typeface originally intended for literature
+long_description    ${description}. It conveys a dynamic and varied rhythm which \
+                    facilitates the reading of long texts.
+
+homepage            https://www.huertatipografica.com/en/fonts/alegreya-ht-pro
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+use_configure       no
+
+checksums           rmd160  8bfe659ac2ceb552af6c3e5becf51f4ef6fee912 \
+                    sha256  ef8dbac0920ad77f36918580c67beac516306949b00857c913a17294f9c1d32b \
+                    size    16352941
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/fonts/otf/*.otf] ${target}
+}
