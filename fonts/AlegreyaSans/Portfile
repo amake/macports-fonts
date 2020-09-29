@@ -8,9 +8,10 @@ github.setup        huertatipografica Alegreya-Sans 2.008 v
 name                AlegreyaSans
 revision            0
 
-description         A typeface originally intended for literature
-long_description    ${description}. It conveys a dynamic and varied rhythm which \
-                    facilitates the reading of long texts.
+description         A humanist sans serif family with a calligraphic feeling \
+                    that conveys a dynamic and varied rhythm.
+long_description    ${description}. This gives a pleasant feeling to readers \
+                    of long texts.
 
 homepage            https://www.huertatipografica.com/en/fonts/alegreya-sans-ht
 
