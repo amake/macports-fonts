@@ -16,7 +16,7 @@ long_description    ${description}. Color version doesn't work on macOS. Also \
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 use_configure       no
 

@@ -17,7 +17,7 @@ homepage            https://adobe-fonts.github.io/source-sans-pro/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            source-sans-[string map {. v} ${version}]
 worksrcdir          .

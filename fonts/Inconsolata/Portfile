@@ -15,7 +15,7 @@ homepage            https://www.levien.com/type/myfonts/inconsolata.html
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            fonts_otf
 dist_subdir         ${name}/${version}

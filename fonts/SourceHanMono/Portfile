@@ -11,7 +11,7 @@ description         A set of Pan-CJK monospaced fonts
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 github.master_sites ${github.homepage}/releases/download/${github.version}
 distfiles           ${name}.ttc

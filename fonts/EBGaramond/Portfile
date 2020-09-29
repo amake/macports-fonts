@@ -17,7 +17,7 @@ homepage            http://www.georgduffner.at/ebgaramond/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 bitbucket.tarball_from  downloads
 

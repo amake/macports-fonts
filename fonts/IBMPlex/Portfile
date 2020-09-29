@@ -15,7 +15,7 @@ homepage            https://www.ibm.com/plex/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            OpenType
 dist_subdir         ${name}/${version}

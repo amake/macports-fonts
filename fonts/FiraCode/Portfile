@@ -14,7 +14,7 @@ long_description    An extension of the Fira Mono font containing a set \
                     combinations.
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            Fira_Code_v${github.version}
 use_configure       no

@@ -11,7 +11,7 @@ description         A comprehensive sans-serif font covering Simplified Chinese,
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 homepage            https://www.google.com/get/noto/help/cjk/
 master_sites        https://noto-website-2.storage.googleapis.com/pkgs/

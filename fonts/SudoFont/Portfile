@@ -15,7 +15,7 @@ master_sites        https://www.kutilek.de/download/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            sudo
 dist_subdir         ${name}/${version}

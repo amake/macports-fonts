@@ -9,7 +9,7 @@ description         Retro gothic Japanese font
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 homepage            http://modi.jpn.org/font_irohamaru.php
 master_sites        http://modi.jpn.org/download/

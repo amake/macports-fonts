@@ -14,7 +14,7 @@ long_description    ${description} such as Arabic, Devanagari, Georgian, Hebrew 
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 fetch.type          git
 

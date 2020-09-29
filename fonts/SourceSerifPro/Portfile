@@ -16,7 +16,7 @@ homepage            https://adobe-fonts.github.io/source-serif-pro/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            ${github.project}-${version}
 use_configure       no

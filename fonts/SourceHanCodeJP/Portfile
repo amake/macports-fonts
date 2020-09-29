@@ -14,7 +14,7 @@ long_description    A UI font for mixed Latin and Japanese text on \
                     app, etc.
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 github.master_sites ${github.homepage}/archive/${github.version}${github.tag_suffix}
 distname            ${github.version}${github.tag_suffix}

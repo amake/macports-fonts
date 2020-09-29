@@ -9,7 +9,7 @@ description         Free Kanji font including over 80,000 Unicode characters
 long_description    ${description}
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 homepage            http://fonts.jp/hanazono/
 master_sites        osdn:hanazono-font/68253

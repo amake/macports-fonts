@@ -14,7 +14,7 @@ homepage            https://www.jetbrains.com/lp/mono/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 use_configure       no
 use_zip             yes

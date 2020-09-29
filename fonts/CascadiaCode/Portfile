@@ -14,7 +14,7 @@ long_description    ${description}
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            ${name}-${github.version}
 use_configure       no

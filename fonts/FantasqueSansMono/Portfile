@@ -16,7 +16,7 @@ long_description \
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
-license             ofl
+license             OFL
 
 distname            ${name}-Normal
 dist_subdir         ${name}/${version}
