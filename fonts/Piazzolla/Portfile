@@ -1,0 +1,52 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        huertatipografica piazzolla 2.001 v
+name                Piazzolla
+revision            0
+github.tarball_from releases
+
+description         Type system intended for optimizing the available space in \
+                    press media and other publications.
+long_description    ${description}. It has a compact appearance which allows for \
+                    small font sizes and tight leading while achieving solid lines \
+                    and robust paragraphs.
+
+homepage            https://piazzolla.huertatipografica.com/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+use_configure       no
+use_zip             yes
+
+distname            ${name}
+dist_subdir         ${name}/${version}
+
+set smallcaps_dist  ${name}SC${extract.suffix}
+
+distfiles           ${distname}${extract.suffix} \
+                    ${name}SC${extract.suffix}
+
+checksums           ${distname}${extract.suffix} \
+                        rmd160  99fc642a8e6b16133afb131c20d7444ae2ea7b81 \
+                        sha256  debfbeabd9e9bcf47a60fecf46db777140ae0f72bded9f41e40668642d794bb7 \
+                        size    7371317 \
+                    ${smallcaps_dist} \
+                        rmd160  6b9cab7f81f2865702bf2d72f9a63194768b5493 \
+                        sha256  236bcea9f182f0c240a61674c127a1a11812e366149f8783ad5668fb74dfc034 \
+                        size    7376122
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${workpath}/*/static/otf/*.otf] ${target}
+}
