@@ -12,7 +12,7 @@ description         A typeface originally intended for literature
 long_description    ${description}. It conveys a dynamic and varied rhythm which \
                     facilitates the reading of long texts.
 
-homepage            https://www.huertatipografica.com/en/fonts/alegreya-ht-pro
+homepage            https://www.huertatipografica.com/en/fonts/alegreya-sans-ht
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
