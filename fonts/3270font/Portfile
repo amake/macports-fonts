@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        rbanffy 3270font 2.1.0 v
+revision            0
+
+description         A 3270 font in a modern format
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             BSD
+
+use_configure       no
+
+checksums           rmd160  dbcd942f01c0d89a5050191932fa78358555e371 \
+                    sha256  7b4adebc97a33da1b5e8dbf87efa0de7efbcd272fc4240f2eb62c8a157721cc7 \
+                    size    493796
+
+depends_build-append port:fontforge
+
+build.target        font
+
+destroot.violate_mtree yes
+destroot.args       DESTFOLDER=${destroot}/Library/Fonts/
