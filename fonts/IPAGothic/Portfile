@@ -11,8 +11,8 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             ipa
 
-homepage            https://ipafont.ipa.go.jp/old/
-master_sites        https://ipafont.ipa.go.jp/IPAfont/
+homepage            https://moji.or.jp/ipafont/
+master_sites        https://moji.or.jp/wp-content/ipafont/IPAfont/
 
 set distprefix      IPAGTTC
 set flatversion     [string map {. ""} ${version}]
