@@ -37,6 +37,4 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.version   ${flatversion}
-livecheck.url       https://ipafont.ipa.go.jp/old/ipafont/download.html
-livecheck.regex     ${distprefix}\(\[0-9\]+\)
+livecheck.regex     {IPAフォント\(Ver\.([0-9.]+)\)}
