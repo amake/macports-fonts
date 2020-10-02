@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                IPAex
+version             004.01
+description         Gothic and mincho fonts with monospaced Japanese and proportional Latin
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             ipa
+
+homepage            https://moji.or.jp/ipafont/
+master_sites        https://moji.or.jp/wp-content/ipafont/IPAexfont/
+
+set distprefix      IPAexfont
+set flatversion     [string map {. ""} ${version}]
+distname            ${distprefix}${flatversion}
+
+use_configure       no
+
+checksums           rmd160  41130e8f4256709d35274e547db04cf4bbbf0157 \
+                    sha256  bcf8374ab3f9672c421120430dd19a51c99f5265cf06fc340d9a661ddfd7974b \
+                    size    9738669
+
+use_zip             yes
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {IPAexフォント\(Ver\.([0-9.]+)\)}
