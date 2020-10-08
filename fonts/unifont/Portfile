@@ -1,0 +1,60 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                unifont
+version             13.0.03
+description         A Unicode font with a glyph for every visible Unicode Basic \
+                    Multilingual Plane code point and more
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             GPL-2+
+
+homepage            http://unifoundry.com/unifont/index.html
+master_sites        https://ftp.gnu.org/gnu/${name}/${name}-${version}/
+
+use_configure       no
+
+checksums           rmd160  b2eb90bf5b07bc7d37871e4b9d5107be8a8d441f \
+                    sha256  071e2ca005d97d72e79b8cb68df886f1f730cb5f0e7739a4c6e8d068ded28212 \
+                    size    23095978
+
+set fonts_dir       ${worksrcpath}/font/compiled
+
+variant precompiled description {Use precompiled binaries} {
+    build {}
+
+    global fonts_dir
+    set fonts_dir   ${worksrcpath}/font/precompiled
+}
+
+default_variants    +precompiled
+
+if {![variant_isset precompiled]} {
+    PortGroup           perl5 1.0
+
+    depends_build   port:fontforge \
+                    port:bdftopcf \
+                    port:p${perl5.major}-gd
+
+    post-patch {
+        reinplace "s|#!/usr/bin/perl|#!${perl5.bin}|" {*}[glob ${worksrcpath}/src/*]
+    }
+
+    build.args      BUILDFONT=1 PSF= GRAPHICS=
+}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy ${fonts_dir}/${name}-${version}.ttf \
+        ${fonts_dir}/${name}_jp-${version}.ttf \
+        ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ${name}-\(\[0-9\.\]+\)
