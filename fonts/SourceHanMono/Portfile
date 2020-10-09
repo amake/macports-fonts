@@ -13,7 +13,7 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-github.master_sites ${github.homepage}/releases/download/${github.version}
+github.tarball_from releases
 distfiles           ${name}.ttc
 dist_subdir         ${name}/${version}
 

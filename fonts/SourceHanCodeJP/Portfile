@@ -16,7 +16,7 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-github.master_sites ${github.homepage}/archive/${github.version}${github.tag_suffix}
+github.tarball_from archive
 distname            ${github.version}${github.tag_suffix}
 use_configure       no
 worksrcdir          ${github.project}-${github.version}${github.tag_suffix}
