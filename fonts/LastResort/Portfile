@@ -16,14 +16,15 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
+github.tarball_from releases
 distfiles           ${name}-Regular.ttf
 dist_subdir         ${name}/${version}
 
 use_configure       no
 
-checksums           rmd160  9d69f883fd508c2453ccc1bd99c800dc57e695b6 \
-                    sha256  9ffd12987d128c277c817d0eaccdc13beb1b0956223c44c7c3bb268235bd8da8 \
-                    size    67948
+checksums           rmd160  1102e7f32be91b9e59a5c0fd583c69b9463e05cb \
+                    sha256  a37c7ed1ee635138d444c81fd744a92e721e0acb5e92f9568e90fb4a9f3be264 \
+                    size    461420
 
 extract.only
 
