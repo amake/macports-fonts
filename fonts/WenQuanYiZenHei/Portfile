@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                WenQuanYiZenHei
+version             0.9.45
+revision            0
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             GPL-2
+
+description         An open-source Chinese font family with good coverage
+long_description    ${description}
+
+homepage            http://wenq.org/wqy2/index.cgi?Home
+master_sites        sourceforge:wqy
+
+distname            wqy-zenhei-${version}
+
+checksums           rmd160  d364c8544665b651a6425b312a857e6bc2e3b2da \
+                    sha256  e4b7e306475bf9427d1757578f0e4528930c84c44eaa3f167d4c42f110ee75d6 \
+                    size    9247393
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
+}
+
+livecheck.regex     wqy-zenhei-(\[0-9.\]+)${extract.suffix}
