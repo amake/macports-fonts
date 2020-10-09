@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        unicode-org last-resort-font 13.000
+name                LastResort
+revision            0
+
+description         A special-purpose font meant to serve as a fallback when other \
+                    fonts don't have a glyph for a given character
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+distfiles           ${name}-Regular.ttf
+dist_subdir         ${name}/${version}
+
+use_configure       no
+
+checksums           rmd160  9d69f883fd508c2453ccc1bd99c800dc57e695b6 \
+                    sha256  9ffd12987d128c277c817d0eaccdc13beb1b0956223c44c7c3bb268235bd8da8 \
+                    size    67948
+
+extract.only
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy ${distpath}/${distfiles} ${target}
+}
