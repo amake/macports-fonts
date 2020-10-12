@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        cormullion juliamono 0.019 v
+name                JuliaMono
+revision            0
+github.tarball_from releases
+
+description         A monospaced font designed to work well with the Julia language
+long_description    ${description}
+homepage            https://juliamono.netlify.app/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+distname            ${name}
+dist_subdir         ${name}/${version}
+worksrcdir          .
+
+use_configure       no
+
+checksums           rmd160  76eab5622f2b1f6291474b1a367f2914e8e63bef \
+                    sha256  06be0c7e10299b4f077d1a129567375a78a4716c2bf0aec789932fe79bdc41e8 \
+                    size    6033282
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
