@@ -8,11 +8,8 @@ github.setup        googlefonts noto-emoji 2020-09-16-unicode13_1 v
 name                NotoEmoji
 revision            0
 
-fetch.type          git
-
 description         Black-and-white Noto emoji fonts
-long_description    ${description}. Color version doesn't work on macOS. Also \
-    included in NotoFonts port.
+long_description    ${description}. Color version doesn't work on macOS.
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
@@ -20,11 +17,13 @@ license             OFL
 
 use_configure       no
 
+checksums           rmd160  a84cb804e01127fcab5c5eb4be2e2d020940141b \
+                    sha256  3dccd10752c1cdc225ad3c6cb94f7fec880a7d830e9af84854d3145ce072cb3a \
+                    size    60004749
+
 build {}
 
 destroot.violate_mtree yes
-
-conflicts           NotoFonts
 
 destroot {
     set target ${destroot}/Library/Fonts/
