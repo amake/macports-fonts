@@ -17,14 +17,25 @@ maintainers         {amake @amake} openmaintainer
 license             OFL
 
 github.tarball_from releases
-distfiles           ${name}-Regular.ttf
-dist_subdir         ${name}/${version}
 
 use_configure       no
 
 checksums           rmd160  edb415ea146077db3c186919a25ee77635ba86af \
                     sha256  2cdfa3f7d70ee06c32e9bb37c94634cecd54ba018e5a8110e853b394e0f91f01 \
                     size    8027548
+
+subport ${name}HE {
+    long_description \
+        ${description}. The high-efficiency version is much smaller but \
+        potentially less compatible, for instance with Windows or Adobe apps.
+
+    checksums       rmd160  35fcede29023d44110b5900f7572e77003dff0e1 \
+                    sha256  07b64116e1a39fa42dee23bbe81fd464809043cc4c0243d3e67622ed29efbe6c \
+                    size    502504
+}
+
+distfiles           ${subport}-Regular.ttf
+dist_subdir         ${subport}/${version}
 
 extract.only
 
