@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        unicode-org last-resort-font 13.000
+github.setup        unicode-org last-resort-font 13.001
 name                LastResort
 revision            0
 
@@ -22,9 +22,9 @@ dist_subdir         ${name}/${version}
 
 use_configure       no
 
-checksums           rmd160  1102e7f32be91b9e59a5c0fd583c69b9463e05cb \
-                    sha256  a37c7ed1ee635138d444c81fd744a92e721e0acb5e92f9568e90fb4a9f3be264 \
-                    size    461420
+checksums           rmd160  edb415ea146077db3c186919a25ee77635ba86af \
+                    sha256  2cdfa3f7d70ee06c32e9bb37c94634cecd54ba018e5a8110e853b394e0f91f01 \
+                    size    8027548
 
 extract.only
 
