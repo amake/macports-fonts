@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        firamath firamath 0.3.4 v
+name                FiraMath
+revision            0
+github.tarball_from releases
+
+homepage            https://firamath.github.io/
+description         Sans-serif font with Unicode math support
+long_description    ${description}. A fork of FiraSans and FiraGO.
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+checksums           rmd160  b37f7c06633cb47281ab56cdc08e08104de3bcfa \
+                    sha256  2028cbd3dd4d8c0cf1608520eb4759956a83a67931d7b6d8e7c313520186e35b \
+                    size    179840
+
+distfiles           ${name}-Regular.otf
+dist_subdir         ${name}/${version}
+
+extract.only
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy ${distpath}/${distfiles} ${target}
+}
