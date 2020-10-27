@@ -16,7 +16,9 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-fetch.type          git
+checksums           rmd160  93076f2d3ec3da1c17f4db7aacff5f1584c052ab \
+                    sha256  3aef9fde508d9ee85463295b81e6d6c95f93742020647aff34ec58472494faea \
+                    size    53405214
 
 use_configure       no
 
