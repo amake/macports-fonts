@@ -1,0 +1,55 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                MigMix
+version             20200307
+description         M+ fonts mixed with kanji from IPA Gothic
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Permissive
+
+homepage            http://mix-mplus-ipa.osdn.jp/migmix/
+master_sites        osdn:mix-mplus-ipa/72510
+
+use_zip             yes
+
+distfiles           migmix-1m-${version}${extract.suffix} \
+                    migmix-1p-${version}${extract.suffix} \
+                    migmix-2m-${version}${extract.suffix} \
+                    migmix-2p-${version}${extract.suffix}
+
+checksums           migmix-1m-${version}${extract.suffix} \
+                        rmd160  ae45324b04c5ec7820c57222bee3383d4ef3bb91 \
+                        sha256  03f62a5f9b3b8e9aec2e9146f75d132f9f73f7674bc9af39358f07d700222412 \
+                        size    4119497 \
+                    migmix-1p-${version}${extract.suffix} \
+                        rmd160  293035c96a5a7167256780e8812c89cfce32af33 \
+                        sha256  557d20c57963349eb216b5f7a0041465073166ab67ab4dc5c975739ac6a133a9 \
+                        size    4207973 \
+                    migmix-2m-${version}${extract.suffix} \
+                        rmd160  86c139292ecad5de10d0da9d2deb7f57dfe41b16 \
+                        sha256  f43cf36d697785989c49b231461ca49f69579c647634c51a914aaf7e61f2aeec \
+                        size    4118302 \
+                    migmix-2p-${version}${extract.suffix} \
+                        rmd160  cb31ba8ac2650be1f2e49f900440986f1a5be466 \
+                        sha256  f12e07527e7e8c1a8d75127c9f5577b5fc71d5a61faadab92b43f2fdfff224a9 \
+                        size    4207706
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${workpath}/*/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://osdn.net/projects/mix-mplus-ipa/releases/rss
+livecheck.regex     {migmix-[12][mp]-([0-9]+)\.zip}
