@@ -6,7 +6,6 @@ PortGroup           github 1.0
 categories          fonts
 github.setup        be5invis Iosevka 3.7.1 v
 revision            0
-github.tarball_from releases
 
 description         Slender typeface for code, from code
 long_description \
@@ -19,23 +18,53 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            pkg-iosevka-${github.version}
-use_configure       no
-use_zip             yes
-worksrcdir          .
+variant precompiled description {Use precompiled binaries} {
+    github.tarball_from releases
 
-checksums           rmd160  37e66b938333a31af9e42a46161dfcd4123940bd \
+    distname        pkg-iosevka-${github.version}
+    use_configure   no
+    use_zip         yes
+    worksrcdir      .
+
+    checksums       rmd160  37e66b938333a31af9e42a46161dfcd4123940bd \
                     sha256  ab81e2c8480eca394cbec79340347b7babf06af309743891ddceac1b5e3ca599 \
                     size    258924662
 
-build {}
+    build {}
+
+    global workbindir
+    set workbindir  ${worksrcpath}/ttc
+}
+
+default_variants    +precompiled
+
+if {![variant_isset precompiled]} {
+    depends_build-append \
+        port:npm6 \
+        port:ttfautohint
+
+    checksums       rmd160  9381831defc9dfe50cdd26d13d2a2f534955ac8d \
+                    sha256  48fc2b2cc0ba109d9d2abb7f1551a117a6df42d8a6f0d660cf5c561530e58c07 \
+                    size    4920954
+
+    configure {
+        system -W ${worksrcpath} "npm install"
+    }
+
+    build {
+        system -W ${worksrcpath} "npm run build -- ttf::iosevka"
+    }
+
+    global workbindir
+    set workbindir  ${worksrcpath}/dist/iosevka/ttf
+}
 
 destroot.violate_mtree yes
 
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/ttc/*] ${target}
+    copy {*}[glob ${workbindir}/*] ${target}
 }
 
 github.livecheck.regex  {([^"-]+)}
