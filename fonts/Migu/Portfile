@@ -1,0 +1,55 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                Migu
+version             20200307
+description         Modified M+ fonts mixed with kanji from IPA Gothic
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Permissive
+
+homepage            http://mix-mplus-ipa.osdn.jp/migmix/
+master_sites        osdn:mix-mplus-ipa/72511
+
+use_zip             yes
+
+distfiles           migu-1c-${version}${extract.suffix} \
+                    migu-1m-${version}${extract.suffix} \
+                    migu-1p-${version}${extract.suffix} \
+                    migu-2m-${version}${extract.suffix}
+
+checksums           migu-1c-${version}${extract.suffix} \
+                        rmd160  e4634ef466acd4035417418f5929aed5ba177f69 \
+                        sha256  6324807e7a7a7738298d86a0b4fcbd3f5f0180416a98a15aa552bdf801b10e0e \
+                        size    4228529 \
+                    migu-1m-${version}${extract.suffix} \
+                        rmd160  af8e515ceb22ff46c35ac8f7c8c6a14a5365755b \
+                        sha256  a4770fca22410668d2747d7898ed4d7ef5d92330162ee428a6efd5cf247d9504 \
+                        size    4135282 \
+                    migu-1p-${version}${extract.suffix} \
+                        rmd160  3514dd608c2916df50473f4f46b32eafb536861b \
+                        sha256  de3fb44777ec2d623db33fefd16e9ceb6caff793e08809cd2e35edb3ec9aa22d \
+                        size    4217848 \
+                    migu-2m-${version}${extract.suffix} \
+                        rmd160  c9bd15419194fe9191294c456f05b9912033f50d \
+                        sha256  dbfd177bf3d7645ba080b7b1e07c5b1966a2cd6e003c7586e3d53490377938be \
+                        size    4134915
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${workpath}/*/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       https://osdn.net/projects/mix-mplus-ipa/releases/rss
+livecheck.regex     {migu-[12][cmp]-([0-9]+)\.zip}
