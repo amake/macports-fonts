@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        floriankarsten space-grotesk 1.1.6
+github.setup        floriankarsten space-grotesk 2.0.0
 name                SpaceGrotesk
 revision            0
 github.tarball_from releases
@@ -23,9 +23,9 @@ use_zip             yes
 
 distname            ${name}-${version}
 
-checksums           rmd160  b754966a8ced0cf5a3a360b543cf4143b324515c \
-                    sha256  fa42bfae65d5511eff43f31dfba70bc87cfc47429c085aad74206ffff3286caf \
-                    size    827292
+checksums           rmd160  e5807432c023f2d68c928a594e4b51a016d7adb2 \
+                    sha256  53b415577d4139248555300710bea0d268c7a5be67b93de53b716a9736cabffd \
+                    size    697233
 
 build {}
 
