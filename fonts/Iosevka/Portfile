@@ -18,7 +18,7 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-variant precompiled description {Use precompiled binaries} {
+variant precompiled description {Use precompiled binaries} conflicts min_leading {
     github.tarball_from releases
 
     distname        pkg-iosevka-${github.version}
@@ -36,6 +36,8 @@ variant precompiled description {Use precompiled binaries} {
     set workbindir  ${worksrcpath}/ttc
 }
 
+variant min_leading description {Build with minimal line height} conflicts precompiled {}
+
 default_variants    +precompiled
 
 if {![variant_isset precompiled]} {
@@ -49,14 +51,23 @@ if {![variant_isset precompiled]} {
 
     configure {
         system -W ${worksrcpath} "npm install"
+        if {[variant_isset min_leading]} {
+            copy ${filespath}/private-build-plans-min-leading.toml ${worksrcpath}/private-build-plans.toml
+        }
+    }
+
+    if {[variant_isset min_leading]} {
+        set plan iosevka-custom
+    } else {
+        set plan iosevka
     }
 
     build {
-        system -W ${worksrcpath} "npm run build -- ttf::iosevka"
+        system -W ${worksrcpath} "npm run build -- ttf::${plan}"
     }
 
     global workbindir
-    set workbindir  ${worksrcpath}/dist/iosevka/ttf
+    set workbindir  ${worksrcpath}/dist/${plan}/ttf
 }
 
 destroot.violate_mtree yes
