@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+
+github.setup        googlefonts opensans 78b13f8cc674287207b253e5e4a7d6639d7148e9
+name                OpenSans
+description         A clean and modern sans-serif typeface designed by Steve \
+                    Matteson and commissioned by Google.
+long_description \
+    ${description}.  It is especially designed for legibility across print, web, \
+    and mobile interfaces.
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Apache-2
+homepage            https://www.opensans.com/
+
+use_configure       no
+
+checksums           rmd160  c9612006dfe4531d65ba8c0fc725bdcc87819e6b \
+                    sha256  57b3d0dc2b3646a5ca6385d30b728e63561c8446d87eeb9958461564e2c18d7e \
+                    size    5960484
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/ttfs/*.ttf] ${target}
+}
