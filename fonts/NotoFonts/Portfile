@@ -5,9 +5,9 @@ PortGroup           github 1.0
 
 categories          fonts
 
-github.setup        googlefonts noto-fonts 08d53e7b5a6b97841951bc2b769d466a046c1c95
+github.setup        googlefonts noto-fonts f1e03a7b198be58a0a31ed00227c51a05b3d58d9
 name                NotoFonts
-version             20201021
+version             20201103
 
 description         Beautiful and free fonts for all languages
 long_description    ${description}
@@ -20,9 +20,9 @@ homepage            http://www.google.com/get/noto/
 
 use_configure       no
 
-checksums           rmd160  066984f6a23d22f3e241cef1f59921af265e44b8 \
-                    sha256  6e4cec49d710c39c1733bbfab0617f0af698f01966329ba73c59bc889738e309 \
-                    size    887878953
+checksums           rmd160  24cf628141a42533bd1c91086b155a00d3abd76f \
+                    sha256  bb8cbd4559d1e654765b0fdecbd44913b3861b2d71ce32f93947c2246be12c5e \
+                    size    851612555
 
 build {}
 
