@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          fonts
 name                SourceHanSans
-github.setup        adobe-fonts source-han-sans 2.001 "" R
+github.setup        adobe-fonts source-han-sans 2.002 "" R
 
 description         A set of Pan-CJK sans-serif fonts
 long_description    ${description}
@@ -13,17 +13,18 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-github.tarball_from releases
-distfiles           ${name}.ttc
+master_sites        https://github.com/adobe-fonts/source-han-sans/raw/release/SuperOTC/
+
+use_zip             yes
+distname            ${name}.ttc
 dist_subdir         ${name}/${version}
+worksrcdir          .
 
 use_configure       no
 
-checksums           rmd160  fdf3ee2fa97c59b16c8e1950a399be9f99d3685f \
-                    sha256  9e94fe493685a7c99ce61e4488169007e3b97badb9f1ef43d3c13da501463780 \
-                    size    123173880
-
-extract.only
+checksums           rmd160  a6880c39f7f270eb4d263d9ad0debc155c8b2eb4 \
+                    sha256  8f78220f16845de12e3bb0dc460c082ffcd3871e5f92cbb0934cdeccffb48dbb \
+                    size    98520702
 
 build {}
 
@@ -32,5 +33,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy ${distpath}/${distfiles} ${target}
+    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
 }
