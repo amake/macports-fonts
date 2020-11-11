@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        aosp-mirror platform_frameworks_base 11.0.0_r11 android-
+github.setup        aosp-mirror platform_frameworks_base 11.0.0_r17 android-
 name                DroidSans
 revision            0
 
@@ -17,9 +17,9 @@ license             Apache-2
 
 use_configure       no
 
-checksums           rmd160  d5d08bc355a0a300eae22a5a92d3114b2ebb8f2a \
-                    sha256  a9bf60ab748de76c45b809985981de756921e5285834443684c06e03934eb6cc \
-                    size    817332611
+checksums           rmd160  43a363f6c27e1e8d2d8b94a02d7cff6ac563c874 \
+                    sha256  9ca8537580043517726fea0fcc3f42c8c96ba3e61b5581a47652e427bc59fd91 \
+                    size    817152650
 
 build {}
 
