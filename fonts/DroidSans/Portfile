@@ -32,3 +32,5 @@ destroot {
         ${worksrcpath}/data/fonts/DroidSansMono.ttf \
         ${target}
 }
+
+livecheck.type      none
