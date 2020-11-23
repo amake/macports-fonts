@@ -5,7 +5,8 @@ PortSystem          1.0
 categories          fonts
 name                AnonymousPro
 version             1.002
-revision            0
+set version_unsc    [string map {. _} ${version}]
+revision            1
 
 description         A family of four fixed-width fonts designed with coding in mind
 long_description    ${description}
@@ -16,12 +17,14 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
+distname            ${name}-${version_unsc}
+
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  75d29f506a0ec98d53ebec8acd8c0417f4d7f1ec \
-                    sha256  86665847a51cdfb58a1e1dfd8b1ba33f183485affe50b53e3304f63d3d3552ab \
-                    size    284289
+checksums           rmd160  b1aaf9aa882f02327a1c8911663178530c173fe4 \
+                    sha256  6d165fd08fe2827f38656c26f644eb1f5d6a0f1cb067cb758c7f295a333eb112 \
+                    size    284900
 
 build {}
 
@@ -34,4 +37,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.regex     ${name}-\(\[0-9.\]+\)${extract.suffix}
+livecheck.version   ${version_unsc}
+livecheck.regex     ${name}-\(\[0-9_\]+\)${extract.suffix}
