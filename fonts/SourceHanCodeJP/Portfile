@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          fonts
 name                SourceHanCodeJP
-github.setup        adobe-fonts source-han-code-jp 2.011 "" R
+github.setup        adobe-fonts source-han-code-jp 2.012 "" R
 
 description         Monospaced font for mixed Latin and Japanese
 long_description    A UI font for mixed Latin and Japanese text on \
@@ -21,9 +21,9 @@ distname            ${github.version}${github.tag_suffix}
 use_configure       no
 worksrcdir          ${github.project}-${github.version}${github.tag_suffix}
 
-checksums           rmd160  a1c47ae6faf98164b8d63e671adbff3d6bb679cb \
-                    sha256  4b6da730e20cccba0fb82e06acb7169c7660e1c1409ee6a7ca8189253ba0ca29 \
-                    size    79530849
+checksums           rmd160  e5b0f706bcca2ac512e2f7a5cf659b61ec39ed11 \
+                    sha256  678a3bf747269c7df6fa892ed9eb050139af77f2d50ec9408d99027da88f3b4b \
+                    size    79326665
 
 build {}
 
