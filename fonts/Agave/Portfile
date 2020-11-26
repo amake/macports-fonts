@@ -1,0 +1,47 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        blobject agave 35 v
+name                Agave
+revision            0
+
+description         A small, monospaced, outline font that is geometrically regular and simple
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             MIT
+homepage            https://b.agaric.net/page/agave
+
+github.tarball_from releases
+
+set dist_regular    ${name}-Regular.ttf
+set dist_bold       ${name}-Bold.ttf
+distfiles           ${dist_regular} ${dist_bold}
+dist_subdir         ${name}/${version}
+
+extract.only
+
+use_configure       no
+
+checksums           ${dist_regular} \
+                        rmd160  c5a009e89514db9f55927c225abcb76777fa7eed \
+                        sha256  d5c9d6f64e0d214aa0a437eb0c852339b3fe3aea3a18d049f37d79203cb2273d \
+                        size    265948 \
+                    ${dist_bold} \
+                        rmd160  0acd210fdda89b79238bc4fb272cfb0308af8e9a \
+                        sha256  6f9338e02d77214a8570565424659ace7f77bc89d78ccebbdfa122732289b505 \
+                        size    269400
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${distpath}/*.ttf] ${target}
+}
