@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 3.7.1 v
+github.setup        be5invis Iosevka 4.0.0 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -18,25 +18,34 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
+set plan            iosevka
+
 variant precompiled description {Use precompiled binaries} conflicts min_leading {
     github.tarball_from releases
 
-    distname        pkg-iosevka-${github.version}
+    distname        ttc-iosevka-${github.version}
     use_configure   no
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  37e66b938333a31af9e42a46161dfcd4123940bd \
-                    sha256  ab81e2c8480eca394cbec79340347b7babf06af309743891ddceac1b5e3ca599 \
-                    size    258924662
+    checksums       rmd160  88cec740bb0eac74afb86014859865314cf78f49 \
+                    sha256  689e97f69cf207203d232f14382fa746bfeb5988c73d24fd2fcfcd93d1559417 \
+                    size    28228986
 
     build {}
 
-    global workbindir
-    set workbindir  ${worksrcpath}/ttc
+    global workbinglob
+    set workbinglob ${worksrcpath}/*.ttc
 }
 
-variant min_leading description {Build with minimal line height} conflicts precompiled {}
+variant min_leading description {Build with minimal line height} conflicts precompiled {
+    global plan
+    set plan        iosevka-custom
+
+    pre-build {
+        copy ${filespath}/private-build-plans-min-leading.toml ${worksrcpath}/private-build-plans.toml
+    }
+}
 
 default_variants    +precompiled
 
@@ -45,29 +54,24 @@ if {![variant_isset precompiled]} {
         port:npm6 \
         port:ttfautohint
 
-    checksums       rmd160  9381831defc9dfe50cdd26d13d2a2f534955ac8d \
-                    sha256  48fc2b2cc0ba109d9d2abb7f1551a117a6df42d8a6f0d660cf5c561530e58c07 \
-                    size    4920954
+    checksums       rmd160  f88efb6753ccb0150b31d06a9ae8fc503d6dc194 \
+                    sha256  856108cc7c1279954ed631967580feb2c2c2a2b9e7fce640b9623f0305485cdc \
+                    size    4355958
 
     configure {
         system -W ${worksrcpath} "npm install"
-        if {[variant_isset min_leading]} {
-            copy ${filespath}/private-build-plans-min-leading.toml ${worksrcpath}/private-build-plans.toml
-        }
-    }
-
-    if {[variant_isset min_leading]} {
-        set plan iosevka-custom
-    } else {
-        set plan iosevka
     }
 
     build {
         system -W ${worksrcpath} "npm run build -- ttf::${plan}"
     }
 
-    global workbindir
-    set workbindir  ${worksrcpath}/dist/${plan}/ttf
+    pre-destroot {
+        # Do this late because otherwise we won't see the value overwritten by
+        # variants, since this is in the "main" scope(?)
+        global workbinglob
+        set workbinglob ${worksrcpath}/dist/${plan}/ttf/*
+    }
 }
 
 destroot.violate_mtree yes
@@ -75,7 +79,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${workbindir}/*] ${target}
+    copy {*}[glob ${workbinglob}] ${target}
 }
 
 github.livecheck.regex  {([^"-]+)}
