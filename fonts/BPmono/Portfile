@@ -1,0 +1,46 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                BPmono
+version             2007_2010
+description         A monospaced font with support for Greek language, and a huge \
+                    amount of love injected to each and every one of its characters.
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Permissive
+
+homepage            https://backpacker.gr/fonts/5
+master_sites        https://backpacker.gr/_functions.php?function=download_typeface
+
+use_configure       no
+use_zip             yes
+
+worksrcdir          .
+
+fetch {
+    if {![file exists ${distpath}/${distname}${extract.suffix}]} {
+        system -W ${distpath} "curl -o ${distname}${extract.suffix} ${master_sites} -d the_typeface_id=5"
+    }
+}
+
+checksums           rmd160  e19e69645bff4859f50f3c9c48fe8db3d6402310 \
+                    sha256  bcb05c0428202d6b23c238ce6e7e17157ae435655f7fe1dee9e77fe2c042c07a \
+                    size    831573
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.url       ${homepage}
+livecheck.version   [string map {_ /} ${version}]
+livecheck.regex     {(\d+(?:/\d+)+)}
