@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                CourierPrime
+version             1.203
+description         An improved version of Courier for screenplays.
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+homepage            https://quoteunquoteapps.com/courierprime/
+master_sites        https://quoteunquoteapps.com/courierprime/downloads/
+
+distname            courier-prime
+dist_subdir         ${name}/${version}
+worksrcdir          "Courier Prime"
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  e02c8414efd407ee86c7339a10cdc704a0e965b8 \
+                    sha256  d5d4faf1bee0d1f52bab1103cbfdfb354976331c86f999c110c22a098cb12d73 \
+                    size    193595
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      none
