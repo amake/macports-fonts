@@ -1,0 +1,34 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                CMUnicode
+version             0.7.0
+description         Computer Modern Unicode fonts converted from metafont sources.
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+homepage            http://canopus.iacp.dvo.ru/~panov/cm-unicode/
+master_sites        sourceforge:project/cm-unicode/cm-unicode/${version}
+
+distname            cm-unicode-${version}-ttf
+
+use_configure       no
+use_xz              yes
+
+checksums           rmd160  5b527ce09585d5e60fcd8693cf1c83e2a4ab0196 \
+                    sha256  2609c14450f42d0bcd40203900afcb1d693521a9b24a18c65e14b6b0585ff150 \
+                    size    4856068
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
