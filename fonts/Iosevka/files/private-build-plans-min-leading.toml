@@ -101,7 +101,7 @@ family = "Iosevka"                        # Font menu family name
 # Edit the values to change the metrics. Remove this section when overriding is not needed.
 
 [buildPlans.iosevka-custom.metric-override]
-leading = 1120
+leading = 1110
 # winMetricAscenderPad = 0
 # winMetricDescenderPad = 0
 # powerlineScaleY = 1

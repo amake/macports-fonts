@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          fonts
 github.setup        be5invis Iosevka 4.0.3 v
-revision            0
+revision            1
 
 description         Slender typeface for code, from code
 long_description \
