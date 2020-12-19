@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Sarasa-Gothic 0.16.0 v
+github.setup        be5invis Sarasa-Gothic 0.16.1 v
 name                SarasaGothic
 revision            0
 github.tarball_from releases
@@ -21,9 +21,9 @@ use_configure       no
 use_7z              yes
 worksrcdir          .
 
-checksums           rmd160  53c4ce109295a288888f0eab6f855fb573ec2f11 \
-                    sha256  49e75e8d6400c8e4e3b1cde0b5f09036b847d0ecff1db31181c6a58bc35d5995 \
-                    size    123231669
+checksums           rmd160  59a9e0de735f50fd4a5360d2f1e165bca6354146 \
+                    sha256  19999934c98cb8b68e6f0a703ec4672c3104376d619ae61602f476a53754c41d \
+                    size    123304500
 
 build {}
 
