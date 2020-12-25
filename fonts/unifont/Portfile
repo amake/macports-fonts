@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             13.0.04
+version             13.0.05
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -17,9 +17,9 @@ master_sites        https://ftp.gnu.org/gnu/${name}/${name}-${version}/
 
 use_configure       no
 
-checksums           rmd160  70e51d54fc69763900c37f517ca77175bbd0df6b \
-                    sha256  92a41a478eebc42f218e8a429ea03fef8b8ec012fa6ba96ee54c986fd7a59118 \
-                    size    23120855
+checksums           rmd160  c10a202071365c0a71310aa6a4a043dc66ade37f \
+                    sha256  f98e4866b71b4d86c2d7458405679914511c58963bb86d1fbf2251e8ed536f4e \
+                    size    23114951
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -40,6 +40,7 @@ if {![variant_isset precompiled]} {
                     port:p${perl5.major}-gd
 
     post-patch {
+        # This generates a ton of warnings, but YOLO
         reinplace "s|#!/usr/bin/perl|#!${perl5.bin}|" {*}[glob ${worksrcpath}/src/*]
     }
 
