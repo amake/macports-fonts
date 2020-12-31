@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        blobject agave 35 v
+github.setup        blobject agave 36 v
 name                Agave
 revision            0
 
@@ -28,13 +28,13 @@ extract.only
 use_configure       no
 
 checksums           ${dist_regular} \
-                        rmd160  c5a009e89514db9f55927c225abcb76777fa7eed \
-                        sha256  d5c9d6f64e0d214aa0a437eb0c852339b3fe3aea3a18d049f37d79203cb2273d \
-                        size    265948 \
+                        rmd160  829c363101fb09b76bcd79916fdd7a8d84f88fb7 \
+                        sha256  08009e590cbd0d3284433ba673c9490409ade0fde8c3e94e98942764c58d9a6a \
+                        size    267192 \
                     ${dist_bold} \
-                        rmd160  0acd210fdda89b79238bc4fb272cfb0308af8e9a \
-                        sha256  6f9338e02d77214a8570565424659ace7f77bc89d78ccebbdfa122732289b505 \
-                        size    269400
+                        rmd160  32a820621b2ce62d4b12d8707f8523b463e706fb \
+                        sha256  4934e821cfb81fdc848986522bcfab2bfee69e4fa5b442be268e1a14bb6e3d5e \
+                        size    143636
 
 build {}
 
