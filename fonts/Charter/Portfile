@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                Charter
-version             200512
+version             210111
 description         A body text font that holds up well on low-resolution output devices
 long_description \
     Designed by Matthew Carter in 1987, ${name} is a body text font that holds \
@@ -22,9 +22,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          ${name}
 
-checksums           rmd160  c39c29b07a91adc4df6310e9d8633475b5b6bf23 \
-                    sha256  39d1615e8b9c71f6e339c4d66f9cd1c6c5e85a63e201cb880f7691fa2d26d3a3 \
-                    size    251529
+checksums           rmd160  b3f84d709f0f645bf6f0bfbe720ee8cc415e74c2 \
+                    sha256  a707b540809d5cbe4417b9f555404e90777d03b4be8ae1cae322847fc936c973 \
+                    size    237035
 
 build {}
 
