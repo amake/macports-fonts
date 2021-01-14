@@ -1,0 +1,48 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                MD_IO
+version             0.1
+description         A clean monospace focused on legibility and designed to work well in code.
+long_description    \
+    ${description} It makes use of 'light traps', a generous x-height, and unique constructions \
+    to improve the visual distinction between glyphs
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Restrictive
+homepage            https://www.futurefonts.xyz/mass-driver/io
+master_sites
+
+distname            ${name}-[string map {. _} ${version}]
+
+worksrcdir          .
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  b85ff10a24b140049ee1fa7daa09501cc43a2e31 \
+                    sha256  5863f325bb57355ccf5577f36845695b7ba9636be1c24168cc31646e30f41308 \
+                    size    1095314
+
+fetch {
+    file mkdir ${distpath}
+    if {![file exists ${distpath}/${distfiles}]} {
+        ui_error "NOTE: Due to licensing restrictions, '${distfiles}' must be manually downloaded from ${homepage}"
+        ui_error "and placed in ${distpath} for example using: 'sudo cp ~/Downloads/${distfiles} ${distpath}'"
+    }
+}
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/Desktop/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {version is ([0-9.]+)}
