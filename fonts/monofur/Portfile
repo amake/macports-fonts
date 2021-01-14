@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                monofur
+version             1.0_2000-03-28
+description         A monospaced font derived from the eurofurence typeface family
+long_description    ${description}
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             Permissive
+homepage            http://web.archive.org/web/20200206093756/http://eurofurence.net/monofur.html
+master_sites        http://web.archive.org/web/20161224053148if_/http://eurofurence.net/
+
+distname            monof_tt
+dist_subdir         ${name}/${version}
+
+use_configure       no
+use_zip             yes
+
+worksrcdir          .
+
+checksums           rmd160  b4a9a7601417633f6c1a880ea6857a8375c0a806 \
+                    sha256  2d41ca991f342f9b74bc01433fba6c371fa7abcd5eaa45d8e71c9b8a2049055a \
+                    size    133670
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      none
