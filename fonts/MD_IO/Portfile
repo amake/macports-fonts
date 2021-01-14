@@ -45,4 +45,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.regex     {version is ([0-9.]+)}
+livecheck.url       https://raw.githubusercontent.com/mass-driver/md-io/main/README.md
+livecheck.regex     {current release is version `([0-9.]+)`}
