@@ -38,4 +38,4 @@ destroot {
     copy {*}[glob ${worksrcpath}/OTF/*] ${target}
 }
 
-github.livecheck.regex     {([^"]+R)}
+github.livecheck.regex     {([^"]+)}
