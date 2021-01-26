@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        cormullion juliamono 0.030 v
+github.setup        cormullion juliamono 0.031 v
 name                JuliaMono
 revision            0
 github.tarball_from releases
@@ -17,15 +17,15 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            ${name}
+distname            ${name}-ttf
 dist_subdir         ${name}/${version}
 worksrcdir          .
 
 use_configure       no
 
-checksums           rmd160  0a2ad85bf0118e7a361fb31295a25057f0ccd13c \
-                    sha256  12a1f72f5e5ee73ff347951e1459cdbad106193da7933cc153003d53b90c5d6a \
-                    size    7020517
+checksums           rmd160  1aa02031d563e731e8f409224e0cc60ba171472f \
+                    sha256  f30fa3e7b98d33b0cc889e5500ffcd492f9c3621c8219fe94138ef2f7ee51940 \
+                    size    7006528
 
 build {}
 
