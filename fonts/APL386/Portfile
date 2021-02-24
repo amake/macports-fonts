@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        abrudz APL386 2446583f58430ba9f0e7d15e7a645e2f1ed5af8f
+github.setup        abrudz APL386 c8894cf978ca4d47889f1e3f4449a6efb2caaf40
 version             20200806
 revision            0
 
@@ -20,9 +20,9 @@ license             Unlicense
 
 use_configure       no
 
-checksums           rmd160  b05633ab5704c04945dd755dbfc3632c0bf7bdd8 \
-                    sha256  c7b4e9bf4a2f8ea948b715ac5e75c16eec75266a1edfbb3cd33a52912193982e \
-                    size    458719
+checksums           rmd160  cd56680b622f82b5412e2587314372acfd3a5675 \
+                    sha256  cd2016466d8776aaf2a2e7416b6cf245eb678c81b6163802601d564ec74cd3f6 \
+                    size    458848
 
 build {}
 
