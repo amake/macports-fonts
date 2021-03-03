@@ -39,3 +39,5 @@ destroot {
     xinstall -m 755 -d ${target}
     copy {*}[glob ${worksrcpath}/*.ttc] ${target}
 }
+
+github.livecheck.branch  main

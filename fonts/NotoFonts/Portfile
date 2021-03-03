@@ -32,3 +32,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/unhinted/otf/*/*.otf] ${target}
 }
+
+github.livecheck.branch  main
