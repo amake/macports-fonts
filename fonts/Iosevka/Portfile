@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 5.0.5 v
+github.setup        be5invis Iosevka 5.0.6 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -28,9 +28,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  4e3821ec989735f3ae69f8272366b4a71f758a0d \
-                    sha256  18c598daca7e041754bbb88777868ba438375c6c76883a3ca2bab2d635406abb \
-                    size    45592326
+    checksums       rmd160  d11ef4fb737423a4f1d9f2b54a3fc3b08371f141 \
+                    sha256  8a21b4f0c7ce66780f6ec2cfd52a26aabe3268495b1466cdbacb3d51fa56772f \
+                    size    45997350
 
     build {}
 
@@ -54,9 +54,9 @@ if {![variant_isset precompiled]} {
         port:npm6 \
         port:ttfautohint
 
-    checksums       rmd160  825f9ecfb7912a8ab00be2e5abd984adb6f3fb6f \
-                    sha256  0f08d1e781be4f62caca1d327243bcfa066174b13889a8981e401f8215eba398 \
-                    size    6560651
+    checksums       rmd160  6197255911c103af9fc09695cae04c4afb60a222 \
+                    sha256  e7c0fd1b36035e6d2754e8a628f5e3a535f78866fea5291d926d726f231a8bfd \
+                    size    6566934
 
     configure {
         system -W ${worksrcpath} "npm install"
