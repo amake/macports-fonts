@@ -45,5 +45,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.url       https://raw.githubusercontent.com/mass-driver/md-io/main/README.md
-livecheck.regex     {current release is version `([0-9.]+)`}
+livecheck.url       https://www.futurefonts.xyz/api/v1/typefaces/io?foundry_slug=mass-driver&by_slug=true
+livecheck.regex     {"version_number":"([0-9.]+)"}
