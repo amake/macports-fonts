@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        rsms inter 3.17 v
+github.setup        rsms inter 3.18 v
 name                Inter
 revision            0
 
@@ -26,9 +26,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  e027934cd232b03e09e4e4a46000484b2d04a4b4 \
-                    sha256  3f95f93e4f49776052d2972a30ed4e1c92764393a41fe0f6ff01059a8e2a6a16 \
-                    size    22257490
+checksums           rmd160  830d39c26494f92821eb02edc1fe1d623fcb5269 \
+                    sha256  bcffbda52f7b0c7c2a842ac7e77869ff6327cea77fa9035393df695ae90bdc5b \
+                    size    22178830
 
 build {}
 
