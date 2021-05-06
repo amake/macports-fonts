@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        cormullion juliamono 0.037 v
+github.setup        cormullion juliamono 0.038 v
 name                JuliaMono
 revision            0
 github.tarball_from releases
@@ -23,9 +23,9 @@ worksrcdir          .
 
 use_configure       no
 
-checksums           rmd160  64c1c0beac6c5a71b30581add1b04fe714f6e50c \
-                    sha256  5a8e1d4487ec39a84d3a7e7370a7073a7152c810e43035df046f0532f231823f \
-                    size    8240451
+checksums           rmd160  73a56f21a8c025bbcd39a1d7d7fa9f0d7be6baa4 \
+                    sha256  62b56a3942012e9c580734d210ac730984ca8a68a4292ef110733c9e06404d01 \
+                    size    8259450
 
 build {}
 
