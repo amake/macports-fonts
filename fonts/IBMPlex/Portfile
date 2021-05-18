@@ -35,3 +35,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/*/*.otf] ${target}
 }
+
+github.livecheck.regex  {([^"-]+)}
