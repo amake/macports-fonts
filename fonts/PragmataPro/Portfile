@@ -19,9 +19,9 @@ distname            ${name}${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  539059e02a461c572ba50213919bb698bb65918a \
-                    sha256  41bb7b9ba2516aee45818c2e87cf5d6af1b010b1d44886eed1dfd1bdda0b17f4 \
-                    size    25584362
+checksums           rmd160  996781cb8d2821b5720d5cb5815dbeb52ea2ae18 \
+                    sha256  27b0897128d0cf074c4f1e0aa2cf3c97f200be1f37074671f458070029c68305 \
+                    size    24991652
 
 fetch {
     file mkdir ${distpath}
