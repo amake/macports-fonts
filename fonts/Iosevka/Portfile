@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 7.0.2 v
+github.setup        be5invis Iosevka 7.0.3 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -32,9 +32,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  1e11e2fab5f2783d12617f4feb042e1db7742f40 \
-                    sha256  fae1d12e64ae4f972ec7173141aec0697c8bac1d7a9348ddea32a747c745e6d9 \
-                    size    68622208
+    checksums       rmd160  44c111ddd48f7d3594bbc3e2fa8014f403204983 \
+                    sha256  e7e0c3d426d523d22d3b3c0fe7b1daea3481d0bf05f37fd24dc3c06bb8886d63 \
+                    size    68614382
 
     build {}
 
@@ -55,9 +55,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    super-ttc-iosevka-ss08-${github.version}
 
-        checksums   rmd160  be65d2c653cadc19f7d17bcae1a8bc276dfd7c6d \
-                    sha256  bd568d8cd908e92851f480de22bf191fe75f60d3640bb7c110d8b50392aa9384 \
-                    size    18941438
+        checksums   rmd160  239d8d0aea7d2f8d7a72c2bc9f250074cebf9aa4 \
+                    sha256  b2d2acd930d36ebb75722ca35b86b302aa53ac8e64122a8cf0efdac596ca4012 \
+                    size    18670412
     }
     pre-build {
         reinplace "s|# inherits = \"ss01\"|inherits = \"ss08\"|" ${worksrcpath}/private-build-plans.toml
@@ -71,9 +71,9 @@ if {![variant_isset precompiled]} {
         port:npm6 \
         port:ttfautohint
 
-    checksums       rmd160  113bc93c3fffad0a1c6bfe57606e1e15bc8f7d21 \
-                    sha256  9145fbf2854b3556371c3c645dece630ce4b46451b1828e7337dca61b14acd54 \
-                    size    6943262
+    checksums       rmd160  a7fe4cb0e45f07d833c8e9943a4990e4ac39ce1a \
+                    sha256  1ea706d60581de50eab7ed400a32f78c6d8c53e4f48a577b5c604a72c71748b7 \
+                    size    6946347
 
     configure {
         system -W ${worksrcpath} "npm install"
