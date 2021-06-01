@@ -18,13 +18,16 @@ platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-set plan            iosevka
+set plan            iosevka-custom
 
-post-extract {
+patch {
     copy ${filespath}/private-build-plans.toml ${worksrcpath}
 }
 
 variant precompiled description {Use precompiled binaries} conflicts min_leading {
+    global plan
+    set plan        iosevka
+
     github.tarball_from releases
 
     distname        super-ttc-iosevka-${github.version}
@@ -43,10 +46,7 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
 }
 
 variant min_leading description {Build with minimal line height} conflicts precompiled {
-    global plan
-    set plan        iosevka-custom
-
-    pre-build {
+    post-patch {
         reinplace "s|# leading = 1250|leading = 1110|" ${worksrcpath}/private-build-plans.toml
     }
 }
@@ -59,7 +59,8 @@ variant ss08 description {Pragmata Pro Style} {
                     sha256  b2d2acd930d36ebb75722ca35b86b302aa53ac8e64122a8cf0efdac596ca4012 \
                     size    18670412
     }
-    pre-build {
+
+    post-patch {
         reinplace "s|# inherits = \"ss01\"|inherits = \"ss08\"|" ${worksrcpath}/private-build-plans.toml
     }
 }
