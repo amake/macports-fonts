@@ -20,6 +20,10 @@ license             OFL
 
 set plan            iosevka
 
+post-extract {
+    copy ${filespath}/private-build-plans.toml ${worksrcpath}
+}
+
 variant precompiled description {Use precompiled binaries} conflicts min_leading {
     github.tarball_from releases
 
@@ -43,7 +47,20 @@ variant min_leading description {Build with minimal line height} conflicts preco
     set plan        iosevka-custom
 
     pre-build {
-        copy ${filespath}/private-build-plans-min-leading.toml ${worksrcpath}/private-build-plans.toml
+        reinplace "s|# leading = 1250|leading = 1110|" ${worksrcpath}/private-build-plans.toml
+    }
+}
+
+variant ss08 description {Pragmata Pro Style} {
+    if {[variant_isset precompiled]} {
+        distname    super-ttc-iosevka-ss08-${github.version}
+
+        checksums   rmd160  be65d2c653cadc19f7d17bcae1a8bc276dfd7c6d \
+                    sha256  bd568d8cd908e92851f480de22bf191fe75f60d3640bb7c110d8b50392aa9384 \
+                    size    18941438
+    }
+    pre-build {
+        reinplace "s|# inherits = \"ss01\"|inherits = \"ss08\"|" ${worksrcpath}/private-build-plans.toml
     }
 }
 
