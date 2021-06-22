@@ -1,0 +1,45 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                BabelStoneHan
+version             13.0.15
+description         A free Unicode CJK font with 57,000+ Unicode characters
+long_description \
+    ${description} It is a Song/Ming style (宋体/明體) font, with glyphs \
+    modelled on the official character forms used in the People's Republic of \
+    China, and is primarily intended for writing Modern Standard Chinese, \
+    Classical Chinese, and various Sinitic languages and dialects.
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             free
+
+homepage            https://babelstone.co.uk/Fonts/Han.html
+master_sites        https://babelstone.co.uk/Fonts/Download/
+
+distname            ${name}
+dist_subdir         ${name}/${version}
+
+use_zip             yes
+use_configure       no
+
+worksrcdir          .
+
+checksums           rmd160  23dd7755186b57e9d24c77a53290e318e80a8098 \
+                    sha256  8e672213b5e06dde4ee9bdff62ec48580d2055aa028e504730c340d2bde66c25 \
+                    size    18628474
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {>([0-9.]+)<}
+livecheck.url       https://babelstone.co.uk/Fonts/Han_Versions.html
