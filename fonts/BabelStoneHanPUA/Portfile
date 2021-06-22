@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                BabelStoneHanPUA
+version             1.266
+description         A free CJK font containing 5,200+ unencoded Han characters in the Private Use Area
+long_description    ${description}
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             free
+
+homepage            https://babelstone.co.uk/Fonts/PUA.html
+master_sites        https://babelstone.co.uk/Fonts/Download/
+
+distfiles           ${name}.ttf
+dist_subdir         ${name}/${version}
+
+extract.only
+
+use_configure       no
+
+checksums           rmd160  5559ec772439dd9fd89d6e4c2b3e2c6d60acd05d \
+                    sha256  b238dbbad82658b8871ee3b8c8c0ab9c2f9c96ab984c3548223edf264a622130 \
+                    size    4298260
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy ${distpath}/${distfiles} ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {>([0-9.]+) \(}
