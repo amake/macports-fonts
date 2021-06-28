@@ -4,8 +4,8 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        adobe-fonts source-sans-pro 3.028 "" R
-name                SourceSansPro
+github.setup        adobe-fonts source-sans 3.042 "" R
+name                SourceSans
 revision            0
 github.tarball_from releases
 
@@ -13,20 +13,20 @@ description         A set of OpenType fonts that have been designed to work \
                     well in user interface (UI) environments
 long_description    ${description}
 
-homepage            https://adobe-fonts.github.io/source-sans-pro/
+homepage            https://adobe-fonts.github.io/source-sans/
 
 platforms           darwin
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            source-sans-[string map {. v} ${version}]${github.tag_suffix}
+distname            source-sans-${version}${github.tag_suffix}
 worksrcdir          .
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  dd6123969d3265fa3a94b8cf2cc625fe9d555dd5 \
-                    sha256  1186d594ecb1336679a1d102bb6ddbe6041f0fd029482e53f02e46aa3ab011cf \
-                    size    10333042
+checksums           rmd160  0dcbe422fa84776c784e42d96ee251d8378d3a8e \
+                    sha256  604d99a42b871e19de3654b936fb145db7094941efcdca4981d742d291382b94 \
+                    size    12104236
 
 build {}
 
