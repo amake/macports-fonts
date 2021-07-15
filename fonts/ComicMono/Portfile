@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        dtinth comic-mono-font 9a96d04cdd2919964169192e7d9de5012ef66de4
+name                ComicMono
+version             20201229
+revision            0
+
+description         A legible monospace font
+long_description    ${description}... the very typeface you’ve been trained to \
+                    recognize since childhood
+
+homepage            https://dtinth.github.io/comic-mono-font/
+
+platforms           darwin
+maintainers         {amake @amake} openmaintainer
+license             MIT
+
+use_configure       no
+
+checksums           rmd160  9863213706b858a3c62b7360a740cb38af20927c \
+                    sha256  82265849ef5f03b6f443caccaa88b40243c23fc0618e37a7d82e6d1f22501d14 \
+                    size    35646
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
