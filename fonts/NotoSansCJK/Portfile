@@ -1,43 +1,11 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
 
 PortSystem          1.0
-PortGroup           github 1.0
+PortGroup           obsolete 1.0
 
-categories          fonts
-github.setup        googlefonts noto-cjk 782eab531e724779772302b835661b7b12a6b3a8
 name                NotoSansCJK
-version             2.002
-description         A comprehensive sans-serif font covering Simplified Chinese, \
-                    Traditional Chinese, Japanese, and Korean in a unified  \
-                    font family.
-long_description    ${description}
-platforms           darwin
+categories          fonts
 maintainers         {amake @amake} openmaintainer
-license             OFL
-
-homepage            https://www.google.com/get/noto/help/cjk/
-master_sites        https://raw.githubusercontent.com/googlefonts/noto-cjk/${github.version}/
-
-distname            ${name}.ttc
-dist_subdir         ${name}/${version}
-
-worksrcdir          .
-
-use_configure       no
-use_zip             yes
-
-checksums           rmd160  9abe3c8f16f44f62e78c327e9cdcef59759be1e7 \
-                    sha256  5184c7bafa7c3ae29e3f3ffceafa63a500a9e122206c9dbf9896459d0c4ab383 \
-                    size    98518887
-
-build {}
-
-destroot.violate_mtree yes
-
-destroot {
-    set target ${destroot}/Library/Fonts/
-    xinstall -m 755 -d ${target}
-    copy {*}[glob ${worksrcpath}/*.ttc] ${target}
-}
-
-github.livecheck.branch  main
+replaced_by         NotoCJK
+version             2.002
+revision            0
