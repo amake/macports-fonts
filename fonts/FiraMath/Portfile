@@ -14,6 +14,7 @@ description         Sans-serif font with Unicode math support
 long_description    ${description}. A fork of FiraSans and FiraGO.
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

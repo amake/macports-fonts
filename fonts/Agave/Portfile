@@ -12,6 +12,7 @@ description         A small, monospaced, outline font that is geometrically regu
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             MIT
 homepage            https://b.agaric.net/page/agave

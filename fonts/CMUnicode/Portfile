@@ -8,6 +8,7 @@ version             0.7.0
 description         Computer Modern Unicode fonts converted from metafont sources.
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

@@ -20,6 +20,7 @@ long_description \
     operators lined up and placed consistently
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             BSD
 

@@ -9,6 +9,7 @@ description         A Unicode font with a glyph for every visible Unicode Basic 
                     Multilingual Plane code point and more
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             GPL-2+
 

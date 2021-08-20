@@ -8,6 +8,7 @@ version             0.9.45
 revision            0
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             GPL-2
 

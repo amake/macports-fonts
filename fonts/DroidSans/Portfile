@@ -12,6 +12,7 @@ description         A pan-Unicode font family created for use in Google's Androi
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Apache-2
 

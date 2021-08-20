@@ -16,6 +16,7 @@ long_description    ${description}
 homepage            https://adobe-fonts.github.io/source-sans/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

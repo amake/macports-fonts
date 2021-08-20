@@ -8,6 +8,7 @@ version             1.0
 description         A coding font based on CamingoMono and suitable for both light and dark themes.
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             CC-BY-ND
 

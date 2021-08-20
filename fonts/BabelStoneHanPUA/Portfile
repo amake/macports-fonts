@@ -8,6 +8,7 @@ version             1.273
 description         A free CJK font containing 5,200+ unencoded Han characters in the Private Use Area
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             free
 

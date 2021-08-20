@@ -8,6 +8,7 @@ version             004.01
 description         Gothic and mincho fonts with monospaced Japanese and proportional Latin
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             ipa
 

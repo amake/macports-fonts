@@ -12,6 +12,7 @@ long_description \
     up well on low-resolution output devices of the day—fax machines and 300 dpi \
     laser printers.
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 homepage            https://practicaltypography.com/charter.html

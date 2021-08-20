@@ -8,6 +8,7 @@ version             1.117
 description         A contemporary, calligraphic serif partly inspired by Palatino
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 homepage            https://mbtype.com/fonts/valkyrie/

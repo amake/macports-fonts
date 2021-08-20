@@ -8,6 +8,7 @@ version             20200307
 description         Modified M+ fonts mixed with kanji from IPA Gothic
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 

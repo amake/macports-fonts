@@ -12,6 +12,7 @@ description         Monospaced font with programming ligatures based on DejaVu S
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

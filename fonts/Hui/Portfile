@@ -8,6 +8,7 @@ version             2.9
 description         Handwriting-like font for Japanese
 long_description    ${description} with JIS2 Kanji coverage
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             free
 

@@ -8,6 +8,7 @@ version             20170904
 description         Free Kanji font including over 80,000 Unicode characters
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

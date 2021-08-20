@@ -16,6 +16,7 @@ long_description    ${description}... the very typeface you’ve been trained to
 homepage            https://dtinth.github.io/comic-mono-font/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             MIT
 

@@ -16,6 +16,7 @@ long_description    ${description}. Its purpose is to provide a wider range of \
     characters while maintaining the original look-and-feel.
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 

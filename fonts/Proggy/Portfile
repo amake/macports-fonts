@@ -12,6 +12,7 @@ description         A cset of fixed-width screen fonts that are designed for pro
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             MIT
 

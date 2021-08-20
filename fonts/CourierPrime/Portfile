@@ -8,6 +8,7 @@ version             1.203
 description         An improved version of Courier for screenplays.
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

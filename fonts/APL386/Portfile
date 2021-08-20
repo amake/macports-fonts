@@ -15,6 +15,7 @@ long_description    ${description}
 homepage            https://abrudz.github.io/APL386/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Unlicense
 

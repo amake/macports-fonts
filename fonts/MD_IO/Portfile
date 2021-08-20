@@ -10,6 +10,7 @@ long_description    \
     ${description} It makes use of 'light traps', a generous x-height, and unique constructions \
     to improve the visual distinction between glyphs
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 homepage            https://www.futurefonts.xyz/mass-driver/io

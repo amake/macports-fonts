@@ -9,6 +9,7 @@ description         A monospaced font derived from the eurofurence typeface fami
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 homepage            http://web.archive.org/web/20200206093756/http://eurofurence.net/monofur.html

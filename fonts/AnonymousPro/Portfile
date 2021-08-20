@@ -14,6 +14,7 @@ homepage            https://www.marksimonson.com/fonts/view/anonymous-pro
 master_sites        https://www.marksimonson.com/assets/content/fonts/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

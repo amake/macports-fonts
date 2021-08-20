@@ -9,6 +9,7 @@ description         A monospaced font with support for Greek language, and a hug
                     amount of love injected to each and every one of its characters.
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 

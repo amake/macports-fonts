@@ -16,6 +16,7 @@ long_description    ${description}
 homepage            https://rsms.me/inter/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             otf
 

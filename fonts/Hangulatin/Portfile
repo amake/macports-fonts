@@ -9,6 +9,7 @@ description         A font with unique Hangul-like ligatures for Latin character
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 

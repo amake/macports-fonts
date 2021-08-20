@@ -8,6 +8,7 @@ version             20210815
 description         Mincho Japanese font
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             CC-BY-3
 

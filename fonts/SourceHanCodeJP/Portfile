@@ -13,6 +13,7 @@ long_description    A UI font for mixed Latin and Japanese text on \
                     viewing text or input command line in a terminal \
                     app, etc.
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

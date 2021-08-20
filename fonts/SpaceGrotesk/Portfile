@@ -15,6 +15,7 @@ long_description    ${description}
 homepage            https://fonts.floriankarsten.com/space-grotesk
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

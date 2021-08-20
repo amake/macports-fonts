@@ -13,6 +13,7 @@ description         A webfont version of the typeface used in Edward Tufte’s b
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             MIT
 

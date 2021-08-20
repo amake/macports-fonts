@@ -13,6 +13,7 @@ description         A typeface by Matthias Tellen, created to enhance code forma
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

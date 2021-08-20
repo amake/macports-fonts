@@ -12,6 +12,7 @@ description         A code font based on Source Code Pro with monospaced ligatur
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

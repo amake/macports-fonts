@@ -8,6 +8,7 @@ version             201907
 description         Handwriting-like font for Japanese
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             free
 

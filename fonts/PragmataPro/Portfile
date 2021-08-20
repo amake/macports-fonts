@@ -9,6 +9,7 @@ description         A condensed monospaced font optimized for screen, designed t
                     be the ideal font for coding, math and engineering
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 homepage            https://fsd.it/shop/fonts/pragmatapro/

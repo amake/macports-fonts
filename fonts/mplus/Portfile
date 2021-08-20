@@ -9,6 +9,7 @@ set short_version   063
 description         Multilingual, multiweight, multistyle free font including CJK characters
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 

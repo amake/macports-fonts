@@ -15,6 +15,7 @@ long_description    Google’s signature family of fonts, the default font on \
                     Google’s visual language, Material Design
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Apache-2
 

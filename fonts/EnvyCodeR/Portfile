@@ -13,6 +13,7 @@ homepage            https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-co
 master_sites        https://download.damieng.com/fonts/original/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             {Permissive NoMirror}
 

@@ -16,6 +16,7 @@ long_description    ${description}. This gives a pleasant feeling to readers \
 homepage            https://www.huertatipografica.com/en/fonts/alegreya-sans-ht
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

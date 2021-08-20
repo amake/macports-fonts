@@ -11,6 +11,7 @@ description         A type family is designed primarily for official \
 
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 homepage            https://company.paratype.com/pt-sans-pt-serif

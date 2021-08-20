@@ -8,6 +8,7 @@ version             1.2
 description         A flexible system of fonts designed specifically for code
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
 homepage            https://input.fontbureau.com/

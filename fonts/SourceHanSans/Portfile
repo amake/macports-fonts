@@ -10,6 +10,7 @@ github.setup        adobe-fonts source-han-sans 2.004 "" R
 description         A set of Pan-CJK sans-serif fonts
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

@@ -10,6 +10,7 @@ github.setup        adobe-fonts source-han-mono 1.002
 description         A set of Pan-CJK monospaced fonts
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

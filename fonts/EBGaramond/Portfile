@@ -16,6 +16,7 @@ long_description    ${description}
 homepage            http://www.georgduffner.at/ebgaramond/
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

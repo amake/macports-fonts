@@ -8,6 +8,7 @@ version             1.00
 description         Mincho-style monospaced and proportional fonts for mixed Latin and Japanese
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             ipa
 

@@ -15,6 +15,7 @@ long_description \
     wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

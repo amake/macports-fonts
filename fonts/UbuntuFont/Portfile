@@ -12,6 +12,7 @@ description         A font with a contemporary style and contains \
 
 long_description    ${description}
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 homepage            https://design.ubuntu.com/font/

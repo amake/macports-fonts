@@ -11,6 +11,7 @@ description         A 3270 font in a modern format
 long_description    ${description}
 
 platforms           darwin
+supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             BSD
 
