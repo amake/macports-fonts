@@ -7,7 +7,7 @@ name                BabelStoneHan
 version             14.0.1
 description         A free Unicode CJK font with 57,000+ Unicode characters
 long_description \
-    ${description} It is a Song/Ming style (宋体/明體) font, with glyphs \
+    ${description}. It is a Song/Ming style (宋体/明體) font, with glyphs \
     modelled on the official character forms used in the People's Republic of \
     China, and is primarily intended for writing Modern Standard Chinese, \
     Classical Chinese, and various Sinitic languages and dialects.
