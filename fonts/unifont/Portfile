@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             13.0.06
+version             14.0.01
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -18,9 +18,9 @@ master_sites        https://ftp.gnu.org/gnu/${name}/${name}-${version}/
 
 use_configure       no
 
-checksums           rmd160  ed1a902bd6e995e38ea0fedc1e91f861660e456d \
-                    sha256  68def7a46df44241c7bf62de7ce0444e8ee9782f159c4b7553da9cfdc00be925 \
-                    size    23507273
+checksums           rmd160  2d2f5e1be4df2b433c9456b8b977171aec8ad3a4 \
+                    sha256  7ad1daeecc466685cdb3c60bdd57d6f3553131f076c1a18ab2f95e2020b26d72 \
+                    size    23589517
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -34,7 +34,7 @@ variant precompiled description {Use precompiled binaries} {
 default_variants    +precompiled
 
 if {![variant_isset precompiled]} {
-    PortGroup           perl5 1.0
+    PortGroup       perl5 1.0
 
     depends_build   port:fontforge \
                     port:bdftopcf \
