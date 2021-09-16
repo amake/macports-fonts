@@ -11,7 +11,7 @@ platforms           darwin
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive
-homepage            https://input.fontbureau.com/
+homepage            https://input.djr.com/
 master_sites
 
 distname            Input-Font
@@ -44,5 +44,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.url       https://input.fontbureau.com/changelog/
+livecheck.url       https://input.djr.com/changelog/
 livecheck.regex     {Version ([0-9.]+)}
