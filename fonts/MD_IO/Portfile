@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                MD_IO
-version             0.2
+version             0.3
 description         A clean monospace focused on legibility and designed to work well in code.
 long_description    \
     ${description} It makes use of 'light traps', a generous x-height, and unique constructions \
@@ -23,9 +23,9 @@ worksrcdir          .
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  a24682b91d51d4010a340402c24f52951a92f0b5 \
-                    sha256  8b5dc576f08e438260851824d649faa7ebbee4f34206f7ff59829dc3001b07fc \
-                    size    1228598
+checksums           rmd160  a64c55f5262227e070b28ba36fb707dba3ad4d48 \
+                    sha256  b559b3158daaf42249792ed2c83e3767190c73a22f028c461aad30693ce46bf9 \
+                    size    359576
 
 fetch {
     file mkdir ${distpath}
@@ -42,7 +42,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/Desktop/*.otf] ${target}
+    copy {*}[glob ${worksrcpath}/OTF/*.otf] ${target}
 }
 
 livecheck.type      regex
