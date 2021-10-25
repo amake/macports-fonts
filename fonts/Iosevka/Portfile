@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 10.3.3 v
+github.setup        be5invis Iosevka 10.3.4 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -36,9 +36,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  0a8ebd9ef4ab42d7f15579f1b7e4e39f7848e83b \
-                    sha256  f94744e690d33a52266cf036626bc10e4435ba3734aa506af84de628ca1f2ff6 \
-                    size    62029468
+    checksums       rmd160  548c088a1709864ec402af3c7927419020fc199e \
+                    sha256  487bb0d1ee5dbe2daecedf57b1108614c5c376f1164b1330244dff5055ec4571 \
+                    size    62051765
 
     build {}
 
@@ -56,9 +56,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    super-ttc-iosevka-ss08-${github.version}
 
-        checksums   rmd160  d43dfd22e66cf23df8bb68294c68aa7c8e1e3d4a \
-                    sha256  0c0f73a13dc1d0f4e3179cdacfd3d28c78fb619535b05deee9ca692403ce974e \
-                    size    18684278
+        checksums   rmd160  b9097ad5e5923c79bfd363a9384566e1445167d2 \
+                    sha256  007c402db1b804db3e485acd52e098d53b0369105ef1fa1e90ab559e5304eef3 \
+                    size    18719587
     }
 
     post-patch {
@@ -70,19 +70,19 @@ default_variants    +precompiled
 
 if {![variant_isset precompiled]} {
     depends_build-append \
-        bin:npm:npm6 \
+        bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  8c6d35b1e5ee193c42c68e140d3bac78bd922d9f \
-                    sha256  00bfaf8e68084e30a678b327bb5b2cb52a0fbfbd10d4b011564ad7f4495e47cb \
-                    size    8758274
+    checksums       rmd160  047111843ce52a1d4ec9cb133bacc9879a69b7db \
+                    sha256  db2edc1ad646db4d5c097c862b017b79cb83e5557b6075b68ea98077307d54f2 \
+                    size    8757960
 
     configure {
         system -W ${worksrcpath} "npm install"
     }
 
     build {
-        system -W ${worksrcpath} "npm run build -- ttf::${plan}"
+        system -W ${worksrcpath} "TERM=dumb npm run build -- --verbosity=8 ttf::${plan}"
     }
 
     pre-destroot {
