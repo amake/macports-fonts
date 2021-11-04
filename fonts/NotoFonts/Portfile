@@ -5,9 +5,9 @@ PortGroup           github 1.0
 
 categories          fonts
 
-github.setup        googlefonts noto-fonts 2b1fbc36600ccd8becb9f894922f644bff2cbc9b
+github.setup        googlefonts noto-fonts c416d4dcb6b3efa9bd6937e17f5bad0a07997e4c
 name                NotoFonts
-version             20201226
+version             2021-11-04
 
 description         Beautiful and free fonts for all languages
 long_description    ${description}
@@ -19,8 +19,13 @@ license             OFL
 
 homepage            http://www.google.com/get/noto/
 
+# --shallow-since needs a newer version of git than on some older systems so use
+# MacPorts version
+depends_fetch-append port:git
+git.cmd             ${prefix}/bin/git
+
 fetch.type          git
-git.url-prepend     --depth=100
+git.url-prepend     --shallow-since=${version}T00:00:00
 
 use_configure       no
 
@@ -31,7 +36,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/unhinted/otf/*/*.otf] ${target}
+    copy -force {*}[glob ${worksrcpath}/unhinted/otf/*/*.otf] ${target}
 }
 
 github.livecheck.branch  main
