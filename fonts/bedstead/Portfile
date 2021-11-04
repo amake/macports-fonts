@@ -1,0 +1,51 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                bedstead
+version             002.003
+
+description         A family of outline fonts based on the characters produced \
+                    by the Mullard SAA5050 series of Teletext Character Generators
+long_description    ${description}
+platforms           darwin
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             free
+
+homepage            https://bjh21.me.uk/bedstead/
+master_sites        ${homepage}
+
+use_zip             yes
+use_configure       no
+
+checksums           rmd160  c7915517a94ac7827afdd4b3930743a86232768f \
+                    sha256  4283ab5ccb2302723d670626dec53e4ad4889b3bef7a82139c6f956653027305 \
+                    size    1097386
+
+variant precompiled description {Use precompiled binaries} {
+    build {}
+}
+
+default_variants    +precompiled
+
+if {![variant_isset precompiled]} {
+    patchfiles-append  patch-Makefile.diff
+
+    depends_build   port:fontforge \
+                    port:ghostscript
+
+    build.target    clean all
+}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ${name}-\(\[0-9\.\]+\[0-9\]+\)${extract.suffix}

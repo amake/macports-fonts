@@ -1,0 +1,14 @@
+--- Makefile.orig	2021-11-04 10:56:00.000000000 +0900
++++ Makefile	2021-11-04 10:55:00.000000000 +0900
+@@ -12,11 +12,9 @@
+ 	Fontmap \
+ 	$(OTFFILES) \
+ 	bedstead-10.bdf bedstead-20.bdf bedstead-bold-20.bdf \
+-	bedstead-10-df.png bedstead-20-df.png \
+ 	bedstead-complement.pdf
+ 
+ all: $(DISTFILES) \
+-     sample.png extended.png
+ 
+ .PHONY: experimental
+ experimental: bedstead-chiseltip.otf bedstead-plotter-thin.otf \
