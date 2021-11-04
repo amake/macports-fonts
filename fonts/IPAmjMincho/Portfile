@@ -1,0 +1,43 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                IPAmjMincho
+version             006.01
+description         Mincho-style font with extensive glyph variations implemented with IVS
+long_description    ${description}
+platforms           darwin
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             ipa
+
+homepage            https://moji.or.jp/mojikiban/font/
+master_sites        https://dforest.watch.impress.co.jp/library/i/ipamjfont/10750/
+
+set distprefix      ipamjm
+set flatversion     [string map {. ""} ${version}]
+distname            ${distprefix}${flatversion}
+
+use_configure       no
+
+checksums           rmd160  0715fdc9dee81a1f28e74ded5f6810f065e790a7 \
+                    sha256  35494e0f2896f38b3f7369a8421a895cea6440a42c0a66ac95eab47d6ed25b68 \
+                    size    31225985
+
+use_zip             yes
+
+worksrcdir          .
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {Ver\.([0-9.]+)}
