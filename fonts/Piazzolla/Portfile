@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        huertatipografica piazzolla 2.004 v
+github.setup        huertatipografica piazzolla 2.005 v
 name                Piazzolla
 revision            0
 github.tarball_from releases
@@ -34,13 +34,13 @@ distfiles           ${distname}${extract.suffix} \
                     ${name}SC${extract.suffix}
 
 checksums           ${distname}${extract.suffix} \
-                        rmd160  d17692a133a052a001f43521b18423bb1c74259d \
-                        sha256  132e467a79121da12551d18f84209b8584b5dca40f4366d040076086cae4f254 \
-                        size    7489355 \
+                        rmd160  9ee61f3f9a7c4e865130848a5834b38b0886cc7e \
+                        sha256  a45561a595c9511f380548e3f7e35e1a6c5cb79d2c9939803161c5d95d5b0cd9 \
+                        size    7513339 \
                     ${smallcaps_dist} \
-                        rmd160  40bc2bb366f0b09ea22695a060ea3522ec7c2b53 \
-                        sha256  657739ecbc9566d03b21432ed1c44a78bf8b872ce35fc9154f410bfbaa005947 \
-                        size    5177971
+                        rmd160  cd8ba397f45abfed44476b38be3a14f6b5fcf4c1 \
+                        sha256  a72861fbeff4c32ba14f6f02b487f9849cc40963dc02be2ac7f8cc460ca9f01d \
+                        size    5186258
 
 build {}
 
