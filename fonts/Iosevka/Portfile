@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 11.2.7 v
+github.setup        be5invis Iosevka 11.3.0 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -36,9 +36,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  9bc23e248725067864b7faf41d8ec0fd4b9f7747 \
-                    sha256  818882e78a383ade6ccfd8a9ed1c176afbf65f681d5f7fbec65a3dc29980735d \
-                    size    62386933
+    checksums       rmd160  8ec60bf32bd114304e1fd20cd9d3d08a5b92f7e1 \
+                    sha256  6a4c4b6bb7a51fe244076c04600e5f24aac93ea628156de218e65e29a9da6a77 \
+                    size    62275098
 
     build {}
 
@@ -56,9 +56,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    super-ttc-iosevka-ss08-${github.version}
 
-        checksums   rmd160  2214e87009ec552ac9ffe6c2d4dec49417e493dd \
-                    sha256  6dae2105567314bedb1b0faa7438a385ce382b8062da95e3260733011a11aa67 \
-                    size    18881669
+        checksums   rmd160  91c6d6a576382d6d975441d0fa37466fd17d446b \
+                    sha256  a1063a6b66d8b045e1d7bc3b7912372197c11b66de726ebf2454ed195df80b04 \
+                    size    18912118
     }
 
     post-patch {
@@ -73,9 +73,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  82251c205636a276a889e0409afde10915526c38 \
-                    sha256  fc047154ab2ab165684228869adb652ad452a0db7e0d531523bf4ff9afcd136d \
-                    size    17408915
+    checksums       rmd160  5683bb6bf84b33d3dd42b9d5f97c01383b4d5872 \
+                    sha256  97edb58c1bef3b91284792c91598fb987fc9025b39577cc52b7fc29d4a391f85 \
+                    size    17414467
 
     configure {
         system -W ${worksrcpath} "npm install"
