@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                BabelStoneHan
-version             14.0.7
+version             14.0.8
 description         A free Unicode CJK font with 57,000+ Unicode characters
 long_description \
     ${description}. It is a Song/Ming style (宋体/明體) font, with glyphs \
@@ -27,9 +27,9 @@ use_configure       no
 
 worksrcdir          .
 
-checksums           rmd160  62813a9fec873106e3599e677bf7bf1790083670 \
-                    sha256  4b80cf2df4a91bc0d37ab5b7e7ffc9d46da6bce7a4695078719ee6d2ab0d614f \
-                    size    19686109
+checksums           rmd160  9ff7f4515bc4f724c60a2cba17c6599e92017c5c \
+                    sha256  971bdd4a843ada877c11726f23a5f598e8910a1a47a8792f49f70b60fc33cbc8 \
+                    size    19790782
 
 build {}
 
