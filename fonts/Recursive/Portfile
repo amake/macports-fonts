@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        arrowtype recursive 1.084 v
+name                Recursive
+description         A variable type family built for better code & UI
+long_description \
+    ${description}. It is inspired by casual script signpainting, but designed \
+    primarily to meet the needs of programming environments and application \
+    interfaces.
+platforms           darwin
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+homepage            https://recursive.design/
+
+github.tarball_from releases
+
+distname            ArrowType-${name}-${version}
+
+use_zip             yes
+
+checksums           rmd160  25537334b1b50d243b6d385916bb816679546cc6 \
+                    sha256  db1f760fefe164644dc2e5156c01cb6d47fe05e28fd1f949eb4d6f65abb9f19a \
+                    size    49244512
+
+use_configure       no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/${name}_Desktop/*.otc] ${target}
+    copy {*}[glob ${worksrcpath}/${name}_Code/*/*.ttf] ${target}
+}
