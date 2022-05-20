@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        IBM plex 6.0.1 v
+github.setup        IBM plex 6.0.2 v
 name                IBMPlex
 revision            0
 github.tarball_from releases
@@ -23,8 +23,8 @@ dist_subdir         ${name}/${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  89902c924536d4609c89e5510d679fd83229726d \
-                    sha256  d837e2fdfdef8eedc50d219dd3a8a093705c73c0574964069200924450fe7bd9 \
+checksums           rmd160  4fcbf022c9422742404b82856151c1557b43293c \
+                    sha256  a75f78b0267f03a2e99edf59ac9bf18ef5899ad27e6988b6c697707f44c81a7f \
                     size    36193528
 
 build {}
