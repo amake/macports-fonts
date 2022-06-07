@@ -7,9 +7,7 @@ all: index hooks
 
 .PHONY: index
 index: ## Build port index
-index: PortIndex
-
-PortIndex:
+index:
 	portindex
 
 .PHONY: hooks
