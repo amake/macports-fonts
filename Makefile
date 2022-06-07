@@ -1,5 +1,5 @@
-HOOKS := $(filter-out %~,$(wildcard hooks/*))
-GIT_DIR := $(shell git rev-parse --git-dir)
+hooks := $(filter-out %~,$(wildcard hooks/*))
+git_dir := $(shell git rev-parse --git-dir)
 
 .PHONY: all
 all: ## Perform all default setup actions
@@ -14,11 +14,11 @@ PortIndex:
 
 .PHONY: hooks
 hooks: ## Install helpful git hooks
-hooks: $(foreach _,$(HOOKS),$(GIT_DIR)/hooks/$(notdir $(_)))
+hooks: $(addprefix $(git_dir)/,$(hooks))
 # Always merge to ensure post-merge hook runs
 	git config pull.rebase false
 
-$(GIT_DIR)/hooks/%: hooks/%
+$(git_dir)/hooks/%: hooks/%
 	ln -s $(PWD)/$(<) $(@)
 
 .PHONY: help
