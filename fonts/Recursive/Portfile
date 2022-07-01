@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        arrowtype recursive 1.084 v
+github.setup        arrowtype recursive 1.085 v
 name                Recursive
 description         A variable type family built for better code & UI
 long_description \
@@ -24,9 +24,9 @@ distname            ArrowType-${name}-${version}
 
 use_zip             yes
 
-checksums           rmd160  25537334b1b50d243b6d385916bb816679546cc6 \
-                    sha256  db1f760fefe164644dc2e5156c01cb6d47fe05e28fd1f949eb4d6f65abb9f19a \
-                    size    49244512
+checksums           rmd160  b6baba00ffd6bc22c1343a5ada4cf6c09b0538ea \
+                    sha256  cbcbdf7a0e181d284a9235e09ed5f3873e527bc5dd1d977df71cdc1ff937da02 \
+                    size    50440082
 
 use_configure       no
 
