@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        rbanffy 3270font 2.3.1 v
+github.setup        rbanffy 3270font 3.0.0 v
 revision            0
 
 description         A 3270 font in a modern format
@@ -17,9 +17,9 @@ license             BSD
 
 use_configure       no
 
-checksums           rmd160  1e64f0f0c035b5fbc5f2e62f770c16312b52c1af \
-                    sha256  9ab9494dad97b2d48c23e72bc26e997c14fb5eff278c892efd8cae5ad817064a \
-                    size    526042
+checksums           rmd160  878ee60280691c2aeac6be759635fe7bdbc9d583 \
+                    sha256  c48cb13d5b67d02b3dbd16e6864b534a1bbb477caf49ff3ff1e46f45dcc4431b \
+                    size    526920
 
 depends_build-append port:fontforge
 
