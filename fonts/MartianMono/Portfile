@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        evilmartians mono 0.9.0 v
+github.setup        evilmartians mono 0.9.1 v
 name                MartianMono
 revision            0
 github.tarball_from releases
@@ -23,9 +23,9 @@ use_zip             yes
 
 worksrcdir          .
 
-checksums           rmd160  cea0d9ac3f26b5a39cb5b4fcafafdad1c11e53fb \
-                    sha256  2d7c4e9103b1df5551eb6d91f19122b80bb82e97aa77d7ddc65cb3edc95cd8d3 \
-                    size    298180
+checksums           rmd160  d649f3d0437386d140e3018dccf7723ebd9590d0 \
+                    sha256  35bbb65f4e1e6e60bc1d0a3e39bdd1c19de963e6cf7e980cf11fb69c5f63a644 \
+                    size    555214
 
 build {}
 
