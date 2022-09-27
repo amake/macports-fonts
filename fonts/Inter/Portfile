@@ -40,3 +40,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob "${worksrcpath}/Inter Desktop/*.otf"] ${target}
 }
+
+github.livecheck.regex     {([0-9.]+)}
