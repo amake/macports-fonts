@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        weiweihuanghuang fragment-mono 1.010
+github.setup        weiweihuanghuang fragment-mono 1.011
 name                FragmentMono
 revision            0
 github.tarball_from releases
@@ -23,9 +23,9 @@ dist_subdir         ${subport}/${version}
 use_zip             yes
 use_configure       no
 
-checksums           rmd160  cc96feadcb383beb1f4760f61cd8f7288e3d5b60 \
-                    sha256  66e92f9683ce9f0c1cfcdcef128eab141f28b4eeca8aca4ce58b5a0b0f22328b \
-                    size    450476
+checksums           rmd160  30a5167c22db64c57189b5212a6fbbaf13074f61 \
+                    sha256  5e60c0c7685ed2893345fa72392c26fe07e53ad1157dddeefedc3991d22755d0 \
+                    size    450339
 
 build {}
 
