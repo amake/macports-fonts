@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                Valkyrie
-version             1.117
+version             2.122
 description         A contemporary, calligraphic serif partly inspired by Palatino
 long_description    ${description}
 platforms           darwin
@@ -14,15 +14,15 @@ license             Restrictive
 homepage            https://mbtype.com/fonts/valkyrie/
 master_sites
 
-distname            ${name}_200718
+distname            ${name}_210415
 
 use_configure       no
 use_zip             yes
-worksrcdir          ${name}
+worksrcdir          "${name} 210415"
 
-checksums           rmd160  07029c3fa579b41b6f94e1cc6981767656e98ceb \
-                    sha256  ab8a184490ce217728155ffee6521df827c91f5913356351fccb8d3b908f427f \
-                    size    4565078
+checksums           rmd160  92bb8cc19b8622bef9c16df6ee635785174b3e85 \
+                    sha256  5b85b10592f479fe29aebddc0c3c4c7498364d371affff40c5bd1829602f24fa \
+                    size    4645316
 
 fetch {
     file mkdir ${distpath}
@@ -40,5 +40,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob "${worksrcpath}/*/OpenType (best for Mac OS)/*.otf"] ${target}
+    copy {*}[glob "${worksrcpath}/OTF font files (best for Mac OS)/Valkyrie*/*.otf"] ${target}
 }
