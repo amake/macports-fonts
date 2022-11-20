@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        madmalik mononoki 1.4
+github.setup        madmalik mononoki 1.5
 revision            0
 github.tarball_from releases
 
@@ -22,9 +22,9 @@ dist_subdir         ${name}/${version}
 
 worksrcdir          .
 
-checksums           rmd160  4c0949508ac6506fd22f500fd2b7fa12e1ade478 \
-                    sha256  1f49d3262f65d3ef87b7fd25f1d2a05d3a8ef8b1ad0242d19a7191538628bd15 \
-                    size    406920
+checksums           rmd160  285222b0d750d1852cc074ca14a74ce058ec0772 \
+                    sha256  c5bc01793b506bcbbfaefbe0a7e49021511d19077d35db934303ecf454fb3c46 \
+                    size    433350
 
 use_configure       no
 
