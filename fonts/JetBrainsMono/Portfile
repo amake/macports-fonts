@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        JetBrains JetBrainsMono 2.242 v
+github.setup        JetBrains JetBrainsMono 2.304 v
 revision            0
 github.tarball_from releases
 
@@ -22,9 +22,9 @@ use_zip             yes
 
 worksrcdir          fonts
 
-checksums           rmd160  d840f400ac0618113c86d4531581c306a96f0801 \
-                    sha256  4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f \
-                    size    4099695
+checksums           rmd160  513a65274756748ffb89ced030ede753a1611cc1 \
+                    sha256  6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7eb7012f7bbf \
+                    size    5622857
 
 build {}
 
