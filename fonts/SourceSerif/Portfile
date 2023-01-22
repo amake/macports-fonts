@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        adobe-fonts source-serif 4.004 "" R
+github.setup        adobe-fonts source-serif 4.005 "" R
 name                SourceSerif
 revision            0
 github.tarball_from releases
@@ -19,13 +19,13 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            source-serif-${version}
+distname            source-serif-${version}_Desktop
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  39e0c1ad0d28e4ee569139d5317bb1c1b1e6b967 \
-                    sha256  cb3e95d6e3c1273d44300dd464e568d4c9613b28199c53c50454af4b40bbdac1 \
-                    size    40750543
+checksums           rmd160  7aebf43f2533a50117e6da046ace8bab52ae2680 \
+                    sha256  549fdb8f9a682bd06944298621404969f6de77c2e422ff3b8244a1dcd6a0c425 \
+                    size    17634695
 
 build {}
 
