@@ -2,6 +2,9 @@
 family = "Iosevka"        # Font menu family name
 # spacing = "normal"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
 # serifs = "sans"                  # Optional; Values: `sans` or `slab`
+# export-glyph-names = false       # Set this to true for ligature support in Kitty (increased file size)
+
+# webfont-formats = ['ttf', 'woff2']
 
 ###################################################################################################
 # Configure variants
@@ -12,7 +15,7 @@ family = "Iosevka"        # Font menu family name
 
 # Optional; Configure single character's variant
 # [buildPlans.iosevka-custom.variants.design]
-# g = 'single-storey'
+# g = 'single-storey-serifless'
 
 # Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
 # [buildPlans.iosevka-custom.variants.upright]

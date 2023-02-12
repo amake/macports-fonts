@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 18.0.0 v
+github.setup        be5invis Iosevka 19.0.0 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -36,9 +36,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  30ff56975f364f32824fcc2d58df7249725293ee \
-                    sha256  77275053112a39d24525ebd6c9230a01932782c87674c67d2ab80d60702069bc \
-                    size    65205667
+    checksums       rmd160  0c34025595a75fcbaa79f20630d3b688c2a3490c \
+                    sha256  015fcd86d26e42ce4314348427977bac0cb30f48598d4a619147183265458fbd \
+                    size    64572731
 
     build {}
 
@@ -56,9 +56,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    super-ttc-iosevka-ss08-${github.version}
 
-        checksums   rmd160  f56d99cf1e406dfad5af30de2edbeb8457d399d1 \
-                    sha256  906de6b704615c96c26f7db3a3a17d7622c1319a167a9a14d1197e48f9c7596b \
-                    size    19693416
+        checksums   rmd160  d43a6ae22125937d0bb48e634b7f0b5f5e14a77f \
+                    sha256  13681e89aeb6a4df7f0497ce9746c5d7e0b9d0cf48aad61e72ddfcc107013814 \
+                    size    19833424
     }
 
     post-patch {
@@ -73,9 +73,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  fb48d2c9e12fd354890d3e85c442fe41032324f9 \
-                    sha256  c905a955881b114c5eb3e130b61336e2d7d52f961765f266ec4d8352d4506cfb \
-                    size    7110326
+    checksums       rmd160  6cc4784a6c2103e935a72cd85ac119ee827137d8 \
+                    sha256  3dec9a7da5c34fbcf21185887a946201a978818efce849698d417b4e8b4de92e \
+                    size    7112738
 
     configure {
         system -W ${worksrcpath} "npm install"
