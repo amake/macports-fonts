@@ -11,7 +11,7 @@ description         A comprehensive serif and sans-serif font covering \
                     Simplified Chinese, Traditional Chinese, Japanese, and \
                     Korean in a unified font family.
 long_description    ${description}
-platforms           darwin
+platforms           {darwin any}
 maintainers         {amake @amake} openmaintainer
 license             OFL
 

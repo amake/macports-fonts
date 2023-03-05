@@ -17,7 +17,7 @@ long_description    ${description}. It has a compact appearance which allows for
 
 homepage            https://piazzolla.huertatipografica.com/
 
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL

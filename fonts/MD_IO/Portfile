@@ -9,7 +9,7 @@ description         A clean monospace focused on legibility and designed to work
 long_description    \
     ${description} It makes use of 'light traps', a generous x-height, and unique constructions \
     to improve the visual distinction between glyphs
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive

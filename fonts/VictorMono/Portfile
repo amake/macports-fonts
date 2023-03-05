@@ -13,7 +13,7 @@ description         An open-source monospaced font with optional semi-connected 
 long_description    ${description}
 homepage            https://rubjo.github.io/victor-mono/
 
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             MIT

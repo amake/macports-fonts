@@ -7,7 +7,7 @@ name                Valkyrie
 version             2.122
 description         A contemporary, calligraphic serif partly inspired by Palatino
 long_description    ${description}
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Restrictive

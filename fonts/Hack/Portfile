@@ -12,7 +12,7 @@ description         A typeface designed for source code
 long_description    ${description}
 homepage            http://sourcefoundry.org/hack/
 
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             {MIT BitstreamVera}

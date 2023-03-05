@@ -9,7 +9,7 @@ description         A monospaced code font for APL
 long_description    ${description}. Developed with all APL software vendors in \
                     the late 1980s and enhanced as required with new characters \
                     to meet interpreter updates.
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             public-domain

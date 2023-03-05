@@ -12,7 +12,7 @@ description         A monospaced font designed for terminal and programming
 long_description    ${description}
 homepage            https://www.kutilek.de/sudo-font/
 
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL

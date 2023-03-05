@@ -8,7 +8,7 @@ version             1.0_2000-03-28
 description         A monospaced font derived from the eurofurence typeface family
 long_description    ${description}
 
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive

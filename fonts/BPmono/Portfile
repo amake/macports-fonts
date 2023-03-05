@@ -8,7 +8,7 @@ version             2007_2010
 description         A monospaced font with support for Greek language, and a huge \
                     amount of love injected to each and every one of its characters.
 long_description    ${description}
-platforms           darwin
+platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
