@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        adobe-fonts source-sans 3.046 "" R
+github.setup        adobe-fonts source-sans 3.052 "" R
 name                SourceSans
 revision            0
 github.tarball_from releases
@@ -25,9 +25,9 @@ worksrcdir          .
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  c0731dceaaf850ec4515ffd1cbd0551c987d1fe0 \
-                    sha256  ed03cdb943892e60ebb7f63f1ec8d826722923f7f65dd9f01fe99ce7a04b8cb8 \
-                    size    2066530
+checksums           rmd160  8cccdf58b8df8778fcad4fa9dea9a1f188e3f472 \
+                    sha256  a4ebbdea20b08ccbd7bf3665a9462454eefdd01d9a6307129d3b3d4672981074 \
+                    size    2387997
 
 build {}
 
