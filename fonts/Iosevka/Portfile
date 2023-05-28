@@ -78,7 +78,7 @@ if {![variant_isset precompiled]} {
                     size    7076539
 
     configure {
-        system -W ${worksrcpath} "npm install"
+        system -W ${worksrcpath} "npm ci"
     }
 
     build {
