@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             15.0.04
+version             15.0.05
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -19,9 +19,9 @@ master_sites        https://unifoundry.com/pub/${name}/${name}-${version}/
 use_configure       no
 use_parallel_build  no
 
-checksums           rmd160  e9da58a70a4cc9dfde1ad077fa0000b745fb7a99 \
-                    sha256  0ff6d76720ee45ba58a9a186982c6d3f42723aa3e06df4cb1e5ef2ed9b406797 \
-                    size    38031552
+checksums           rmd160  6f326fe474decf4027646fb582aa2ebbb55d8207 \
+                    sha256  d154b8e15aa42d714d255fa23b52ee184941b046192036af31911ef0894084c7 \
+                    size    41369636
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -43,7 +43,9 @@ if {![variant_isset precompiled]} {
 
     post-patch {
         # This generates a ton of warnings, but YOLO
-        reinplace "s|#!/usr/bin/perl|#!${perl5.bin}|" {*}[glob ${worksrcpath}/src/*]
+        foreach f [glob ${worksrcpath}/src/*] {
+            catch {reinplace "s|#!/usr/bin/perl|#!${perl5.bin}|" ${f}}
+        }
     }
 
     build.target    buildfont
