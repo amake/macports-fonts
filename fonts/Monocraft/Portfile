@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        IdreesInc Monocraft 2.5 v
+github.setup        IdreesInc Monocraft 3.0 v
 revision            0
 github.tarball_from releases
 
@@ -25,9 +25,9 @@ worksrcdir          .
 
 extract.only
 
-checksums           rmd160  f82c11c0fea14f59c9211f4bf537f94b2749d6e9 \
-                    sha256  c4a52373da2d937cccf2d77b092ebafff86f970eb406a27960583c11ac345ea6 \
-                    size    38704
+checksums           rmd160  91e002521e653008b8701f1d40578cbcc1bf03af \
+                    sha256  7af9d6163261ee2c2267258208ad86b6cda3b045f4d610294de1d72f4ffe4817 \
+                    size    160236
 
 build {}
 
