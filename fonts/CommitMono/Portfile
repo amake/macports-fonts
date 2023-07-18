@@ -1,0 +1,58 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                CommitMono
+version             130
+revision            0
+
+description         An anonymous and neutral coding font focused on creating a better reading experience.
+long_description    {*}${description}
+
+homepage            https://commitmono.com/
+
+platforms           {darwin any}
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+use_configure       no
+
+master_sites        https://commitmono.com/src/fonts/
+
+distfiles           ${name}V${version}-450Regular.otf \
+                    ${name}V${version}-450Italic.otf \
+                    ${name}V${version}-700Regular.otf \
+                    ${name}V${version}-700Italic.otf
+
+checksums           ${name}V${version}-450Regular.otf \
+                        rmd160  8ff053b754c5929c3aa0207145610c4d0848b76e \
+                        sha256  579b45ad608dfbd7f319edb21ef30b78d479ddce0cdc853e6db0a602263c8ff3 \
+                        size    134916 \
+                    ${name}V${version}-450Italic.otf \
+                        rmd160  bcfbc80585d5c7377eaf56c5697b0f806e3d4d84 \
+                        sha256  6f0a018e2a20ef6673781efa5fd41fc720267218eb3558af99bb7212ccea1ae3 \
+                        size    140560 \
+                    ${name}V${version}-700Regular.otf \
+                        rmd160  9ee1525617dc8f596a685f9639cef78cb397e31e \
+                        sha256  b2b6365416d2d9a12b146ea89ae36817eae96f5616e5ec92c3d274e5dcd47d5a \
+                        size    136616 \
+                    ${name}V${version}-700Italic.otf \
+                        rmd160  be084da5440af8f097df8cd68eccabfed2cd7049 \
+                        sha256  5fd7eb3e4dc21ca6351a4fdd684a3692f84704721dd53617e723635e5e584c49 \
+                        size    140488
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${distpath}/*.otf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     {V([0-9]+)}
+livecheck.url       ${homepage}
