@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                CommitMono
-version             130
+version             132
 revision            0
 
 description         An anonymous and neutral coding font focused on creating a better reading experience.
@@ -27,21 +27,21 @@ distfiles           ${name}V${version}-450Regular.otf \
                     ${name}V${version}-700Italic.otf
 
 checksums           ${name}V${version}-450Regular.otf \
-                        rmd160  8ff053b754c5929c3aa0207145610c4d0848b76e \
-                        sha256  579b45ad608dfbd7f319edb21ef30b78d479ddce0cdc853e6db0a602263c8ff3 \
-                        size    134916 \
+                        rmd160  6a84a6ee6b942966242c97be7027e36e0415dfe6 \
+                        sha256  3c46dfa0dc3b1812f30584b066b1f1f67444fbfb3b82d8b0a3b68c8b133e037c \
+                        size    136024 \
                     ${name}V${version}-450Italic.otf \
-                        rmd160  bcfbc80585d5c7377eaf56c5697b0f806e3d4d84 \
-                        sha256  6f0a018e2a20ef6673781efa5fd41fc720267218eb3558af99bb7212ccea1ae3 \
-                        size    140560 \
+                        rmd160  03e41cd8a254c581a3152da7e0f44bc76c7ac72e \
+                        sha256  06a6c87c0e8a84305a92808aee409573cb7537f290edcb7313b41b88868ea56b \
+                        size    142072 \
                     ${name}V${version}-700Regular.otf \
-                        rmd160  9ee1525617dc8f596a685f9639cef78cb397e31e \
-                        sha256  b2b6365416d2d9a12b146ea89ae36817eae96f5616e5ec92c3d274e5dcd47d5a \
-                        size    136616 \
+                        rmd160  c191f68290a6bdffcf90d531df43e6fb5efcb5a5 \
+                        sha256  3d4c0f01a7a3664688b65bb9ca2128d8f47fda03780d10561e7f560e60b3e867 \
+                        size    137376 \
                     ${name}V${version}-700Italic.otf \
-                        rmd160  be084da5440af8f097df8cd68eccabfed2cd7049 \
-                        sha256  5fd7eb3e4dc21ca6351a4fdd684a3692f84704721dd53617e723635e5e584c49 \
-                        size    140488
+                        rmd160  f322ad203662cc791bf0d0cbd78e820a38e6502a \
+                        sha256  4ebb754d80011c707222975bf463a9efe9a92a9510f10b112cb6239dfad471fe \
+                        size    140088
 
 build {}
 
@@ -50,7 +50,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${distpath}/*.otf] ${target}
+    copy {*}[glob ${distpath}/${name}V${version}*.otf] ${target}
 }
 
 livecheck.type      regex
