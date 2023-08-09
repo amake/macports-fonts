@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem      1.0
+
+name            terminus-ttf
+version         4.49.3
+license         OFL-1.1 GPL-2+
+categories      fonts
+maintainers     {amake @amake} openmaintainer
+
+description     A clean monospaced font
+long_description Terminus Font is designed for long (8 and more hours \
+                per day) work with computers. It contains a total of \
+                about 110 language sets. Also included are IBM VGA, \
+                vt100 and xterm pseudographic characters.
+platforms       {darwin any}
+homepage        http://terminus-font.sourceforge.net/
+master_sites    https://files.ax86.net/terminus-ttf/files/${version}
+
+use_zip         yes
+
+checksums       rmd160  df84901dec5f3ff303f63508c86c864f85fee775 \
+                sha256  0ead921d98d99a4590ffe6cd66dc037fc0a2ceea1c735d866ba73fe058257577 \
+                size    558303
+
+use_configure   no
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
