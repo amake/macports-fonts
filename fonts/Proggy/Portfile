@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        bluescan proggyfonts 1.1.5 v
+github.setup        bluescan proggyfonts 1.1.6 v
 name                Proggy
 revision            0
 
@@ -18,9 +18,9 @@ license             MIT
 
 use_configure       no
 
-checksums           rmd160  7f84078d192075445e8b43ea3804b8e8d84b7510 \
-                    sha256  4c3c3dab899bf04aafc293a4672fcf2b3285fc7a7ed05bd813d2517a74e682d7 \
-                    size    4846208
+checksums           rmd160  eb5cdf43e667f90d1d3cebe1ca9b57c94a5718c1 \
+                    sha256  8241b4d0c5f8daadc61f2d2a460fc93e0ffb99a46fcee8c55005f9d169bd0206 \
+                    size    4980709
 
 build {}
 
