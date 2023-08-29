@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                MD_IO
-version             0.7
+version             1.0
 description         A clean monospace focused on legibility and designed to work well in code.
 long_description    \
     ${description} It makes use of 'light traps', a generous x-height, and unique constructions \
@@ -23,9 +23,9 @@ worksrcdir          .
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  fd1981d735fefb901a112e8b0e4fe56348172f91 \
-                    sha256  46038ce1ad7bd5f65b6d3fbb7cf729ab31d8b671feba80d72a43288d824203bd \
-                    size    2456752
+checksums           rmd160  2c9efbde901bf7b28b58a5206f2bc3cc1113b43c \
+                    sha256  4e0f48df4f134b784fd79ce199c00b3f00251db7651a6d7806db85c96227f9f5 \
+                    size    3481481
 
 fetch {
     file mkdir ${distpath}
