@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             15.0.06
+version             15.1.01
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -19,9 +19,9 @@ master_sites        https://unifoundry.com/pub/${name}/${name}-${version}/
 use_configure       no
 use_parallel_build  no
 
-checksums           rmd160  cd044bbd5c52a21b212bc408555c1682100daf6f \
-                    sha256  36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1 \
-                    size    40878710
+checksums           rmd160  4b48a9a4e5712f95d35336042831caf901af0646 \
+                    sha256  e15f4209a2f7937951681f4522b21a4deb9fb36220c82f8b8cb66e2b1466cdb7 \
+                    size    30733769
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -57,8 +57,8 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy ${fonts_dir}/${name}-${version}.ttf \
-        ${fonts_dir}/${name}_jp-${version}.ttf \
+    copy ${fonts_dir}/${name}-${version}.otf \
+        ${fonts_dir}/${name}_jp-${version}.otf \
         ${target}
 }
 
