@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                CommitMono
-version             136
+version             137
 revision            0
 
 description         An anonymous and neutral coding font focused on creating a better reading experience.
@@ -19,29 +19,29 @@ license             OFL
 
 use_configure       no
 
-master_sites        https://commitmono.com/src/fonts/
+master_sites        https://commitmono.com/src/fonts/fontlab/
 
-distfiles           ${name}V${version}-450Regular.otf \
-                    ${name}V${version}-450Italic.otf \
+distfiles           ${name}V${version}-400Regular.otf \
+                    ${name}V${version}-400Italic.otf \
                     ${name}V${version}-700Regular.otf \
                     ${name}V${version}-700Italic.otf
 
-checksums           ${name}V${version}-450Regular.otf \
-                        rmd160  9323abf9116089af530bb89cf87af9ebca04c4c0 \
-                        sha256  3de235db8dbf7f5de5988077b0fc2853fc20a252fb7ff482b56027cba8414cc5 \
-                        size    152144 \
-                    ${name}V${version}-450Italic.otf \
-                        rmd160  73fadc3b6f4ebcf2c049f2727150feca2942f548 \
-                        sha256  58eeccd9545903ee4dc0232a33a3c00534472585dd66713ec1437be7afde772e \
-                        size    157692 \
+checksums           ${name}V${version}-400Regular.otf \
+                        rmd160  244458260c551fef170ccf86cadae2c2d9b3041e \
+                        sha256  70a53654e62d351e50c33a0e5d48527473df75631aa4ca0177292e71a2eba842 \
+                        size    151948 \
+                    ${name}V${version}-400Italic.otf \
+                        rmd160  b5fa923d54e2630b1c084205578fbced39359e2a \
+                        sha256  40091e3333882ec00010aa3523aaf339daa9ef1508386095a40e1d0a255958a1 \
+                        size    158444 \
                     ${name}V${version}-700Regular.otf \
-                        rmd160  026d981c87ff3c0e38205613e02241f55687da3f \
-                        sha256  2426dc2411c2d7940084c0d76f92f7096d4c2eaccd59482a52cc2999b94206ff \
-                        size    153696 \
+                        rmd160  2baf917facb0de17096d6ab799b967f1149d2fcc \
+                        sha256  5f45bf2070e340b17705c62d2d29f619115ef13693976bf8e43527d40e1dcbc9 \
+                        size    154256 \
                     ${name}V${version}-700Italic.otf \
-                        rmd160  766002066a464721c6827252b1fae2043eec47b0 \
-                        sha256  7d1e287a56ce4f5e0e8d2514339daf46b2c3bcae0264ed7fba9eb5bdd6a33f07 \
-                        size    156916
+                        rmd160  a64e4a072c6b34fb33a3d97f6bc25727e87810d1 \
+                        sha256  358e11e384c5be56e7c8c6fda21d435a6131aec225959a3cef8cca618259e4ec \
+                        size    156824
 
 build {}
 
