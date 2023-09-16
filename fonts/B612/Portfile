@@ -1,0 +1,34 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        polarsys b612 1.008
+name                B612
+revision            0
+
+description         A highly legible font family designed and tested to be used \
+                    on aircraft cockpit screens
+long_description    ${description}
+
+platforms           {darwin any}
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+use_configure       no
+
+checksums           rmd160  4bcee3f49045d5de4a3f4e74c6dbdd1ccc236d4e \
+                    sha256  bbffb4ea3bfd793cc114f26a9ec2effb97020c245e883b91c98857e68866c326 \
+                    size    5178892
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/fonts/ttf/*.ttf] ${target}
+}
