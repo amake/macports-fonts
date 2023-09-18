@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                CommitMono
-version             137
+version             138
 revision            0
 
 description         An anonymous and neutral coding font focused on creating a better reading experience.
@@ -26,22 +26,22 @@ distfiles           ${name}V${version}-400Regular.otf \
                     ${name}V${version}-700Regular.otf \
                     ${name}V${version}-700Italic.otf
 
-checksums           ${name}V${version}-400Regular.otf \
-                        rmd160  244458260c551fef170ccf86cadae2c2d9b3041e \
-                        sha256  70a53654e62d351e50c33a0e5d48527473df75631aa4ca0177292e71a2eba842 \
-                        size    151948 \
-                    ${name}V${version}-400Italic.otf \
-                        rmd160  b5fa923d54e2630b1c084205578fbced39359e2a \
-                        sha256  40091e3333882ec00010aa3523aaf339daa9ef1508386095a40e1d0a255958a1 \
-                        size    158444 \
-                    ${name}V${version}-700Regular.otf \
-                        rmd160  2baf917facb0de17096d6ab799b967f1149d2fcc \
-                        sha256  5f45bf2070e340b17705c62d2d29f619115ef13693976bf8e43527d40e1dcbc9 \
-                        size    154256 \
-                    ${name}V${version}-700Italic.otf \
-                        rmd160  a64e4a072c6b34fb33a3d97f6bc25727e87810d1 \
-                        sha256  358e11e384c5be56e7c8c6fda21d435a6131aec225959a3cef8cca618259e4ec \
-                        size    156824
+checksums           CommitMonoV138-400Regular.otf \
+                    rmd160  2db5722c212adaf4631f3c4b236bd64d2b51b5d9 \
+                    sha256  0110d82a7a42992eaf16dd27834df8acd717b7c61c473ebd9255a14fec1417c4 \
+                    size    151792 \
+                    CommitMonoV138-400Italic.otf \
+                    rmd160  ef532232fb47d3059324382978c52f776e422f5b \
+                    sha256  69a8e476958d50bc1077a962bbd45811c06a3957d6e9c54d9b084d2c82b5c43e \
+                    size    158036 \
+                    CommitMonoV138-700Regular.otf \
+                    rmd160  38b0c32b173dafe6a0a4bd4c2e4d4530158001a1 \
+                    sha256  20d6a70353d56fc37d5a7a89ceaaf2a0d0ddb3154be02b1338d2574d46b53eaf \
+                    size    154308 \
+                    CommitMonoV138-700Italic.otf \
+                    rmd160  574b7de25a8e18e3dc01f99d82b1f75d4a8e08b1 \
+                    sha256  5aabbe7b38be00e57a1e284f314ab70c97f3d7dd20c718312fcc6b419e259713 \
+                    size    157372
 
 build {}
 
