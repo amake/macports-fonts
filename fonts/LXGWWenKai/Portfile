@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        lxgw LxgwWenKai 1.300 v
+github.setup        lxgw LxgwWenKai 1.310 v
 name                LXGWWenKai
 revision            0
 github.tarball_from releases
@@ -20,9 +20,9 @@ license             OFL
 distname            lxgw-wenkai-v${version}
 use_configure       no
 
-checksums           rmd160  a8507ee8ce81d84527c90a05b5c0f5b838a32af2 \
-                    sha256  a4f37cb2217ff03efcb04717a05faf6780487985b25c0ba4e0705024ff86dcef \
-                    size    62468087
+checksums           rmd160  07d535e53b9d30538c9bf7dcdf6a8eacbb92df7e \
+                    sha256  61b9c75ce2f7592571309582c90e1b7023d241929e4c66a4a1b47677198de883 \
+                    size    63110288
 
 build {}
 
