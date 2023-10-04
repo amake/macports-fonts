@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                CommitMono
-version             138
+version             139
 revision            0
 
 description         An anonymous and neutral coding font focused on creating a better reading experience.
@@ -26,22 +26,22 @@ distfiles           ${name}V${version}-400Regular.otf \
                     ${name}V${version}-700Regular.otf \
                     ${name}V${version}-700Italic.otf
 
-checksums           CommitMonoV138-400Regular.otf \
-                    rmd160  2db5722c212adaf4631f3c4b236bd64d2b51b5d9 \
-                    sha256  0110d82a7a42992eaf16dd27834df8acd717b7c61c473ebd9255a14fec1417c4 \
-                    size    151792 \
-                    CommitMonoV138-400Italic.otf \
-                    rmd160  ef532232fb47d3059324382978c52f776e422f5b \
-                    sha256  69a8e476958d50bc1077a962bbd45811c06a3957d6e9c54d9b084d2c82b5c43e \
-                    size    158036 \
-                    CommitMonoV138-700Regular.otf \
-                    rmd160  38b0c32b173dafe6a0a4bd4c2e4d4530158001a1 \
-                    sha256  20d6a70353d56fc37d5a7a89ceaaf2a0d0ddb3154be02b1338d2574d46b53eaf \
-                    size    154308 \
-                    CommitMonoV138-700Italic.otf \
-                    rmd160  574b7de25a8e18e3dc01f99d82b1f75d4a8e08b1 \
-                    sha256  5aabbe7b38be00e57a1e284f314ab70c97f3d7dd20c718312fcc6b419e259713 \
-                    size    157372
+checksums           ${name}V${version}-400Regular.otf \
+                        rmd160  3eed239ba0d0d194ad049a7a24f687d4fc3d6e35 \
+                        sha256  47298e8c24f686207a74012cdfc73875f8d1ceedf9d65e1cd5b1e8d16bc83152 \
+                        size    150784 \
+                    ${name}V${version}-400Italic.otf \
+                        rmd160  ea6c53d1cea7c8c777f2b5e0666604387a653a46 \
+                        sha256  91bcc88e63b719f47e6c2cd5a1f9addc5b973b56e73c821e65e1016977c907b3 \
+                        size    157028 \
+                    ${name}V${version}-700Regular.otf \
+                        rmd160  c356fa2c6c683d69d53469fa5beb15d4ae213b25 \
+                        sha256  e927873f015894bf68c6ddb56caa49ebb59eb0f4c4c5bed6dc66c23915316757 \
+                        size    152640 \
+                    ${name}V${version}-700Italic.otf \
+                        rmd160  f4bfef74aa90fa0dda0cb481f219e75b5fe87394 \
+                        sha256  b9c9e635570d061eb79a38a84cfedbdaa26d38c8081c3d253629ff6e2867a54c \
+                        size    156144
 
 build {}
 
