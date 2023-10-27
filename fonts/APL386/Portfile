@@ -4,8 +4,8 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        abrudz APL386 238556e5c00fc1d43c4cdd75d00cdb2ee7f1be5f
-version             20231023
+github.setup        abrudz APL386 22bad1ecd530c344338e09bbfc72ef5a17437f02
+version             20231027
 revision            0
 
 description         APL font based on Adrian Smith's APL385 font with a fun, \
@@ -21,9 +21,9 @@ license             Unlicense
 
 use_configure       no
 
-checksums           rmd160  8175f436e509c268c2524de6dfe21d9ec1fb1cee \
-                    sha256  e00b1fad86e39509f6ec4e475f4fab9fa30b20b38dad8a57371de6796ed36e19 \
-                    size    501225
+checksums           rmd160  6bf493adf8017b0f2e369c20c20e4addaff05e37 \
+                    sha256  c8866bcc05d1590e729ac3ffd8d9c3f755c6782971ade4a23caa01a281c72677 \
+                    size    605217
 
 build {}
 
