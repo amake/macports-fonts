@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                CommitMono
-version             139
+version             141
 revision            0
 
 description         An anonymous and neutral coding font focused on creating a better reading experience.
@@ -27,21 +27,21 @@ distfiles           ${name}V${version}-400Regular.otf \
                     ${name}V${version}-700Italic.otf
 
 checksums           ${name}V${version}-400Regular.otf \
-                        rmd160  3eed239ba0d0d194ad049a7a24f687d4fc3d6e35 \
-                        sha256  47298e8c24f686207a74012cdfc73875f8d1ceedf9d65e1cd5b1e8d16bc83152 \
-                        size    150784 \
+                        rmd160  bf127278468c73f6b184fc2701715802610b011f \
+                        sha256  7c1fa057c2c9d6d375ac701cb1bf3cc35705d13863ab0b4e710855b349c3ca83 \
+                        size    151704 \
                     ${name}V${version}-400Italic.otf \
-                        rmd160  ea6c53d1cea7c8c777f2b5e0666604387a653a46 \
-                        sha256  91bcc88e63b719f47e6c2cd5a1f9addc5b973b56e73c821e65e1016977c907b3 \
-                        size    157028 \
+                        rmd160  5c05b79354e0efff5da7764480bc7b7ee0b8f108 \
+                        sha256  7890950890846c4d4f87b771794d1eb75d70d4526be1ebbe6275d67ad7158a2e \
+                        size    158512 \
                     ${name}V${version}-700Regular.otf \
-                        rmd160  c356fa2c6c683d69d53469fa5beb15d4ae213b25 \
-                        sha256  e927873f015894bf68c6ddb56caa49ebb59eb0f4c4c5bed6dc66c23915316757 \
-                        size    152640 \
+                        rmd160  cc96a06e39689a1676ba738b2c36222503c818bd \
+                        sha256  e9a73a337755270967547b604f672ddc1b7045deacd7d69a449126a8efa6d620 \
+                        size    153556 \
                     ${name}V${version}-700Italic.otf \
-                        rmd160  f4bfef74aa90fa0dda0cb481f219e75b5fe87394 \
-                        sha256  b9c9e635570d061eb79a38a84cfedbdaa26d38c8081c3d253629ff6e2867a54c \
-                        size    156144
+                        rmd160  9c18c500ddce853272674073e23162396152c14b \
+                        sha256  5f0ebdda1c149d9e2198bb3bc02c545e0f8dc42190f1dc816af8062167b41cdb \
+                        size    156472
 
 build {}
 
