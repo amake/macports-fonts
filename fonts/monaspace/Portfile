@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+categories          fonts
+github.setup        githubnext monaspace 1.000 v
+revision            0
+github.tarball_from releases
+
+description         An innovative superfamily of fonts for code
+long_description    ${description}
+
+platforms           {darwin any}
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+distname            ${name}-v${version}
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  f552d2075f563e8b4eaee696a401ed6131bc7dd0 \
+                    sha256  3e08376fd0aeca1f851fde0c08e18ca2d797f6a4c7a449670bf4d1270303c8f6 \
+                    size    122949327
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/fonts/otf/*.otf] ${target}
+}
