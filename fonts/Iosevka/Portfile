@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 27.3.5 v
+github.setup        be5invis Iosevka 28.0.0 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -19,7 +19,7 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-set plan            iosevka-custom
+set plan            IosevkaCustom
 
 patch {
     copy ${filespath}/private-build-plans.toml ${worksrcpath}
@@ -31,14 +31,14 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
 
     github.tarball_from releases
 
-    distname        super-ttc-iosevka-${github.version}
+    distname        SuperTTC-Iosevka-${github.version}
     use_configure   no
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  679084c190c89216f9619129b85f27e7685a2e53 \
-                    sha256  e385e21e8ca96e4dfd412d1a117f278a173637e9e63083e1cd560b6323fa89cb \
-                    size    96598596
+    checksums       rmd160  2e0ba6ad0e309bab295025a3f479cccba98e3f9b \
+                    sha256  9d123648fde276a44f2bf8225ec77a91c3f623f9d670033a22ddc79fe2467706 \
+                    size    100334725
 
     build {}
 
@@ -54,11 +54,11 @@ variant min_leading description {Build with minimal line height} conflicts preco
 
 variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
-        distname    super-ttc-iosevka-ss08-${github.version}
+        distname    PkgTTC-IosevkaSS08-${github.version}
 
-        checksums   rmd160  d204033ffe7a25926d168bccd3a4939e7a83d620 \
-                    sha256  401727c2b4007547a358c7f09f51a1a36236ed55c42f6f5d0c476ac07cb92188 \
-                    size    20506588
+        checksums   rmd160  daf8a59ed2abede2a8af7e5edcd29c603833ab26 \
+                    sha256  2d009bd8430dea84af8d2b9fd8990f6e4dae483d633bd4a91622334524eb0d8b \
+                    size    22079757
     }
 
     post-patch {
@@ -73,9 +73,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  354ac024abc9a63e8e8815dbe7a091436ac03e74 \
-                    sha256  549c1c76d85f122a9588d88671a7cde6d3abe3ab02b4821b3af07cc4b1faf78d \
-                    size    10061062
+    checksums       rmd160  cd995382451979008c69fc321757bd1efeb715f4 \
+                    sha256  aed0ddfd7f9c00c99832b084ac0adba33883da613e6e6414c9d7fb394cebe127 \
+                    size    10011778
 
     configure {
         system -W ${worksrcpath} "npm ci"
@@ -89,7 +89,7 @@ if {![variant_isset precompiled]} {
         # Do this late because otherwise we won't see the value overwritten by
         # variants, since this is in the "main" scope(?)
         global workbinglob
-        set workbinglob ${worksrcpath}/dist/${plan}/ttf/*
+        set workbinglob ${worksrcpath}/dist/${plan}/TTF/*
     }
 }
 
