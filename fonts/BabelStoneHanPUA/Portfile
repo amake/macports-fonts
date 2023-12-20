@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                BabelStoneHanPUA
-version             1.390
+version             1.391
 revision            0
 epoch               1
 description         A free CJK font containing 5,200+ unencoded Han characters in the Private Use Area
@@ -24,9 +24,9 @@ extract.only
 
 use_configure       no
 
-checksums           rmd160  7e1d7079895ef03458aa37371f2beb246993bdf3 \
-                    sha256  c79b1fd3c472066494bf78e119239f25d6d56a0abbe0555ef9bfbcb4f16d834a \
-                    size    4518380
+checksums           rmd160  64177614dd8fd47de6d40807f975b56a6cc5c4e3 \
+                    sha256  1dce83f28a7cb4990811c1c6c202809883ca3a6734ff99ec67ed4b7f8ea4d337 \
+                    size    4562796
 
 build {}
 
