@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        jenskutilek sudo-font 0.80 v
+github.setup        jenskutilek sudo-font 0.81 v
 name                SudoFont
 revision            0
 
@@ -24,9 +24,9 @@ dist_subdir         ${name}/${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  eadb6589f6187f7be1d6a0948d01d181c21e912a \
-                    sha256  6b1d090b1fa304ba78ac0025b7a3fb373fed9d4b5e2ea12717ea8de00865a6e5 \
-                    size    2612333
+checksums           rmd160  39f9b0c849ec08774e1a53c16bc09cdd563b5737 \
+                    sha256  7cb85250db95899ce9f894ff5559c71fe77ba8c6c7abbfaabec869d847963764 \
+                    size    2645217
 
 build {}
 
