@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        rubjo victor-mono 1.5.5 v
+github.setup        rubjo victor-mono 1.5.6 v
 name                VictorMono
 revision            0
 
@@ -25,9 +25,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  e4ca9c78b80f3f547239673799e8e4e248bef337 \
-                    sha256  34288e16ca4834efc721aaf0c6f4ef3d86a85a5a791769787b50853ec21afd3b \
-                    size    9165795
+checksums           rmd160  ed50370fd3c642132f3f0506233bf9ea964fc725 \
+                    sha256  eab377ad3bcc7a202697c024ebb8c8728f99789c4f093d358f3d202052cc9496 \
+                    size    9190154
 
 build {}
 
