@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 29.0.2 v
+github.setup        be5invis Iosevka 29.0.4 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -36,9 +36,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  1fcf8d8965a9c25a3a04904caf7ede856536deec \
-                    sha256  778e67de18de8fa3182af185f66c05db661073d197fcc3e32f0bf5af01c84a2b \
-                    size    106905273
+    checksums       rmd160  ef3df6ab035bc24caf4824023f60e01c876be138 \
+                    sha256  937b5672faf19e556b80585f9dd749f76ca61d1a349cc09645dabb643f5cf098 \
+                    size    100748042
 
     build {}
 
@@ -54,11 +54,11 @@ variant min_leading description {Build with minimal line height} conflicts preco
 
 variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
-        distname    PkgTTC-IosevkaSS08-${github.version}
+        distname    SuperTTC-IosevkaSS08-${github.version}
 
-        checksums   rmd160  a05aa7f56f9192bc891db78279b09edc21b352f4 \
-                    sha256  0ee37a03879dd24513187ad6a7d448d609551252ecacd85f312da25f81abb9d3 \
-                    size    24239617
+        checksums   rmd160  1b45982c146dbb1909b26ee108e9cc0ff7948cb9 \
+                    sha256  58826863f29ceb5bb5949744e1030f6cf77c70cc31280b1f16c361aecd8b2bb4 \
+                    size    23902074
     }
 
     post-patch {
@@ -73,9 +73,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  690ad47465e1df408a75d4f129e93b7138c63176 \
-                    sha256  df533dd3e513525c5a28afdd5cf83affc8cecd00f1adef02d9a9a6be81407e1a \
-                    size    10159465
+    checksums       rmd160  514bf5b6fb5f330c04b69d7a0f9d4c491df7ead5 \
+                    sha256  bc1d8c92892662a9d3d9cebcd649c28d4a575a39fb7a355c0f24883828090844 \
+                    size    10159866
 
     configure {
         system -W ${worksrcpath} "npm ci"
