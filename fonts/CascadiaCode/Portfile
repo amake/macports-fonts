@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        microsoft cascadia-code 2111.01 v
+github.setup        microsoft cascadia-code 2404.23 v
 name                CascadiaCode
 revision            0
 github.tarball_from releases
@@ -22,9 +22,9 @@ use_configure       no
 use_zip             yes
 worksrcdir          .
 
-checksums           rmd160  558d72ebe77f4c37e307472fbe9d5852030afb78 \
-                    sha256  51fd68176dffb87e2fbc79381aef7f5c9488b58918dee223cd7439b5aa14e712 \
-                    size    24899516
+checksums           rmd160  84b08b39e4c355e7986b8965fb26fc35519d8ee9 \
+                    sha256  a911410626c0e09d03fa3fdda827188fda96607df50fecc3c5fee5906e33251b \
+                    size    150478329
 
 build {}
 
