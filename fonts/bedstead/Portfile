@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                bedstead
-version             002.005
+version             002.006
 
 description         A family of outline fonts based on the characters produced \
                     by the Mullard SAA5050 series of Teletext Character Generators
@@ -20,9 +20,9 @@ master_sites        ${homepage}
 use_zip             yes
 use_configure       no
 
-checksums           rmd160  427a66bbe1b2c8d736995d9fb5b1c583d0b882f2 \
-                    sha256  d99830c3aaea2e8e0f9ea5a3d9806ccc44253180734a56ef40539aaa6bbec255 \
-                    size    1243332
+checksums           rmd160  49dee78dc8fc3fd446718aadf0092807ee64efa4 \
+                    sha256  cbf627d39772616faf92d7e62215328a887ce0b6dcb80c9a11471424d3ef3eac \
+                    size    1243376
 
 variant precompiled description {Use precompiled binaries} {
     build {}
