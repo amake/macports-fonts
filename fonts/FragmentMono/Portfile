@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        weiweihuanghuang fragment-mono 1.012
+github.setup        weiweihuanghuang fragment-mono 1.21
 name                FragmentMono
 revision            0
 github.tarball_from releases
@@ -18,14 +18,14 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            ${github.project}-fonts
+distname            ${github.project}-${version}
 dist_subdir         ${subport}/${version}
 use_zip             yes
 use_configure       no
 
-checksums           rmd160  a0da926bee12e435e3216082559251a8dabc70c0 \
-                    sha256  e2a31e3ef1295f24eff5481b69ecaf0c162916c71a8d00a256677e738c91127a \
-                    size    480451
+checksums           rmd160  d53426e11ddeb44b2aa13ea4220b25add84525f7 \
+                    sha256  1d3b711facfb0621638dc650708f8a26dbe83b1efb4382a2438ac5eadb716658 \
+                    size    412973
 
 build {}
 
