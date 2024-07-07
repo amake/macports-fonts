@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 30.3.1 v
+github.setup        be5invis Iosevka 30.3.2 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -36,9 +36,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  791ffe4e695b539b8ba9522562614909a2e73451 \
-                    sha256  121d81fe8379b43c21da23b896bd65ba1fa4887f3ea6c0734f9e264b2337a2e8 \
-                    size    100795128
+    checksums       rmd160  b1a9441f6dcdc4a8364a07c6d113147505fbb3bd \
+                    sha256  a0e18b18164a66b6e37c4500aaf88e7e62fb37d7f024d40b454f13d10757693a \
+                    size    100864961
 
     build {}
 
@@ -56,9 +56,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    SuperTTC-IosevkaSS08-${github.version}
 
-        checksums   rmd160  f4881ce7708f88e96667b774396fe6a9f1a6dde1 \
-                    sha256  9ef29f120e838cbea704d939d3d299ce0aaa2f65e862115af797a9adcc951cec \
-                    size    26158152
+        checksums   rmd160  d02ce6398960ec30275c5389725a8def34215222 \
+                    sha256  7f79e5f01b218452c62e399233970ff971f643cc0da2a99e5bba03582fe5e605 \
+                    size    26208160
     }
 
     post-patch {
@@ -73,9 +73,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm8 \
         port:ttfautohint
 
-    checksums       rmd160  4012a1133dafc5ed26b5c690ef554a1631962c83 \
-                    sha256  5d9419aa99e99239ec087e59c41463fd5b30e5c11f65cdf653c9472a535398c4 \
-                    size    11346450
+    checksums       rmd160  e2ed37f6da62ca73db2b78d5f013b0922a82c851 \
+                    sha256  935944cea2bf437d93ae2ce4d28022138918537165b0234f927de06109c5f90f \
+                    size    11341077
 
     configure {
         system -W ${worksrcpath} "npm ci"
