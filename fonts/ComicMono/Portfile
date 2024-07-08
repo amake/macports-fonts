@@ -4,9 +4,9 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        dtinth comic-mono-font 9a96d04cdd2919964169192e7d9de5012ef66de4
+github.setup        dtinth comic-mono-font 6a133be3235177801e2aaf80619afcd40071c9c0
 name                ComicMono
-version             20201229
+version             20240705
 revision            0
 
 description         A legible monospace font
@@ -22,9 +22,9 @@ license             MIT
 
 use_configure       no
 
-checksums           rmd160  9863213706b858a3c62b7360a740cb38af20927c \
-                    sha256  82265849ef5f03b6f443caccaa88b40243c23fc0618e37a7d82e6d1f22501d14 \
-                    size    35646
+checksums           rmd160  ab955a2fae60191ad5f14fc2702965263bc2a500 \
+                    sha256  7a0ca10b9accb43a81789b35b67eac403a13d8b632eff9b701c16e8126e7b4cb \
+                    size    35975
 
 build {}
 
