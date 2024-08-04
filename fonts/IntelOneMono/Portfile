@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        intel intel-one-mono 1.3.0 V
+github.setup        intel intel-one-mono 1.4.0 V
 name                IntelOneMono
 revision            0
 github.tarball_from releases
@@ -22,9 +22,9 @@ dist_subdir         ${name}/${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  ab2de24fc30213d63d403c01967dd3a89e126ae1 \
-                    sha256  89921f9171fe1a9955c044b82da40121a096b3b38a984b68f49d92a73bda812b \
-                    size    354382
+checksums           rmd160  8907d5433ca15555e6532759ccc57deeb08aa932 \
+                    sha256  74ef8ee667403c760745bc12fc5e2cb1684544194fad3d5340919c173a8227fc \
+                    size    563509
 
 build {}
 
