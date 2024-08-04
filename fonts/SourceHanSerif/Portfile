@@ -5,7 +5,7 @@ PortGroup           github 1.0
 
 categories          fonts
 name                SourceHanSerif
-github.setup        adobe-fonts source-han-serif 2.002 "" R
+github.setup        adobe-fonts source-han-serif 2.003 "" R
 
 description         A set of Pan-CJK serif fonts
 long_description    ${description}
@@ -23,9 +23,9 @@ use_zip             yes
 use_configure       no
 worksrcdir          .
 
-checksums           rmd160  f71b334b4706d0edb24ad9994b52c956722ca678 \
-                    sha256  3868cbad34109776e2bbf4ec6caaccdab46a41389a720b4be191af4268784df1 \
-                    size    138270517
+checksums           rmd160  a71d5716afb7e071a75e104df602de7a3ed2c1c3 \
+                    sha256  6ee689ab57894ae35af604a73e95c372bda0306610ffa179a4708e8cd47a795f \
+                    size    138703713
 
 build {}
 
