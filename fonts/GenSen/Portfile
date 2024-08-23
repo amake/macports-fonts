@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        ButTaiwan gensen-font 2.000 v
+github.setup        ButTaiwan gensen-font 2.100 v
 name                GenSen
 revision            0
 github.tarball_from releases
@@ -25,9 +25,9 @@ use_configure       no
 
 worksrcdir          .
 
-checksums           rmd160  8bf433c67abdcfeba0442a087ed99408a35768f8 \
-                    sha256  82c439a688a7083c641164e09515c11dbe3ca23f8d9d4a8874f6bb06a8d028c0 \
-                    size    55962044
+checksums           rmd160  4aeff08ebd64112bc9b19ee8d9e74d055b3d945f \
+                    sha256  01f57ff5eac25143c654cfd37ab06d191703fb67aea94811ec48f101a2f6e203 \
+                    size    57807254
 
 build {}
 
