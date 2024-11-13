@@ -116,4 +116,4 @@ destroot {
     copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/*.otf] ${target}
 }
 
-github.livecheck.regex  {([^"-]+)}
+livecheck.regex  {archive/refs/tags/\@ibm\/plex\-.*\@([^"-]+)\.tar\.gz}
