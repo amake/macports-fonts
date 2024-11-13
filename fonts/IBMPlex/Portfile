@@ -4,10 +4,11 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        IBM plex 6.4.0 v
+github.setup        IBM plex 1.1.0 @ibm/plex-sans@
 name                IBMPlex
 revision            0
 github.tarball_from releases
+epoch               1
 
 description         IBM’s typeface, IBM Plex
 long_description    ${description}
@@ -18,14 +19,92 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-distname            OpenType
-dist_subdir         ${name}/${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  15f61798459685e29ea7e630b6276d7ee791da48 \
-                    sha256  e8e502823a9c6c7dda9ebb1710c5f6c4001db4ab15067d9ec373a6d39844fc1d \
-                    size    97107701
+master_sites \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-math%40${github.version}:math \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-mono%40${github.version}:mono \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans%40${github.version}:sans \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-arabic%40${github.version}:arabic \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-condensed%40${github.version}:condensed \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-devanagari%40${github.version}:devanagari \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-hebrew%40${github.version}:hebrew \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-jp%40${github.version}:jp \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-kr%40${github.version}:kr \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-tc%40${github.version}:tc \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai%40${github.version}:thai \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai-looped%40${github.version}:thai-looped \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-serif%40${github.version}:serif
+
+distfiles \
+    ibm-plex-math${extract.suffix}:math \
+    ibm-plex-mono${extract.suffix}:mono \
+    ibm-plex-sans${extract.suffix}:sans \
+    ibm-plex-sans-arabic${extract.suffix}:arabic \
+    ibm-plex-sans-condensed${extract.suffix}:condensed \
+    ibm-plex-sans-devanagari${extract.suffix}:devanagari \
+    ibm-plex-sans-hebrew${extract.suffix}:hebrew \
+    ibm-plex-sans-jp${extract.suffix}:jp \
+    ibm-plex-sans-kr${extract.suffix}:kr \
+    ibm-plex-sans-tc${extract.suffix}:tc \
+    ibm-plex-sans-thai${extract.suffix}:thai \
+    ibm-plex-sans-thai-looped${extract.suffix}:thai-looped \
+    ibm-plex-serif${extract.suffix}:serif
+
+checksums \
+    ibm-plex-math${extract.suffix} \
+        rmd160  b52b610bc247d5cbdb615575e6a4d76ffa24f9a6 \
+        sha256  d85ed404394ced3a79a519af24611acdee9cc0483363c07cd5ac0656c06db42a \
+        size    2089697 \
+    ibm-plex-mono${extract.suffix} \
+        rmd160  f7a14f14026c7d514c8d6da7a8d49472953fa685 \
+        sha256  4bfc936d0e1fd19db6327a3786eabdbc3dc0d464500576f6458f6706df68d26c \
+        size    7307192 \
+    ibm-plex-sans${extract.suffix} \
+        rmd160  ca7adb279ebf9a7806dc3bacd0294c8cd911991c \
+        sha256  fb365d910566e6d199cc2c15579a7dd9a267128e18431a394ed81f1970c69200 \
+        size    9921777 \
+    ibm-plex-sans-arabic${extract.suffix} \
+        rmd160  b756ee7ce1dccdfb0efbc407dd6f567126755139 \
+        sha256  f03915581aea37d82792c188b08064023a73494d679b8e19f85f5971db714013 \
+        size    3898251 \
+    ibm-plex-sans-condensed${extract.suffix} \
+        rmd160  07e9d929646ccada715d273ca925ca83732df31b \
+        sha256  c172bedb417831bc6ba35ccb727f33959b7f2f8382902386947660bcd66a8077 \
+        size    5823577 \
+    ibm-plex-sans-devanagari${extract.suffix} \
+        rmd160  1c9b93f2380eb3c1945bfdc727b4c78a7330c4d3 \
+        sha256  effc4a35b2908c80806c97a4d5033e63f437611d17a3e09b237edd5c33d8ac94 \
+        size    5338792 \
+    ibm-plex-sans-hebrew${extract.suffix} \
+        rmd160  c9a6c459bb453a9eae37704ab779fea50cf307e5 \
+        sha256  d7d490b8a767b972a7f361055fdcf60ad7cb7c270b38ff1bf859562a021369fd \
+        size    1706978 \
+    ibm-plex-sans-jp${extract.suffix} \
+        rmd160  54b2ad8ba40d9d5d3d2431d48a36335c3ece8c9b \
+        sha256  96e7b8af07b5b38fad9c531c11854559c47332b45de7e65c45672b5415f3cd55 \
+        size    154932010 \
+    ibm-plex-sans-kr${extract.suffix} \
+        rmd160  48e161e658ada05e045821de1be7845d2906785a \
+        sha256  9837800c8e5aedf4123775e1d767afa482c983321bd2fc606c985f405d24562e \
+        size    73268731 \
+    ibm-plex-sans-tc${extract.suffix} \
+        rmd160  815fdfffed72398fc074ba86efba1c90eebca403 \
+        sha256  b79600d3c9155fa05c9024eb81cfe2fbdd8cd068503dfafd79405ea577aa9fec \
+        size    367460242 \
+    ibm-plex-sans-thai${extract.suffix} \
+        rmd160  5730fb950684e8cc0a330c56e0c47fd997da8b9f \
+        sha256  d7203f43c20f9abd40487f845c48db4077d2056ea18632c8959591c6815d7fb9 \
+        size    1985960 \
+    ibm-plex-sans-thai-looped${extract.suffix} \
+        rmd160  8342d67c0356317556c81a6717369409eec80f97 \
+        sha256  26c453e3a4341026e2f5525cd498c5aa214e57bdb9db99bc3816826a36be157f \
+        size    2116691 \
+    ibm-plex-serif${extract.suffix} \
+        rmd160  72a776dd7c064fde4fc47f3751ecf5f11c10ed2e \
+        sha256  76f1a272b084d2beedcd22aaaa653bc6f92b71b5689081aef9c5b05d0a470e1b \
+        size    10556818
 
 build {}
 
@@ -34,7 +113,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/*/*.otf] ${target}
+    copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/*.otf] ${target}
 }
 
 github.livecheck.regex  {([^"-]+)}
