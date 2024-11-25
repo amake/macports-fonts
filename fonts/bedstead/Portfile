@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                bedstead
-version             002.009
+version             3.246
 
 description         A family of outline fonts based on the characters produced \
                     by the Mullard SAA5050 series of Teletext Character Generators
@@ -20,9 +20,9 @@ master_sites        ${homepage}
 use_zip             yes
 use_configure       no
 
-checksums           rmd160  002915117556b004cd9b9cf9ae0ec70bd6a0d8b0 \
-                    sha256  66fcd83a038da958899a38756553447e5563c1b53572cbc68976e1cf237592f1 \
-                    size    1479039
+checksums           rmd160  d36107579bd7032c13ca4b0bc23f2b937df4532b \
+                    sha256  d082e49981b51626c496f8aca593722a96cae94de751d2bb4930831c7175ba2f \
+                    size    1392492
 
 variant precompiled description {Use precompiled binaries} {
     build {}
@@ -32,9 +32,12 @@ default_variants    +precompiled
 
 if {![variant_isset precompiled]} {
     depends_build   port:fontforge \
-                    port:ghostscript
+                    port:ghostscript \
+                    port:gmake \
+                    path:bin/ttx:py312-fonttools
 
-    build.target    clean all
+    build.target    install-user
+    build.args      HOME=${worksrcpath}
 }
 
 destroot.violate_mtree yes
