@@ -36,7 +36,7 @@ if {![variant_isset precompiled]} {
                     port:gmake \
                     path:bin/ttx:py312-fonttools
 
-    build.target    install-user
+    build.target    clean install-user
     build.args      HOME=${worksrcpath}
 }
 
