@@ -6,7 +6,7 @@ PortGroup           github 1.0
 categories          fonts
 github.setup        IBM plex 1.1.0 @ibm/plex-sans@
 name                IBMPlex
-revision            0
+revision            1
 github.tarball_from releases
 epoch               1
 
@@ -22,6 +22,8 @@ license             OFL
 use_configure       no
 use_zip             yes
 
+dist_subdir         ${name}/${version}
+
 master_sites \
     ${github.homepage}/releases/download/%40ibm%2Fplex-math%40${github.version}:math \
     ${github.homepage}/releases/download/%40ibm%2Fplex-mono%40${github.version}:mono \
@@ -33,6 +35,7 @@ master_sites \
     ${github.homepage}/releases/download/%40ibm%2Fplex-sans-jp%40${github.version}:jp \
     ${github.homepage}/releases/download/%40ibm%2Fplex-sans-kr%40${github.version}:kr \
     ${github.homepage}/releases/download/%40ibm%2Fplex-sans-tc%40${github.version}:tc \
+    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-sc%40${github.version}:sc \
     ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai%40${github.version}:thai \
     ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai-looped%40${github.version}:thai-looped \
     ${github.homepage}/releases/download/%40ibm%2Fplex-serif%40${github.version}:serif
@@ -48,6 +51,7 @@ distfiles \
     ibm-plex-sans-jp${extract.suffix}:jp \
     ibm-plex-sans-kr${extract.suffix}:kr \
     ibm-plex-sans-tc${extract.suffix}:tc \
+    ibm-plex-sans-sc${extract.suffix}:sc \
     ibm-plex-sans-thai${extract.suffix}:thai \
     ibm-plex-sans-thai-looped${extract.suffix}:thai-looped \
     ibm-plex-serif${extract.suffix}:serif
@@ -93,6 +97,10 @@ checksums \
         rmd160  815fdfffed72398fc074ba86efba1c90eebca403 \
         sha256  b79600d3c9155fa05c9024eb81cfe2fbdd8cd068503dfafd79405ea577aa9fec \
         size    367460242 \
+    ibm-plex-sans-sc${extract.suffix} \
+        rmd160  3e65cfcf43da63334bd299280a160f79afee7b28 \
+        sha256  0aabd737c8ef0206892b912c759101c10b86c6244be99f2e6b57c6905c716837 \
+        size    523434713 \
     ibm-plex-sans-thai${extract.suffix} \
         rmd160  5730fb950684e8cc0a330c56e0c47fd997da8b9f \
         sha256  d7203f43c20f9abd40487f845c48db4077d2056ea18632c8959591c6815d7fb9 \
@@ -114,6 +122,7 @@ destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/*.otf] ${target}
+    copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/hinted/*.otf] ${target}
 }
 
 livecheck.regex  {archive/refs/tags/\@ibm\/plex\-.*\@([^"-]+)\.tar\.gz}
