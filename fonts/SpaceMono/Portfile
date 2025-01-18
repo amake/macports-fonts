@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        googlefonts spacemono f5ebc1e1c0
+github.setup        googlefonts spacemono 329858c2c4dbd3476f972a4ae00624b018cf4b81
 version             1.0
 name                SpaceMono
 revision            0
@@ -20,9 +20,9 @@ license             OFL
 
 use_configure       no
 
-checksums           rmd160  e7b5f7ad5f056113fe1155732c02d3ef9066eaa1 \
-                    sha256  abffac5663c51260624b66ee12828da9b889a67adae88b9bbec5b1e2487d6134 \
-                    size    1105919
+checksums           rmd160  8dfc8c38877819ed4b881621ef73a1d5577fa9a6 \
+                    sha256  e4f920e88325993d1798ea628c349c1388a7f7a33c878a4fac4d615a946ac7c0 \
+                    size    1941436
 
 build {}
 
@@ -31,7 +31,7 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/fonts/*.ttf] ${target}
+    copy {*}[glob ${worksrcpath}/fonts/otf/*.otf] ${target}
 }
 
 github.livecheck.branch  main
