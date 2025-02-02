@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        be5invis Iosevka 32.4.0 v
+github.setup        be5invis Iosevka 32.5.0 v
 revision            0
 
 description         Slender typeface for code, from code
@@ -25,6 +25,8 @@ patch {
     copy ${filespath}/private-build-plans.toml ${worksrcpath}
 }
 
+github.tarball_from archive
+
 variant precompiled description {Use precompiled binaries} conflicts min_leading {
     global plan
     set plan        iosevka
@@ -36,9 +38,9 @@ variant precompiled description {Use precompiled binaries} conflicts min_leading
     use_zip         yes
     worksrcdir      .
 
-    checksums       rmd160  23652185d2ba7b089494f62dc24c218066c31bfb \
-                    sha256  d421439194d76f2cbb9ed8f9e022f7e7be6ea318534326ba6edaa9af6a78ce7a \
-                    size    112004435
+    checksums       rmd160  4b9339d00f414ad7a967bcaa64370b2dc7e01eb0 \
+                    sha256  bbd84ec3d9272f9681bc65db539c68964c2bd3cea501a98fb2a240d76e836a7b \
+                    size    112209794
 
     build {}
 
@@ -56,9 +58,9 @@ variant ss08 description {Pragmata Pro Style} {
     if {[variant_isset precompiled]} {
         distname    SuperTTC-IosevkaSS08-${github.version}
 
-        checksums   rmd160  bf478dfaf7cb44cfa8d9df8e2f7006912fe18162 \
-                    sha256  384dcd7fe2cb1d945e1476a69580416851acb8358e0d72c417bb68eb9ba1575a \
-                    size    29108124
+        checksums   rmd160  e0379a6e6ad4e8b55c2d8ce415b5658fac3c841b \
+                    sha256  fc4165e203d2cc2c261b4e57b17d7f43fa38e97e0dab02e6087994470982cf16 \
+                    size    29222863
     }
 
     post-patch {
@@ -73,9 +75,9 @@ if {![variant_isset precompiled]} {
         bin:npm:npm10 \
         port:ttfautohint
 
-    checksums       rmd160  b0f9e6ff735de94ea031448cf0e772db8a265795 \
-                    sha256  8ed3c3a2d1f97d48b8c3e9494622a8752867c57d8fbf1267a5cde7a4137342f4 \
-                    size    11620274
+    checksums       rmd160  d8bb95ccf3e453393496b2327bccbfe7ad27fa64 \
+                    sha256  e2968534eb7ea44ef0ff87dfb35260f9e06fce39ab46f42d48a3d6c77880066e \
+                    size    11629458
 
     configure {
         system -W ${worksrcpath} "npm ci"
