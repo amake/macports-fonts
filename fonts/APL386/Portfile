@@ -4,8 +4,8 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        abrudz APL386 83d0d62fbdeac296b469218018271e415a861e1e
-version             20250202
+github.setup        abrudz APL386 1bacee7667e4df3b69ea94bf42e850e28acf518e
+version             20250205
 revision            0
 
 description         APL font based on Adrian Smith's APL385 font with a fun, \
@@ -21,9 +21,9 @@ license             Unlicense
 
 use_configure       no
 
-checksums           rmd160  d05a24e937275a1a8068533cd943cc64a847c5d4 \
-                    sha256  312e49288277df88ed61a9d4f27b1833d54e4fd47c8b9136f29cafc01c62b9e9 \
-                    size    673304
+checksums           rmd160  a487bd9e3aa42886abdfe2a279415e223d4223c4 \
+                    sha256  42c016b3dffbc143d180fb33d548401b557fac41762bf139a2802567bdfb2249 \
+                    size    1035390
 
 build {}
 
@@ -32,5 +32,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+    copy {*}[glob ${worksrcpath}/*.otf] ${target}
 }
