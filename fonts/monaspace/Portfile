@@ -4,12 +4,13 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        githubnext monaspace 1.101 v
+github.setup        githubnext monaspace 1.200 v
 revision            0
 github.tarball_from releases
 
 description         An innovative superfamily of fonts for code
 long_description    ${description}
+homepage            https://monaspace.githubnext.com/
 
 platforms           {darwin any}
 supported_archs     noarch
@@ -20,9 +21,9 @@ distname            ${name}-v${version}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  4ffca4555b56ceb95c4f1d2ba343f47644ea3138 \
-                    sha256  7ff2317c7bdaed8e81dcbe1314e6ab12ad9641b7ddf921e996a227ff4ec7752f \
-                    size    36830244
+checksums           rmd160  97a28a966af46ab57c06f9e4ae0cc66df270216d \
+                    sha256  544b94719be76dd2d7e69f8464c5f8c0d612e59e9bde8d9ecc8867c9aa4940af \
+                    size    994146021
 
 build {}
 
