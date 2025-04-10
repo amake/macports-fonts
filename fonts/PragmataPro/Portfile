@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                PragmataPro
-version             0.830
+version             0.9
 description         A condensed monospaced font optimized for screen, designed to \
                     be the ideal font for coding, math and engineering
 long_description    ${description}
@@ -15,16 +15,15 @@ license             Restrictive
 homepage            https://fsd.it/shop/fonts/pragmatapro/
 master_sites
 
-dist_subdir         ${name}/${version}
-distname            PP-ep6wq
+distname            ${name}${version}-8svlok
 worksrcdir          ${name}${version}
 
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  7ce627fd4caea67a316f39ed7c74a6a3431e94f0 \
-                    sha256  28c3170ae35e35f23514ba3ef109e8934d5cd1552984b79144cb42bb1527ca32 \
-                    size    60392041
+checksums           rmd160  e713e10498343b88c1c504b8b988bb53fbe65ea1 \
+                    sha256  3178e90cd5320333038fb09d3972da83e50e194d3702d00c8ecad5b5f5e7579d \
+                    size    60487704
 
 fetch {
     file mkdir ${distpath}
