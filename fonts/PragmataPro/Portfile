@@ -5,6 +5,7 @@ PortSystem          1.0
 categories          fonts
 name                PragmataPro
 version             0.9
+epoch               1
 description         A condensed monospaced font optimized for screen, designed to \
                     be the ideal font for coding, math and engineering
 long_description    ${description}
