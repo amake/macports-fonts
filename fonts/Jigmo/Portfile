@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+categories          fonts
+name                Jigmo
+version             20230816
+description         Free Kanji font including over 80,000 Unicode characters
+long_description    ${description}. Successor to Hanazono.
+platforms           {darwin any}
+supported_archs     noarch
+maintainers         {amake @amake} openmaintainer
+license             OFL
+
+homepage            https://kamichikoichi.github.io/jigmo/
+master_sites        ${homepage}
+
+use_configure       no
+use_zip             yes
+
+checksums           rmd160  f86f8540af9feb05f8bb773b615fc919592963cc \
+                    sha256  4d2641686e0978819a3fc0f5250b31a209f829de42bb12448745fc8d89dd2fc2 \
+                    size    32799501
+
+build {}
+
+destroot.violate_mtree yes
+
+destroot {
+    set target ${destroot}/Library/Fonts/
+    xinstall -m 0755 -d ${target}
+    copy {*}[glob ${worksrcpath}/*.ttf] ${target}
+}
+
+livecheck.type      regex
+livecheck.regex     ${name}-\(\[0-9\]+\)${extract.suffix}
