@@ -12,8 +12,8 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-homepage            http://fonts.jp/hanazono/
-master_sites        osdn:hanazono-font/68253
+homepage            https://glyphwiki.org/hanazono/
+master_sites        ${homepage}
 
 worksrcdir          .
 
@@ -35,5 +35,4 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.url       https://osdn.net/projects/hanazono-font/releases/rss
 livecheck.regex     ${name}-\(\[0-9\]+\)${extract.suffix}
