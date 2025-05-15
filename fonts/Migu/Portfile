@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                Migu
-version             20200307
+version             2023.1123
 description         Modified M+ fonts mixed with kanji from IPA Gothic
 long_description    ${description}
 platforms           {darwin any}
@@ -12,32 +12,43 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             Permissive
 
-homepage            http://mix-mplus-ipa.osdn.jp/migu/
-master_sites        osdn:mix-mplus-ipa/72511
+homepage            https://itouhiro.github.io/mixfont-mplus-ipa/migu/
+
+set version2 ${version}
+set version2.nodot [string map {. ""} ${version2}]
+set version1 2020.0307
+set version1.nodot [string map {. ""} ${version1}]
+
+set github.download https://github.com/itouhiro/mixfont-mplus-ipa/releases/download/
+master_sites        ${github.download}v${version1}:1c \
+                    ${github.download}v${version1}:1m \
+                    ${github.download}v${version1}:1p \
+                    ${github.download}v${version2}:2m
+
 
 use_zip             yes
 
-distfiles           migu-1c-${version}${extract.suffix} \
-                    migu-1m-${version}${extract.suffix} \
-                    migu-1p-${version}${extract.suffix} \
-                    migu-2m-${version}${extract.suffix}
+distfiles           migu-1c-${version1.nodot}${extract.suffix}:1c \
+                    migu-1m-${version1.nodot}${extract.suffix}:1m \
+                    migu-1p-${version1.nodot}${extract.suffix}:1p \
+                    migu-2m-${version2.nodot}${extract.suffix}:2m
 
-checksums           migu-1c-${version}${extract.suffix} \
-                        rmd160  e4634ef466acd4035417418f5929aed5ba177f69 \
-                        sha256  6324807e7a7a7738298d86a0b4fcbd3f5f0180416a98a15aa552bdf801b10e0e \
-                        size    4228529 \
-                    migu-1m-${version}${extract.suffix} \
-                        rmd160  af8e515ceb22ff46c35ac8f7c8c6a14a5365755b \
-                        sha256  a4770fca22410668d2747d7898ed4d7ef5d92330162ee428a6efd5cf247d9504 \
-                        size    4135282 \
-                    migu-1p-${version}${extract.suffix} \
-                        rmd160  3514dd608c2916df50473f4f46b32eafb536861b \
-                        sha256  de3fb44777ec2d623db33fefd16e9ceb6caff793e08809cd2e35edb3ec9aa22d \
-                        size    4217848 \
-                    migu-2m-${version}${extract.suffix} \
-                        rmd160  c9bd15419194fe9191294c456f05b9912033f50d \
-                        sha256  dbfd177bf3d7645ba080b7b1e07c5b1966a2cd6e003c7586e3d53490377938be \
-                        size    4134915
+checksums           migu-1c-${version1.nodot}${extract.suffix} \
+                        rmd160  4165f04d58fc043771272332c09a7469fde19c51 \
+                        sha256  de18e4558495ab2860e01a218e43274c49660ab882085f4b803bfd9f0ccde02b \
+                        size    4228521 \
+                    migu-1m-${version1.nodot}${extract.suffix} \
+                        rmd160  07a46af440de9be1bef6f5f3b837d29c946c9bfb \
+                        sha256  e4806d297e59a7f9c235b0079b2819f44b8620d4365a8955cb612c9ff5809321 \
+                        size    4135274 \
+                    migu-1p-${version1.nodot}${extract.suffix} \
+                        rmd160  95df6f71ecb890a461b8adf4b42242600ccee5b5 \
+                        sha256  2e632832e7984400654bf666775c0fba14e18191765b64b6477e65b14c3a624a \
+                        size    4217840 \
+                    migu-2m-${version2.nodot}${extract.suffix} \
+                        rmd160  99689f8bc072fd7288b5dac78be9b355329bd9e7 \
+                        sha256  e7845f148772c984064c325eba70ed4dfb9a27084c2011a3a1b6194be6e439e5 \
+                        size    4134787
 
 use_configure       no
 
@@ -52,5 +63,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.url       https://osdn.net/projects/mix-mplus-ipa/releases/rss
 livecheck.regex     {migu-[12][cmp]-([0-9]+)\.zip}
+livecheck.version   ${version2.nodot}
