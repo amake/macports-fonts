@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             16.0.03
+version             16.0.04
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -19,9 +19,9 @@ master_sites        https://unifoundry.com/pub/${name}/${name}-${version}/
 use_configure       no
 use_parallel_build  no
 
-checksums           rmd160  1ef0cd3dd30b5979cec492c4280fd5b20ba9b4d0 \
-                    sha256  2eee0454e7e570ac22b637f9f622a9c06cfc56e61931069d0d667ce5c2ae189e \
-                    size    32865898
+checksums           rmd160  49786cd3214bc8531b37d8fc3e75f03cc2431a4e \
+                    sha256  2bd4e4679757126f48e1bf2c1be40b09aa92162bfedda4683ce5fbc70a2a5972 \
+                    size    32852475
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -40,7 +40,8 @@ if {![variant_isset precompiled]} {
     depends_build   port:fontforge \
                     port:bdftopcf \
                     port:p${perl5.major}-gd \
-                    port:gmake
+                    port:gmake \
+                    port:ImageMagick7
 
     post-patch {
         # This generates a ton of warnings, but YOLO
