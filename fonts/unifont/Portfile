@@ -53,6 +53,8 @@ if {![variant_isset precompiled]} {
     build.cmd       gmake
     build.target    buildfont
     build.args      BUILDFONT=1 PSF= GRAPHICS=
+    build.env-append \
+        PATH=${prefix}/lib/ImageMagick7/bin:$env(PATH)
 }
 
 destroot.violate_mtree yes
