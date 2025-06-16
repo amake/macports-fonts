@@ -4,9 +4,9 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        coz-m MPLUS_FONTS 6073a0f1543cae839d9e94a30ffe29607be72fb3
+github.setup        coz-m MPLUS_FONTS 9a47d6289d8a41cc27bc9fdc78c9d390fde93f22
 name                mplus
-version             20250503
+version             20250615
 
 description         Multilingual, multiweight, multistyle free font including CJK characters
 long_description    ${description}
@@ -21,11 +21,11 @@ use_configure       no
 
 github.tarball_from archive
 
-checksums           md5     a84745cfd639802d7ff6b74ad0cfa093 \
-                    sha1    0916e6b396b18c8f233344919727c3896c8dadd2 \
-                    sha256  ec3c67999630923ea0183133f3599f8e9b0ee985ca9522b9ddedd4ff0fcd68ab \
-                    rmd160  be5d9bae2b40fbeabaef7a63ffb454a02087c12a \
-                    size    130095264
+checksums           md5     6fff5e9f1b80f40e56dd3265f3879cb3 \
+                    sha1    bbd7dc99bf9121b228b009eb913fd55835f8200a \
+                    sha256  18570945f1241144f17babb93699d5a0d5da5ce42552fcfaaa9f4ebe17987bcb \
+                    rmd160  f24bd3aa0c3e6ad0a2cb3de733131288fffde1eb \
+                    size    130115521
 
 build {}
 
