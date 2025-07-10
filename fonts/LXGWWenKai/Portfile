@@ -33,3 +33,5 @@ destroot {
     xinstall -m 0755 -d ${target}
     copy {*}[glob ${worksrcpath}/*.ttf] ${target}
 }
+
+github.livecheck.regex  {([0-9.]+)}
