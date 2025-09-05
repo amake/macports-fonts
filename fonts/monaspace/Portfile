@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        githubnext monaspace 1.300 v
+github.setup        githubnext monaspace 1.301 v
 revision            0
 github.tarball_from releases
 
@@ -23,9 +23,9 @@ use_zip             yes
 
 worksrcdir          .
 
-checksums           rmd160  f8d0386d9dde01be70a1e69241b6b41c4c9b76a6 \
-                    sha256  b857609c97dcf8c55e3fc408c6bf3e62b50b53122d6b1cc6813554e39cbebccc \
-                    size    35554678
+checksums           rmd160  c1aca4275e8ca00f0dcc1eff7c0ec9f9b845470a \
+                    sha256  e201697c8ef3cfd4559fbfb4b5f60bf7425113729bca28e33b0a9112db1ca579 \
+                    size    35852498
 
 build {}
 
