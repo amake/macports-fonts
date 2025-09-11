@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        unicode-org last-resort-font 16.000
+github.setup        unicode-org last-resort-font 17.000
 name                LastResort
 revision            0
 
@@ -21,18 +21,18 @@ github.tarball_from releases
 
 use_configure       no
 
-checksums           rmd160  a9982be734330eed17af77ca035f5b0fa6f7b49d \
-                    sha256  f7b2a5ddecf37e3c9d5a4388eb291430f3382b304470b48677f3d40f93d29166 \
-                    size    9013284
+checksums           rmd160  d7b762084429f6ba5db93e47fd9565cdd469e145 \
+                    sha256  c25223fd85c6dbb4cc720a5ae77c15bc1b5317b4488e37ba648180cbe1682a5e \
+                    size    9225000
 
 subport ${name}HE {
     long_description \
         ${description}. The high-efficiency version is much smaller but \
         potentially less compatible, for instance with Windows or Adobe apps.
 
-    checksums       rmd160  6568598211b949db8de9e389fed7a6b3025460eb \
-                    sha256  60c48abfc05e9f2ba33599c4dcba40105d1ece71d3761f0b26f75a38b5b17895 \
-                    size    564228
+    checksums       rmd160  af634f0c94f5aad5ec5823bca61e1d91645a3b4f \
+                    sha256  3a936fe2379e9e164a8f9819095cbf53d9305a2d08532d9be5b496f4be45bcde \
+                    size    576156
 }
 
 distfiles           ${subport}-Regular.ttf
