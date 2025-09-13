@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                Jigmo
-version             20230816
+version             20250912
 description         Free Kanji font including over 80,000 Unicode characters
 long_description    ${description}. Successor to Hanazono.
 platforms           {darwin any}
@@ -18,9 +18,11 @@ master_sites        ${homepage}
 use_configure       no
 use_zip             yes
 
-checksums           rmd160  f86f8540af9feb05f8bb773b615fc919592963cc \
-                    sha256  4d2641686e0978819a3fc0f5250b31a209f829de42bb12448745fc8d89dd2fc2 \
-                    size    32799501
+checksums           rmd160  916b492369f718b3a0a90c36c53b7918217d82ed \
+                    sha256  5744c7386d129475d87607ca66d043c8793c65448adeaedc921b6931890e5d0b \
+                    size    35559738
+
+worksrcdir          .
 
 build {}
 
