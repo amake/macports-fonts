@@ -4,11 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        IBM plex 1.1.0 @ibm/plex-sans@
 name                IBMPlex
-revision            1
-github.tarball_from releases
-epoch               1
 
 description         IBM’s typeface, IBM Plex
 long_description    ${description}
@@ -17,112 +13,189 @@ homepage            https://www.ibm.com/plex/
 platforms           {darwin any}
 supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
-license             OFL
 
 use_configure       no
-use_zip             yes
+build {}
 
-dist_subdir         ${name}/${version}
+if {${subport} eq ${name}} {
+    version             1
+    revision            0
+    epoch               2
 
-master_sites \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-math%40${github.version}:math \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-mono%40${github.version}:mono \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans%40${github.version}:sans \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-arabic%40${github.version}:arabic \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-condensed%40${github.version}:condensed \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-devanagari%40${github.version}:devanagari \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-hebrew%40${github.version}:hebrew \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-jp%40${github.version}:jp \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-kr%40${github.version}:kr \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-tc%40${github.version}:tc \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-sc%40${github.version}:sc \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai%40${github.version}:thai \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-sans-thai-looped%40${github.version}:thai-looped \
-    ${github.homepage}/releases/download/%40ibm%2Fplex-serif%40${github.version}:serif
+    license         Permissive
 
-distfiles \
-    ibm-plex-math${extract.suffix}:math \
-    ibm-plex-mono${extract.suffix}:mono \
-    ibm-plex-sans${extract.suffix}:sans \
-    ibm-plex-sans-arabic${extract.suffix}:arabic \
-    ibm-plex-sans-condensed${extract.suffix}:condensed \
-    ibm-plex-sans-devanagari${extract.suffix}:devanagari \
-    ibm-plex-sans-hebrew${extract.suffix}:hebrew \
-    ibm-plex-sans-jp${extract.suffix}:jp \
-    ibm-plex-sans-kr${extract.suffix}:kr \
-    ibm-plex-sans-tc${extract.suffix}:tc \
-    ibm-plex-sans-sc${extract.suffix}:sc \
-    ibm-plex-sans-thai${extract.suffix}:thai \
-    ibm-plex-sans-thai-looped${extract.suffix}:thai-looped \
-    ibm-plex-serif${extract.suffix}:serif
+    distfiles
 
-checksums \
-    ibm-plex-math${extract.suffix} \
+    depends_lib \
+        port:IBMPlex-Math \
+        port:IBMPlex-Mono \
+        port:IBMPlex-Sans \
+        port:IBMPlex-Sans-Arabic \
+        port:IBMPlex-Sans-Condensed \
+        port:IBMPlex-Sans-Devanagari \
+        port:IBMPlex-Sans-Hebrew \
+        port:IBMPlex-Sans-JP \
+        port:IBMPlex-Sans-KR \
+        port:IBMPlex-Sans-TC \
+        port:IBMPlex-Sans-SC \
+        port:IBMPlex-Sans-Thai \
+        port:IBMPlex-Sans-Thai-Looped \
+        port:IBMPlex-Serif
+
+    destroot {
+        # Create a dummy file so the port can be successfully activated
+        xinstall -d ${destroot}${prefix}/share/doc/${name}
+        set docfile [open ${destroot}${prefix}/share/doc/${name}/README.${name}.txt "w"]
+        puts $docfile "IBM Plex ${version} (MacPorts revision ${version}_${revision})\n"
+        puts $docfile "${long_description}\n"
+        close $docfile
+    }
+} else {
+    license         OFL
+    use_zip         yes
+}
+
+subport IBMPlex-Math {
+    github.setup    IBM plex 1.1.0 @ibm/plex-math@
+    distfiles       ibm-plex-math${extract.suffix}
+    checksums \
         rmd160  b52b610bc247d5cbdb615575e6a4d76ffa24f9a6 \
         sha256  d85ed404394ced3a79a519af24611acdee9cc0483363c07cd5ac0656c06db42a \
-        size    2089697 \
-    ibm-plex-mono${extract.suffix} \
+        size    2089697
+}
+
+subport IBMPlex-Mono {
+    github.setup    IBM plex 1.1.0 @ibm/plex-mono@
+    distfiles       ibm-plex-mono${extract.suffix}
+    checksums \
         rmd160  f7a14f14026c7d514c8d6da7a8d49472953fa685 \
         sha256  4bfc936d0e1fd19db6327a3786eabdbc3dc0d464500576f6458f6706df68d26c \
-        size    7307192 \
-    ibm-plex-sans${extract.suffix} \
+        size    7307192
+}
+
+subport IBMPlex-Sans {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans@
+    distfiles       ibm-plex-sans${extract.suffix}
+    checksums \
         rmd160  ca7adb279ebf9a7806dc3bacd0294c8cd911991c \
         sha256  fb365d910566e6d199cc2c15579a7dd9a267128e18431a394ed81f1970c69200 \
-        size    9921777 \
-    ibm-plex-sans-arabic${extract.suffix} \
+        size    9921777
+}
+
+subport IBMPlex-Sans-Arabic {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-arabic@
+    distfiles       ibm-plex-sans-arabic${extract.suffix}
+    checksums \
         rmd160  b756ee7ce1dccdfb0efbc407dd6f567126755139 \
         sha256  f03915581aea37d82792c188b08064023a73494d679b8e19f85f5971db714013 \
-        size    3898251 \
-    ibm-plex-sans-condensed${extract.suffix} \
+        size    3898251
+}
+
+subport IBMPlex-Sans-Condensed {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-condensed@
+    distfiles       ibm-plex-sans-condensed${extract.suffix}
+    checksums \
         rmd160  07e9d929646ccada715d273ca925ca83732df31b \
         sha256  c172bedb417831bc6ba35ccb727f33959b7f2f8382902386947660bcd66a8077 \
-        size    5823577 \
-    ibm-plex-sans-devanagari${extract.suffix} \
+        size    5823577
+}
+
+subport IBMPlex-Sans-Devanagari {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-devanagari@
+    distfiles       ibm-plex-sans-devanagari${extract.suffix}
+    checksums \
         rmd160  1c9b93f2380eb3c1945bfdc727b4c78a7330c4d3 \
         sha256  effc4a35b2908c80806c97a4d5033e63f437611d17a3e09b237edd5c33d8ac94 \
-        size    5338792 \
-    ibm-plex-sans-hebrew${extract.suffix} \
+        size    5338792
+}
+
+subport IBMPlex-Sans-Hebrew {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-hebrew@
+    distfiles       ibm-plex-sans-hebrew${extract.suffix}
+    checksums \
         rmd160  c9a6c459bb453a9eae37704ab779fea50cf307e5 \
         sha256  d7d490b8a767b972a7f361055fdcf60ad7cb7c270b38ff1bf859562a021369fd \
-        size    1706978 \
-    ibm-plex-sans-jp${extract.suffix} \
-        rmd160  54b2ad8ba40d9d5d3d2431d48a36335c3ece8c9b \
-        sha256  96e7b8af07b5b38fad9c531c11854559c47332b45de7e65c45672b5415f3cd55 \
-        size    154932010 \
-    ibm-plex-sans-kr${extract.suffix} \
+        size    1706978
+}
+
+subport IBMPlex-Sans-JP {
+    github.setup    IBM plex 2.0.0 @ibm/plex-sans-jp@
+    distfiles       ibm-plex-sans-jp${extract.suffix}
+    checksums \
+        rmd160  bf5638e3a9156a63f2a1817f343537e57061d65e \
+        sha256  ce6af1c716bfe24d2f8129129e4fea8cd4b573869d8417ec4f22eab1e07da510 \
+        size    317295342
+}
+
+subport IBMPlex-Sans-KR {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-kr@
+    distfiles       ibm-plex-sans-kr${extract.suffix}
+    checksums \
         rmd160  48e161e658ada05e045821de1be7845d2906785a \
         sha256  9837800c8e5aedf4123775e1d767afa482c983321bd2fc606c985f405d24562e \
-        size    73268731 \
-    ibm-plex-sans-tc${extract.suffix} \
+        size    73268731
+}
+
+subport IBMPlex-Sans-TC {
+    github.setup    IBM plex 1.1.1 @ibm/plex-sans-tc@
+    distfiles       ibm-plex-sans-tc${extract.suffix}
+    checksums \
         rmd160  815fdfffed72398fc074ba86efba1c90eebca403 \
         sha256  b79600d3c9155fa05c9024eb81cfe2fbdd8cd068503dfafd79405ea577aa9fec \
-        size    367460242 \
-    ibm-plex-sans-sc${extract.suffix} \
+        size    367460242
+}
+
+subport IBMPlex-Sans-SC {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-sc@
+    distfiles       ibm-plex-sans-sc${extract.suffix}
+    checksums \
         rmd160  3e65cfcf43da63334bd299280a160f79afee7b28 \
         sha256  0aabd737c8ef0206892b912c759101c10b86c6244be99f2e6b57c6905c716837 \
-        size    523434713 \
-    ibm-plex-sans-thai${extract.suffix} \
+        size    523434713
+}
+
+subport IBMPlex-Sans-Thai {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-thai@
+    distfiles       ibm-plex-sans-thai${extract.suffix}
+    checksums \
         rmd160  5730fb950684e8cc0a330c56e0c47fd997da8b9f \
         sha256  d7203f43c20f9abd40487f845c48db4077d2056ea18632c8959591c6815d7fb9 \
-        size    1985960 \
-    ibm-plex-sans-thai-looped${extract.suffix} \
+        size    1985960
+}
+
+subport IBMPlex-Sans-Thai-Looped {
+    github.setup    IBM plex 1.1.0 @ibm/plex-sans-thai-looped@
+    distfiles       ibm-plex-sans-thai-looped${extract.suffix}
+    checksums \
         rmd160  8342d67c0356317556c81a6717369409eec80f97 \
         sha256  26c453e3a4341026e2f5525cd498c5aa214e57bdb9db99bc3816826a36be157f \
-        size    2116691 \
-    ibm-plex-serif${extract.suffix} \
+        size    2116691
+}
+
+subport IBMPlex-Serif {
+    github.setup    IBM plex 1.1.0 @ibm/plex-serif@
+    distfiles       ibm-plex-serif${extract.suffix}
+    checksums \
         rmd160  72a776dd7c064fde4fc47f3751ecf5f11c10ed2e \
         sha256  76f1a272b084d2beedcd22aaaa653bc6f92b71b5689081aef9c5b05d0a470e1b \
         size    10556818
-
-build {}
-
-destroot.violate_mtree yes
-
-destroot {
-    set target ${destroot}/Library/Fonts/
-    xinstall -m 0755 -d ${target}
-    copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/*.otf] ${target}
-    copy {*}[glob ${workpath}/ibm-plex-*/fonts/complete/otf/hinted/*.otf] ${target}
 }
 
-livecheck.regex  {archive/refs/tags/\@ibm\/plex\-.*\@([^"-]+)\.tar\.gz}
+if {${subport} ne ${name}} {
+    github.tarball_from releases
+    dist_subdir         ${subport}/${version}
+    destroot.violate_mtree yes
+
+    github.master_sites ${github.homepage}/releases/download/[string map {@ %40 / %2F} ${git.branch}]
+
+    destroot {
+        set target ${destroot}/Library/Fonts/
+        xinstall -m 0755 -d ${target}
+        foreach dir {otf otf/hinted complete/otf complete/otf/hinted} {
+            set otf_glob ${workpath}/ibm-plex-*/fonts/${dir}/*.otf
+            if {[llength [glob -nocomplain ${otf_glob}]] > 1} {
+                copy {*}[glob ${otf_glob}] ${target}
+            }
+        }
+    }
+}
