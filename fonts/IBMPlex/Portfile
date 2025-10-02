@@ -119,12 +119,12 @@ subport IBMPlex-Sans-Hebrew {
 }
 
 subport IBMPlex-Sans-JP {
-    github.setup    IBM plex 2.0.0 @ibm/plex-sans-jp@
+    github.setup    IBM plex 3.0.0 @ibm/plex-sans-jp@
     distfiles       ibm-plex-sans-jp${extract.suffix}
     checksums \
-        rmd160  bf5638e3a9156a63f2a1817f343537e57061d65e \
-        sha256  ce6af1c716bfe24d2f8129129e4fea8cd4b573869d8417ec4f22eab1e07da510 \
-        size    317295342
+        rmd160  b9e288e915bc312ed58fb82f29d1ea2ffee77dbb \
+        sha256  4c14c41552934b0bc92fc216a76b36bdc78f745dfbeed1115f9b8bc405ee314f \
+        size    317241486
 }
 
 subport IBMPlex-Sans-KR {
