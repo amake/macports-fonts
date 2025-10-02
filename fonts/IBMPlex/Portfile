@@ -193,7 +193,7 @@ if {${subport} ne ${name}} {
         xinstall -m 0755 -d ${target}
         foreach dir {otf otf/hinted complete/otf complete/otf/hinted} {
             set otf_glob ${workpath}/ibm-plex-*/fonts/${dir}/*.otf
-            if {[llength [glob -nocomplain ${otf_glob}]] > 1} {
+            if {[llength [glob -nocomplain ${otf_glob}]] > 0} {
                 copy {*}[glob ${otf_glob}] ${target}
             }
         }
