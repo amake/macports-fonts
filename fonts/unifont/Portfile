@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             17.0.01
+version             17.0.02
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -19,9 +19,9 @@ master_sites        https://unifoundry.com/pub/${name}/${name}-${version}/
 use_configure       no
 use_parallel_build  no
 
-checksums           rmd160  ab85865a637dd85c1be93f9a4724b9c1b066bf2e \
-                    sha256  234af86e7a0e851f020900db5ad0afc32691c248db362df9b2914cf50c42d940 \
-                    size    35123586
+checksums           rmd160  b72aa6429afacdfaeb14cc4bf5bafc2f280f31d3 \
+                    sha256  0c19e2611f0fd836966080b31b0d45921998debacd5745e2506ee0bbcbc6e528 \
+                    size    31710851
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
