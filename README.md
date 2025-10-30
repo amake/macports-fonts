@@ -21,7 +21,9 @@ distfiles.
 
 # Usage
 
-Clone this repository somewhere:
+Clone this repository somewhere (as of MacPorts 2.11.6 you will likely want to
+put it *outside* of your home directory, such as in `/Users/Shared`, for
+permissions reasons):
 
 ```sh
 git clone https://github.com/amake/macports-fonts.git
