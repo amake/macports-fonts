@@ -4,11 +4,11 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        bBoxType FiraGO 715cd3e8b59179822cd5b86933ecfc254cd1e74e
+github.setup        bBoxType FiraGO 5bbcb9d066ab563686ed1de1e6f62eec0148e82d
 version             1.001
 revision            0
 
-homepage            https://bboxtype.com/typefaces/FiraGO/
+homepage            https://carrois.com/fira/
 description         Fira Sans, but with extensions for several languages
 long_description    ${description} such as Arabic, Devanagari, Georgian, Hebrew and Thai
 
@@ -17,9 +17,11 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-checksums           rmd160  93076f2d3ec3da1c17f4db7aacff5f1584c052ab \
-                    sha256  3aef9fde508d9ee85463295b81e6d6c95f93742020647aff34ec58472494faea \
-                    size    53405214
+github.tarball_from archive
+
+checksums           rmd160  a1b10af1b3d7e7f9bcf3d7c308a71b9dea352b2c \
+                    sha256  f55e4fafad1242eab226596b349eeaa7b9a7a93890c5e3045e4aeb167de2a6b5 \
+                    size    53410269
 
 use_configure       no
 
