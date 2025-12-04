@@ -92,12 +92,12 @@ subport IBMPlex-Sans-Arabic {
 }
 
 subport IBMPlex-Sans-Condensed {
-    github.setup    IBM plex 1.1.0 @ibm/plex-sans-condensed@
+    github.setup    IBM plex 2.0.0 @ibm/plex-sans-condensed@
     distfiles       ibm-plex-sans-condensed${extract.suffix}
     checksums \
-        rmd160  07e9d929646ccada715d273ca925ca83732df31b \
-        sha256  c172bedb417831bc6ba35ccb727f33959b7f2f8382902386947660bcd66a8077 \
-        size    5823577
+        rmd160  17b0097eb0fdcefc53bdc42155db3ba52ed1be92 \
+        sha256  f86ba73abbeed7cf7690ead863192a87211dfc2b0cef0ac6bf4700533ec5ab9e \
+        size    9290447
 }
 
 subport IBMPlex-Sans-Devanagari {
