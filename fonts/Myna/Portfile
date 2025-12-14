@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        sayyadirfanali Myna 1.0.0 v
+github.setup        sayyadirfanali Myna 2.0.0 v
 revision            0
 
 description         Monospace typeface designed for symbol-rich programming
@@ -15,14 +15,11 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
-github.tarball_from releases
+github.tarball_from archive
 
-dist_subdir         ${name}/${version}
-distfiles           ${name}.otf
-
-checksums           rmd160  1bb901a03142ae8e3e2e2ae14a435d0d371a7120 \
-                    sha256  0f09d4353fcb45a5a29c28005f7c1334587da23005c056d611a8b1014d890530 \
-                    size    190228
+checksums           rmd160  c609b6c4ecc956ba874a14da4b43a1949ed6dbc1 \
+                    sha256  c51fdc87b435db743bb496016a39b76ea420a93ee0a6157eccf2d9c86e8761a8 \
+                    size    6907016
 
 use_configure       no
 
@@ -33,5 +30,5 @@ destroot.violate_mtree yes
 destroot {
     set target ${destroot}/Library/Fonts/
     xinstall -m 0755 -d ${target}
-    copy ${distpath}/${distfiles} ${target}
+    copy {*}[glob ${worksrcpath}/fonts/*.otf] ${target}
 }
