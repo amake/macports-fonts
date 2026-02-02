@@ -173,12 +173,12 @@ subport IBMPlex-Sans-Thai-Looped {
 }
 
 subport IBMPlex-Serif {
-    github.setup    IBM plex 1.1.0 @ibm/plex-serif@
+    github.setup    IBM plex 2.0.0 @ibm/plex-serif@
     distfiles       ibm-plex-serif${extract.suffix}
     checksums \
-        rmd160  72a776dd7c064fde4fc47f3751ecf5f11c10ed2e \
-        sha256  76f1a272b084d2beedcd22aaaa653bc6f92b71b5689081aef9c5b05d0a470e1b \
-        size    10556818
+        rmd160  622ac6aa8054769aedb10c24615a45f6f28ee624 \
+        sha256  c006b095c47b919c6c8d78319e9e628745033f5db94507c1c9dfe4b35dd51f1e \
+        size    9272432
 }
 
 if {${subport} ne ${name}} {
