@@ -25,7 +25,9 @@ depends_fetch-append port:git
 git.cmd             ${prefix}/bin/git
 
 fetch.type          git
-git.url-prepend     --shallow-since=${version}T00:00:00
+pre-fetch {
+    git.url-prepend     --shallow-since=${version}T00:00:00
+}
 
 use_configure       no
 
