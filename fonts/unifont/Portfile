@@ -4,7 +4,7 @@ PortSystem          1.0
 
 categories          fonts
 name                unifont
-version             17.0.03
+version             17.0.05
 description         A Unicode font with a glyph for every visible Unicode Basic \
                     Multilingual Plane code point and more
 long_description    ${description}
@@ -19,9 +19,9 @@ master_sites        https://unifoundry.com/pub/${name}/${name}-${version}/
 use_configure       no
 use_parallel_build  no
 
-checksums           rmd160  430d76da4985827ec7f1de40c39eb1603cd421ff \
-                    sha256  9a26aa9adfa8eb1f91b0cd9b83e7f95ea9e14c6e85be71aa3ab0df5cb4e69c35 \
-                    size    31749332
+checksums           rmd160  c2e6399bdb88e21f405fb04102a92146fbddd670 \
+                    sha256  f287cffb26e22723aa36e6684869b0f3ff3bfb822c4b01008bd847911ec1b631 \
+                    size    41506878
 
 set fonts_dir       ${worksrcpath}/font/compiled
 
@@ -44,6 +44,10 @@ if {![variant_isset precompiled]} {
                     port:ImageMagick7
 
     post-patch {
+        # Workaround a bug in the Makefile that doesn't use the PSF variable
+        # correctly starting in 17.0.04
+        reinplace {s|pcf psf html|pcf $(PSF) html|} ${worksrcpath}/font/Makefile
+
         # This generates a ton of warnings, but YOLO
         foreach f [glob ${worksrcpath}/src/*] {
             catch {reinplace "s|#!/usr/bin/perl|#!${perl5.bin}|" ${f}}
