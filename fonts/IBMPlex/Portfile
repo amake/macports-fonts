@@ -65,12 +65,12 @@ subport IBMPlex-Math {
 }
 
 subport IBMPlex-Mono {
-    github.setup    IBM plex 1.1.0 @ibm/plex-mono@
+    github.setup    IBM plex 2.5.0 @ibm/plex-mono@
     distfiles       ibm-plex-mono${extract.suffix}
     checksums \
-        rmd160  f7a14f14026c7d514c8d6da7a8d49472953fa685 \
-        sha256  4bfc936d0e1fd19db6327a3786eabdbc3dc0d464500576f6458f6706df68d26c \
-        size    7307192
+        rmd160  75f128bd362c320d9f6f4ebb827907c54b0b8af0 \
+        sha256  6d23f01257663d8cc49a0d64c22ced630b79e0e2a0ac08a0da86e9a38bbc481c \
+        size    6940652
 }
 
 subport IBMPlex-Sans {
