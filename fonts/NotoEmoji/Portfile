@@ -16,6 +16,8 @@ supported_archs     noarch
 maintainers         {amake @amake} openmaintainer
 license             OFL
 
+github.tarball_from archive
+
 use_configure       no
 
 checksums           rmd160  a84cb804e01127fcab5c5eb4be2e2d020940141b \
