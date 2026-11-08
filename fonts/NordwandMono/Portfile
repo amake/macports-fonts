@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 categories          fonts
-github.setup        tywr Nordwand-Mono 1.5.1
+github.setup        tywr Nordwand-Mono 1.5.2
 name                NordwandMono
 revision            0
 github.tarball_from releases
@@ -24,9 +24,9 @@ use_zip             yes
 
 worksrcdir          .
 
-checksums           rmd160  6682a9aae181c84a27551d5e16727ba570b5c15a \
-                    sha256  c4bd54e69e8e99723ceb781e058e37a2dbc09942f254b2583254c5cfb9902050 \
-                    size    492329
+checksums           rmd160  c302a32212c3115539a910fb3344ec5fa0a6d003 \
+                    sha256  3b33d3a3861d4d8308f01183725fb1709007733dca0973ff80e35787d594b742 \
+                    size    605104
 
 build {}
 
